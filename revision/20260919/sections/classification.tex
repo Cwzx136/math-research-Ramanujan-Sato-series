@@ -1,0 +1,465 @@
+\section{CM arithmetic and the classification}\label{sec:enumeration}
+
+The CM classification rests on two structures.  A modular correspondence
+bounds the orbit of the elliptic invariant; the complementary CM
+eigenline determines the coefficient slope.  The first structure makes
+the parameter set finite, and the second produces an identity at every
+admissible CM parameter.
+
+\subsection{The modular correspondence}
+
+Write $j_s(x)=j(E_{s,x})$ for the elliptic families of
+Section~\ref{sec:families}.  Their invariants are
+\begin{equation}\label{eq:jmaps}
+\begin{array}{c|c}
+\ell&j_{s_\ell}(x)\\\hline
+1&1728/[4x(1-x)]\\
+2&64(1+3x)^3/[x(1-x)^2]\\
+3&27(1+8x)^3/[x(1-x)^3]\\
+4&256(1-x+x^2)^3/[x^2(1-x)^2].
+\end{array}
+\end{equation}
+The involution $\iota:x\mapsto1-x$ fixes
+$C=R_\ell/[4x(1-x)]$.  At levels one and four it fixes $j_s$ as
+well.  At levels two and three it exchanges the invariants of a
+cyclically isogenous pair.  Indeed, with
+\[
+ t_n=\left(\frac{\eta(\tau)}{\eta(n\tau)}\right)^{24/(n-1)},
+ \qquad (n,k_n)=(2,64),(3,27),
+\]
+the classical $X_0(n)$ coordinates give
+\[
+ x=\frac{k_n}{t_n+k_n},\qquad
+ C=\frac{(t_n+k_n)^2}{t_n},\qquad
+ w_n(t_n)=\frac{k_n^2}{t_n}.
+\]
+Here $w_n$ is the Fricke involution, and the two maps to the
+$j$-line are
+\[
+\begin{array}{c|cc}
+ n&j(\tau)&j(n\tau)\\\hline
+ 2&(t_2+256)^3/t_2^2&(t_2+16)^3/t_2\\
+ 3&(t_3+27)(t_3+243)^3/t_3^3&(t_3+27)(t_3+3)^3/t_3.
+\end{array}
+\]
+Substitution identifies them with $j_{s_n}(x)$ and
+$j_{s_n}(1-x)$, respectively.  Thus the
+arithmetic information belongs to the correspondence
+\[
+\begin{tikzcd}[column sep=large]
+ X_0(n) \arrow[r,"j"] \arrow[d,"/\langle w_n\rangle"']
+   & X(1)\\
+ X_0(n)^+ \arrow[r,"C"'] & \mathbf P^1_C .
+\end{tikzcd}
+\]
+There is no asserted map from the lower row to $X(1)$: the missing
+descent is precisely why a quadratic equation in $j$ occurs.
+
+The equations of the four correspondences may be written compactly as
+\begin{align}
+ \Phi_1(J,C)&=C-J,\notag\\
+ \Phi_2(J,C)&=J^2-(C^2-207C+3456)J+(C+144)^3,
+       \label{eq:P2}\\
+ \Phi_3(J,C)&=J^2-C(C^2-126C+2944)J+C(C+192)^3,
+       \label{eq:P3}\\
+ \Phi_4(J,C)&=(C-16)^3-CJ.\notag
+\end{align}
+Each is monic as a polynomial in $C$.  For $C\ne0$, its degree in
+$J$ is
+\[
+                         m_\ell=(1,2,2,1)_\ell.
+\]
+These two elementary features encode, respectively, integrality and
+the CM degree bound.
+
+\begin{proposition}[Arithmetic of CM parameters]
+\label{prop:rational-cm-integrality}
+Let $C\in\Qbar^\times$ have degree at most $d$, and suppose that
+the indicated nonsingular elliptic fiber has CM by the order of
+discriminant $D$.  Then $C$ is an algebraic integer and
+\[
+                             h(D)\le m_\ell d.
+\]
+In particular, a rational CM parameter is an integer; it has
+$h(D)\le1$ at levels one and four and $h(D)\le2$ at levels two
+and three.  At level four a rational CM parameter also satisfies
+$C\mid4096$.
+\end{proposition}
+\begin{proof}
+We use the following precise consequence of the main theorem of
+complex multiplication, including nonmaximal orders
+\cite[Chapters~7 and~11]{CoxCM}.  If
+$\operatorname{End}(E)=\mathcal O_D$, then $j(E)$ is integral and
+\begin{equation}\label{eq:cm-main-packet}
+ H_D(J)=\prod_{[\mathfrak a]\in\operatorname{Pic}(\mathcal O_D)}
+       \bigl(J-j(\mathbf C/\mathfrak a)\bigr)\in\Z[J]
+ \quad\text{is irreducible},\qquad
+ [\Q(j(E)):\Q]=h(D).
+\end{equation}
+Artin reciprocity acts simply transitively on these $h(D)$
+invariants over the quadratic field; complex conjugation permutes
+the same orbit.  The degree of a single invariant over $\Q$ is
+therefore $h(D)$, whereas the ring class field is obtained after
+adjoining the quadratic field.
+
+Now $\Phi_\ell(j,C)=0$ gives
+\[
+ h(D)=[\Q(j):\Q]
+       \le[\Q(C,j):\Q]\le m_\ell[\Q(C):\Q].
+\]
+Viewed in the other variable, $\Phi_\ell(j,C)$ is monic over the
+ring of algebraic integers.  Transitivity of integrality makes
+$C$ integral, and a rational algebraic integer belongs to $\Z$.
+For level four the equation also gives
+\[
+              4096=C\bigl(C^2-48C+768-j\bigr),
+\]
+whose second factor is an integer when $C$ is rational.
+\end{proof}
+
+\subsection{The canonical CM coefficient line}
+\label{sec:cm-existence-certificates}
+
+The existence of the coefficient slope is most naturally expressed
+in de Rham cohomology.  At a smooth CM fiber over a number field
+$K$, put
+\[
+ H=H^1_{\mathrm{dR}}(E/K),\qquad L=F^1H.
+\]
+The CM algebra acts on $H\otimes_K\Qbar$ with two eigenlines.
+One is $L\otimes_K\Qbar$.  Galois preserves their unordered pair
+and fixes $L$, so its companion is also defined over $K$:
+\begin{equation}\label{eq:cm-canonical-splitting}
+                             H=L\oplus L^{\mathrm{CM}}.
+\end{equation}
+This splitting is intrinsic and isogeny invariant.  It does not
+require all geometric endomorphisms to be defined over $K$.
+
+In the standard models write $\Omega=dX/y$ and $\Xi=X\,dX/y$,
+and put $H_x=H^1_{\mathrm{dR}}(E_{s,x}/K)$.  For
+$x\ne0,1,1/2$, define
+\[
+ Q(x)=\frac{2x(1-x)}{1-2x},\qquad
+ T_x:K^2\longrightarrow H_x,\quad
+ (A,B)\longmapsto A\Omega_x+BQ(x)\nabla_x\Omega_x.
+\]
+The Gauss--Manin formula \eqref{eq:logderivative} shows that
+$T_x$ is an isomorphism: in the basis $(\Omega,\Xi)$ its determinant
+is $v_s(x)\ne0$.  The CM coefficient line is consequently
+\begin{equation}\label{eq:cm-coefficient-line}
+                       \mathcal R_x=T_x^{-1}(L_x^{\mathrm{CM}}).
+\end{equation}
+It is a $K$-line, and it is different from $B=0$.
+
+\begin{proposition}[The endomorphism determinant]
+\label{prop:cm-matrix-certificate}
+Let $z\in[-1,1)$ be nonzero and algebraic, and suppose that its indicated
+elliptic fiber has CM.  A nonzero coefficient vector $(A,B)$ on
+$\mathcal R_x$ satisfies
+\[
+                 (A+B\thetaop)F_s(z)=\frac\alpha\pi,
+                 \qquad \alpha\in\Qbar^\times.
+\]
+More explicitly, choose a nonrational endomorphism $\varphi$ and
+write
+\[
+ \varphi^*\Omega=\lambda\Omega,\qquad
+ \varphi^*\Xi=r\Omega+\bar\lambda\Xi,
+ \qquad \kappa=\frac{r}{\bar\lambda-\lambda}.
+\]
+If $d$ is the signed index of
+$(\gamma,\varphi_*\gamma)$ in an oriented integral symplectic
+homology basis, then
+\begin{align}
+ \frac AB&=v\kappa-u,\label{eq:cm-matrix-slope}\\
+ \alpha&=\frac{3iBvd}{\bar\lambda-\lambda}.
+ \label{eq:cm-matrix-alpha}
+\end{align}
+Here $u,v$ are those of \eqref{eq:logderivative}, and $d\ne0$.
+\end{proposition}
+\begin{proof}
+The vector $\nu=\kappa\Omega+\Xi$ spans the complementary
+eigenline.  Write $\omega=\int_\gamma\Omega$ and
+$\rho=\int_\gamma\nu$.  The intrinsic determinant identity
+\eqref{eq:general-cm-determinant} gives $d\ne0$ and
+\[
+                  (\bar\lambda-\lambda)\omega\rho=2\pi i d.
+\]
+The condition $T_x(A,B)\in\Qbar\nu$ says
+$A+Bu=Bv\kappa$.  The normalization of the standard period now
+gives
+\[
+ (A+B\thetaop)F_s
+   =\frac{3Bv}{2\pi^2}\omega\rho
+   =\frac1\pi\frac{3iBvd}{\bar\lambda-\lambda}.
+\]
+The multiplier is algebraic and nonzero.  The identity-line theorem
+identifies this line with the unique possible algebraic coefficient
+slope in the ordinary convergence interval.
+\end{proof}
+
+\begin{lemma}[Equivariance of the coefficient line]
+\label{lem:cm-involution-covariance}
+The parameter involution $x\mapsto1-x$ identifies projective
+coefficient vectors under an isogeny of the corresponding smooth
+elliptic fibers.  In particular, it preserves the line
+$\mathcal R_x$ whenever the fiber has CM.
+\end{lemma}
+\begin{proof}
+The modular correspondence supplies an isogeny
+$\psi:E_{s,x}\to E_{s,1-x}$ of degree $1,2,3,1$, respectively,
+over an algebraic extension of the function field.  For levels one
+and four the equality of the $j$-invariants supplies an isomorphism;
+for the middle levels this is the cyclic isogeny on $X_0(2)$ or
+$X_0(3)$ just described.  Write
+$\psi^*\Omega_{1-x}=c(x)\Omega_x$.
+
+The multiplier is constant.  Indeed, the period equations for the
+two chosen differentials are the same Gauss equation
+\[
+ y''+\frac{1-2x}{x(1-x)}y'
+                 -\frac{s(1-s)}{x(1-x)}y=0,
+\]
+which is invariant under $x\mapsto1-x$.  On a simply connected
+open set, $\psi$ is a constant map of Betti local systems.
+Multiplication of a solution basis by $c(x)$ multiplies its
+Wronskian by $c(x)^2$; both Wronskians are constant multiples of
+$[x(1-x)]^{-1}$.  Thus $c(x)=c\in\Qbar^\times$.
+
+Functoriality of Gauss--Manin and $Q(1-x)=-Q(x)$ give
+$\psi^*T_{1-x}=cT_x$.  After projectivizing, the square
+\begin{equation}\label{eq:coefficient-covariance}
+\begin{tikzcd}[column sep=large]
+ \mathbf P^1(\Qbar) \arrow[r,"\mathbf P(T_{1-x})"]
+                        \arrow[d,equal]
+   & \mathbf P(H_{1-x}\otimes\Qbar)
+                        \arrow[d,"\mathbf P(\psi^*)"]\\
+ \mathbf P^1(\Qbar) \arrow[r,"\mathbf P(T_x)"']
+   & \mathbf P(H_x\otimes\Qbar)
+\end{tikzcd}
+\end{equation}
+commutes.  An isogeny intertwines the CM endomorphism algebras and
+preserves the Hodge lines, hence also their companions.  This proves
+the assertion.  The identity extends to every smooth fiber with
+$x\ne1/2$ by extension of homomorphisms of abelian schemes; the
+constant nonzero differential multiplier remains nonzero.
+\end{proof}
+
+\begin{theorem}[Rational descent of CM identities]
+\label{thm:rational-cm-existence}
+Let $z\in\Q\setminus\{0\}$ with $-1\le z<1$.  If its indicated
+elliptic fiber has CM, there is a primitive integer pair $(A,B)$,
+unique up to sign, for which the ordinarily convergent standard
+series is a nonzero algebraic multiple of $1/\pi$.
+\end{theorem}
+\begin{proof}
+Set $K=\Q(x)$, where $x=(1-\sqrt{1-z})/2$.  The line
+$\mathcal R_x$ is defined over $K$ by
+\eqref{eq:cm-canonical-splitting}.  If $K=\Q$ there is nothing
+to descend.  Otherwise its nontrivial automorphism $\sigma$ sends
+$x$ to $1-x$.  Galois functoriality gives
+$\mathcal R_x^\sigma=\mathcal R_{1-x}$, while the commutative
+square \eqref{eq:coefficient-covariance} gives
+$\mathcal R_{1-x}=\mathcal R_x$.  Therefore
+$\mathcal R_x\in\mathbf P^1(\Q)$.
+
+Choose its relatively prime integer representative.  The
+endomorphism determinant gives the nonzero algebraic multiplier,
+and Theorem~\ref{thm:unconditional} gives uniqueness.  The
+convergence statement follows from the assumed interval, including
+ordinary alternating convergence at $z=-1$.
+\end{proof}
+
+\subsection{Finite exhaustion}
+
+Only orders of class number at most two remain.  To make this
+reduction effective, we use the proved classification of quadratic
+fields in \cite{Watkins}: a negative fundamental discriminant with
+class number at most two satisfies $|d|\le427$.  For an arbitrary
+order of discriminant $D=f^2d$, the conductor formula is
+\begin{equation}\label{eq:conductor-packet}
+ h(f^2d)=\frac{h(d)f}{[\mathcal O_d^\times:
+                              \mathcal O_{f^2d}^\times]}
+            \prod_{p\mid f}\left(1-\frac{(d/p)}p\right).
+\end{equation}
+The order class group surjects onto the maximal-order class group,
+so $h(d)\le h(f^2d)$.  The unit index is at most three and
+\begin{equation}\label{eq:conductor-bound-packet}
+ h(f^2d)\ge\frac{h(d)}3\varphi(f)
+                  \ge\frac{h(d)}3\sqrt{f/2}.
+\end{equation}
+The last inequality follows by multiplying
+$p^{a-2}(p-1)^2\ge1$ over odd prime powers $p^a\Vert f$;
+the factor at two is at least $1/2$.  Thus $h(D)\le2$ implies
+$f\le72$.  The finite range is a theorem, not a numerical cutoff.
+
+\begin{lemma}[Exact arithmetic enumeration]
+\label{lem:cm-finite-enumeration}
+The rational CM parameters in the closed convergence domain
+$|C|\ge R_\ell$ are the $C$-columns of
+Tables~\ref{tab:standard1}--\ref{tab:standard4}, together with
+$C=R_\ell$ at each level.
+\end{lemma}
+\begin{proof}
+Primitive reduced positive definite binary quadratic forms and
+\eqref{eq:conductor-packet}, in the proved range
+$-427\le d\le-3$, $1\le f\le72$, give thirteen orders of class
+number one and twenty-nine of class number two.  For each order
+compute its integral class polynomial $H_D$.
+
+There is a short elimination rule.  If $h(D)=1$, substitute its
+single integral root in $\Phi_\ell(J,C)$.  If $h(D)=2$, only the
+middle levels are possible; a shared root forces the monic
+quadratics $H_D(J)$ and $\Phi_\ell(J,C)$ to be equal.  Thus, writing
+them as $J^2-T_DJ+N_D$ and $J^2-T_\ell(C)J+N_\ell(C)$, the
+possible $C$ are exactly the integer roots of
+\[
+               \gcd\bigl(T_\ell(C)-T_D,
+                          N_\ell(C)-N_D\bigr).
+\]
+Exact factorization therefore lists every possible parameter
+without a bound on its magnitude.  It gives
+\[
+\begin{array}{c|rrrr}
+\ell&1&2&3&4\\\hline
+|C|\ge R_\ell&12&13&10&5\\
+C\ne R_\ell&11&12&9&4.
+\end{array}
+\]
+The complete discriminants, class polynomials, and factorizations
+are retained in the finite arithmetic certificate described in
+Appendix~\ref{app:cm-certificate}.  The class
+polynomial coefficients were certified by complex interval
+arithmetic and their integrality; independent PARI calculations
+gave the same polynomials.  Integer roots were recovered both by
+factorization and, for the middle levels, by elimination resultants.
+
+The correspondence may initially retain either elliptic invariant
+above $C$.  They are isogenous, so CM of one is equivalent to CM of
+the other.  Every retained nonsingular fiber is consequently CM on
+the specified branch.  This proves both directions of the
+enumeration.
+\end{proof}
+
+\begin{theorem}[The standard CM classification]\label{thm:conditional}
+The primitive ordinarily convergent standard identities whose
+indicated elliptic fibers have CM are exactly the 36 rows of
+Tables~\ref{tab:standard1}--\ref{tab:standard4}, up to simultaneous
+sign.  Under Hypothesis~\ref{hyp:QPI}, they exhaust all primitive
+standard identities.  The CM assertion remains unchanged if the
+nonzero parameter $C$ is allowed to be rational.
+\end{theorem}
+\begin{proof}
+Integrality reduces rational CM parameters to integer ones.
+Lemma~\ref{lem:cm-finite-enumeration} exhausts their possible values
+in the convergence domain.  Theorem~\ref{thm:unconditional}
+excludes the four positive endpoints, and rational descent gives
+an identity at every remaining parameter.  It also permits only
+one primitive pair up to sign.  The evaluations below identify
+those pairs and their multipliers with the tabulated rows.
+Finally, conditional CM forcing supplies the assertion without
+the CM premise.  The conditional assertion uses the parameter domain of
+Hypothesis~\ref{hyp:QPI}; enlarging that domain to arbitrary
+rational $C$ requires enlarging the hypothesis as well.
+\end{proof}
+
+\subsection{Exact evaluation of the classified lines}
+\label{sec:standard}
+
+The geometric proof establishes existence and rationality before
+computing a single singular value.  For the displayed coefficients
+we use the exact modular evaluations in
+\cite[Tables~5--11]{CCY}.  Their role is specific: with the
+normalizations
+\[
+ X_\ell(q)=q+O(q^2),\qquad
+ Z_\ell(q)=\sum_{n\ge0}u_\ell(n)X_\ell(q)^n,\qquad
+ G_\ell(X)=1-R_\ell X,
+\]
+these tables give the singular value $X_\ell=1/C$ and the
+coefficient slope $\lambda=A/B$ obtained by differentiating the
+corresponding modular equation.  The modular summation theorem of
+Chan--Chan--Liu \cite[Theorem~2.1]{CCL}, in this normalization
+\cite[Theorem~2.4]{CCY}, applies to the specified weight-two form
+on the indicated normal extension of $\Gamma_0(\ell)$.  At the
+tabulated quadratic nome, inside the open convergence disk, its
+conclusion is
+\begin{equation}\label{eq:alpha}
+ \alpha=\frac{B}{2\sqrt{1-R_\ell/C}}
+ \begin{cases}
+   \sqrt{\ell/N},&q=e^{-2\pi\sqrt{N/\ell}},\\
+   \sqrt{L/N},&q=-e^{-2\pi\sqrt{N/L}},
+ \end{cases}
+ \qquad L=\frac{4\ell}{\gcd(4,\ell)}.
+\end{equation}
+Thus each interior row follows from two exact modular values and
+this summation theorem; its displayed radical is then fixed by
+\eqref{eq:alpha}.  These evaluations furnish identities on the
+CM locus, not a converse for arbitrary algebraic-value identities.
+
+The remaining row is the boundary identity of Bauer,
+\[
+ \sum_{n\ge0}(4n+1)\frac{(1/2)_n^3}{(n!)^3}(-1)^n
+       =\frac2\pi,
+\]
+as recorded with its original source in
+\cite[Section~4.1 and Table~11]{CCY}.  Its ordinary convergence
+was proved in the analytic part.  It is the sole conditionally
+convergent row; all other rows are absolutely convergent.
+
+\subsection{Linear Euler companions}\label{sec:euler}
+
+Put
+\[
+ G_s(z)={}_2F_1(1-s/2,(1+s)/2;1;z)^2.
+\]
+Euler's transformation identifies the two branches and their
+coefficient lines:
+\begin{equation}\label{eq:euler}
+ F_s=(1-z)G_s,\qquad
+ (A+B\thetaop)F_s
+   =\bigl(A(1-z)-Bz+B(1-z)\thetaop\bigr)G_s.
+\end{equation}
+This is a change of differential basis, whose determinant is
+$(1-z)^2$.  Away from $z=1$ it induces an isomorphism of rational
+projective coefficient lines.
+
+\begin{theorem}[Euler transport]\label{thm:euler}
+For $|C|>R=R_\ell$, define
+\[
+ (a_0,b_0)=\bigl((C-R)A-RB,(C-R)B\bigr),\qquad
+ d=\gcd(|a_0|,|b_0|).
+\]
+The primitive Euler companion of a primitive standard identity is
+\[
+                  (a,b,\beta)=\varepsilon
+                  (a_0/d,b_0/d,C\alpha/d),
+\]
+where $\varepsilon=\pm1$ chooses the representative.  This
+transport is bijective on rational projective slopes.  The
+convergent CM companions are exactly the 35 rows of
+Tables~\ref{tab:euler1}--\ref{tab:euler4}; under
+Hypothesis~\ref{hyp:QPI}, they are all the primitive companions.
+No nonzero companion pair converges at either endpoint.
+\end{theorem}
+\begin{proof}
+Multiply \eqref{eq:euler} by $C$.  The coefficient matrix is
+\[
+ M_C=\begin{pmatrix}C-R&-R\\0&C-R\end{pmatrix},
+ \qquad \det M_C=(C-R)^2.
+\]
+Its inverse on projective lines is represented by
+$(a,b)\mapsto((C-R)a+Rb,(C-R)b)$.  Both directions preserve
+algebraicity of the multiplier, and division by the gcd gives
+exactly the primitive representative.
+
+For convergence, the coefficients of $G_s=F_s/(1-z)$ are
+$d_s(n)=\sum_{k=0}^n c_s(k)$.  Positivity and convergence of
+$F_s(1)$ give $d_s(n)\to F_s(1)>0$.  Hence
+$(a+bn)d_s(n)z^n$ fails to tend to zero for every nonzero pair
+when $|z|\ge1$.  In $|z|<1$ the series converges absolutely.
+Thus transport preserves all 35 interior standard rows and loses
+the single Bauer boundary row.  The standard classification and
+the inverse transport prove exhaustion, with exactly the same
+conditional qualification.
+\end{proof}

@@ -1,0 +1,788 @@
+\section{Functoriality and further elliptic branches}
+\label{rev:sec:elliptic-extensions}
+
+The classification is stable under an algebraic change of variable only
+after its branch, derivative, and convergence domain have been specified.
+The following elementary observation keeps these three issues separate.
+For a germ $F$ and a pullback $G(t)=r(t)F(\phi(t))$, put
+\[
+ \delta=t\frac{d}{dt},\qquad
+ u=\delta\log r,\qquad v=\delta\log\phi.
+\]
+At a regular point with $rv\ne0$, the first jets satisfy
+\begin{equation}\label{rev:eq:jet-pullback}
+ \begin{pmatrix}G\\ \delta G\end{pmatrix}
+ =r\begin{pmatrix}1&0\\u&v\end{pmatrix}
+   \begin{pmatrix}F\circ\phi\\(\thetaop F)\circ\phi\end{pmatrix}.
+\end{equation}
+Thus pullback induces an isomorphism of coefficient lines,
+\[
+ [A:B]\longmapsto[A+Bu:Bv].
+\]
+Algebraicity, the period reduction, and projective uniqueness transport
+through this map. An identity of germs transports analytic values;
+ordinary convergence of the resulting series is a separate assertion.
+
+\subsection{Quadratic companions}\label{sec:quadratic-companion-extra}
+Put $K=R_\ell/4$, $\mathcal F(X)=F_{s_\ell}(R_\ell X)
+=\sum u_\ell(n)X^n$, and define
+\[
+ U(n)=\sum_{k=0}^n u_\ell(k)\binom{n+k}{n-k}(-K)^{n-k},
+ \qquad \mathcal G(Y)=\sum_{n\ge0}U(n)Y^n.
+\]
+The binomial generating function gives
+\begin{equation}\label{eq:quad-extra-generating}
+ \mathcal G(Y)=\frac1{1+KY}
+      \mathcal F\!\left(\frac{Y}{(1+KY)^2}\right).
+\end{equation}
+For $c\ne0,-K$ set $J=(c+K)^2/c$. Formula
+\eqref{rev:eq:jet-pullback} becomes
+\begin{equation}\label{eq:quad-extra-transport}
+ (A+B\delta)\mathcal G(1/c)
+ =\frac1J\bigl((c+K)A-KB+(c-K)B\Theta\bigr)
+                         \mathcal F^{\mathrm{an}}(1/J),
+ \qquad \Theta=X\partial_X.
+\end{equation}
+The continuation is along the real interval from zero. For $|c|>K$
+the coefficient map is invertible. Its image has $J>4K$ if $c>K$
+and $J<0$ if $c<-K$; in the latter case the standard power series
+need not converge.
+
+\begin{proposition}[The five quadratic companions]
+\label{prop:quad-extra-five}
+Among ordinarily convergent quadratic-companion identities with
+$c\in\Z\setminus\{0\}$, $\gcd(A,B)=1$, and a CM elliptic fiber,
+the following are precisely the classes up to simultaneous sign:
+\[
+\begin{array}{c|rrr|l}
+ \ell&A&B&c&\alpha\\\hline
+ 2&2&9&512&4\\
+ 2&0&1&-256&4\sqrt3/9\\
+ 2&1&9&-4096&64\sqrt7/49\\
+ 3&1&8&-243&3\sqrt3\\
+ 4&0&1&-32&2.
+\end{array}
+\]
+Here the value is $\alpha/\pi$, and every displayed sum is absolutely
+convergent.
+\end{proposition}
+\begin{proof}
+Clausen's and Pfaff's transformations give
+\[
+ \mathcal G(Y)=(1+KY)^{2s-1}{}_2F_1(s,s;1;-KY)^2,
+ \qquad s=s_\ell.
+\]
+The only singularity on $|KY|=1$ is $KY=-1$. The Gauss connection
+formula there gives, for $s<1/2$,
+\[
+ \frac{U(n)}{(-K)^n}
+ =\frac{\Gamma(1-2s)}{\Gamma(1-s)^4}n^{-2s}
+       +O(n^{-1-\epsilon_s}),\qquad \epsilon_s>0;
+\]
+for $s=1/2$ it gives $(d\log n+e)/n+O(\log n/n^2)$ with $d>0$.
+Consequently a nonzero linear weight converges absolutely for $|c|>K$,
+diverges for $|c|<K$ or $c=-K$, and at $c=K$ converges exactly when
+$B=0$. Abel's theorem identifies the last value with
+$\mathcal G(1/K)=F_s(1)/2$, excluded by the positive-endpoint theorem.
+
+At CM, Proposition~\ref{prop:rational-cm-integrality} makes the rational
+standard denominator $J$ integral. Since
+\[
+ J=c+2K+\frac{K^2}{c},
+\]
+we have $c\mid K^2$. Thus integrality converts the classification into
+a finite divisor problem. The signed divisors satisfying $|c|>K$ number
+$62,12,6,8$ at the four levels. Applying the class-polynomial criterion
+of Section~\ref{sec:enumeration} gives exactly
+\[
+ (\ell,c,J)=(2,512,648),\ (2,-256,-144),\ (2,-4096,-3969),
+             \ (3,-243,-192),\ (4,-32,-8).
+\]
+Their selected elliptic invariants are $1728,0,-3375,0,1728$,
+respectively. This is the same exact finite test as for the standard
+tables, applied before a standard convergence filter.
+
+Three evaluations follow from \eqref{eq:quad-extra-transport}: the
+transported weights are respectively $8/9$, $64/441$, and $9/4$ times
+the standard pairs $(1,7)$, $(8,65)$, and $(1,5)$, at
+$J=648,-3969,-192$. The two remaining evaluations follow from the
+endomorphisms of the equianharmonic and square lattices. The period
+normalization and determinant identity continue along the nonsingular
+real interval $z<1$, so their use does not require convergence of the
+transported standard power series. The complete data, in the notation
+of \eqref{eq:cm-matrix-alpha}, are
+\[
+\begin{array}{c|c|c|c|c|c}
+ (\ell,c)&(a,b)&(u,v)&\lambda&\kappa&d\\\hline
+ (2,-256)&(4/9,20/9)&(-1/5,-1/5)&\zeta&0&1\\
+ (4,-32)&(2,6)&(-1/3,-2/9)&i&0&1
+\end{array}
+ \qquad \zeta=\frac{-1+i\sqrt3}{2}.
+\]
+Indeed the fibers are $y^2=4X^3-4$ and $y^2=4X^3-9X$, with
+endomorphisms $(X,y)\mapsto(\zeta X,y)$ and
+$(X,y)\mapsto(-X,iy)$. Their standard cycles are the positive primitive
+real cycles, transported from the primitive vanishing cycle; the
+oriented lattice bases are $(\omega,\zeta\omega)$ and
+$(\omega,i\omega)$. Since $a+bu=0$, the determinant formula yields
+$4\sqrt3/9$ and $2$.
+
+Finally, the period-ratio proof of uniqueness extends over the whole
+real interval $z<1$, $z\ne0$: here
+$x=(1-\sqrt{1-z})/2<1/2$, the Euler integral is positive, and the
+derivative coefficient is nonzero. The invertible transport therefore
+excludes every additional slope. The continuation used to evaluate
+two fibers does not alter the ordinary convergence already proved.
+\end{proof}
+
+These five classes are distinct from the 35 linear Euler companions.
+They agree with \cite[Tables~13 and 15]{CGG}; for the last row the
+coefficient convention is
+\[
+ U_4(n)=(-1)^n\sum_{k=0}^n
+   \binom{2k}{k}^{\!2}\binom{2n-2k}{n-k}^{\!2},
+\]
+which explains the negative denominator. Removing the CM premise
+requires quadratic-period independence at the additional fibers
+$z=R_\ell c/(c+K_\ell)^2$, $c\in\Z$, $|c|>K_\ell$.
+The restricted standard hypothesis does not contain that assertion.
+
+\subsection{The level-nine pullback}\label{sec:nine}
+Let
+\[
+ D(t)=(1-9t)(1+3t),\qquad
+ H(t)=D(t)^{-1/2}F_{1/6}\!\left(\frac{1728t^3}{D(t)^3}\right)
+      =\sum_{n\ge0}h_nt^n,
+\]
+where the square root is one at zero. This is
+\cite[Theorem~9.2, $\ell=1$]{CCY}, with the factor $1728$ converting
+its factorial variable to the present hypergeometric variable.
+
+\begin{theorem}\label{thm:nine}
+For a nonzero pair $(a,b)$ and integer $C\ne0$, the weighted series
+$\sum h_n(a+bn)C^{-n}$ converges exactly when $|C|\ge20$; its
+convergence is then absolute. At each such $C$ there is at most one
+algebraic projective slope with value in $\Qbar/\pi$, and a nonzero
+pair cannot have value zero. The complete primitive CM list, with
+$b>0$, is
+\[
+\begin{array}{rrr|l}
+ a&b&C&\alpha\\\hline
+ 1&4&27&9\sqrt3/2\\
+ 7&22&-27&9\sqrt3.
+\end{array}
+\]
+It is exhaustive without a CM premise if quadratic-period independence
+holds for the selected non-CM fibers at
+$z=1728t^3/D(t)^3$, $t=1/C$, $|C|\ge20$.
+\end{theorem}
+\begin{proof}
+The radius is $\rho=(9+6\sqrt3)^{-1}$. In fact $z(\rho)=1$;
+the nonnegative coefficient expansions give $|z(t)|\le z(|t|)<1$
+for $|t|<\rho$, whereas $H'(t)$ diverges as $t\uparrow\rho$.
+A nonzero polynomial weight preserves the radius, and no integer
+reciprocal has modulus $\rho$. This proves convergence.
+
+The transport \eqref{rev:eq:jet-pullback} has
+\[
+ r=D^{-1/2},\qquad
+ u=\frac{3t(1+9t)}D,\qquad v=\frac{3(1+27t^2)}D.
+\]
+For real $0<|t|<\rho$ the derivative $v$ is nonzero and
+$z\in(-1,1)\setminus\{0\}$. The unconditional period theorem gives
+uniqueness and nonvanishing, and the stated additional independence
+hypothesis gives CM.
+
+At CM, integrality of
+\[
+ j=\frac{D(t)^3}{t^3}=\left(C-6-\frac{27}C\right)^3
+\]
+forces its rational cube root to be integral; hence $C\mid27$.
+Convergence leaves $C=\pm27$, with $j=8000,-32768$. At these two
+parameters, respectively, the transported coefficient pair and scalar
+are
+\[
+ ((a+bu,bv),r)
+ =\left(\tfrac35(3,28),\tfrac{3\sqrt{15}}{10}\right),\qquad
+   \left(\tfrac38(15,154),\tfrac{3\sqrt6}{8}\right).
+\]
+The two standard evaluations prove the displayed identities.
+\end{proof}
+
+The extra hypothesis cannot be suppressed: before CM is known,
+$j=(C-6-27/C)^3$ is generally rational rather than integral.
+
+\subsection{Domb numbers}\label{sec:domb}
+For
+\[
+ D_n=\sum_{k=0}^n\binom nk^2\binom{2k}k\binom{2n-2k}{n-k},
+ \qquad H(t)=\sum_{n\ge0}D_nt^n,
+\]
+Rogers's transformation \cite{RogersDomb} is the germ identity
+\begin{equation}\label{eq:domb-pullback}
+ H(t)=\frac1{1-4t}F_{1/3}\!\left(\frac{108t^2}{(1-4t)^3}\right).
+\end{equation}
+Its equivalent coefficient formula is
+\[
+ D_n=\sum_{k=0}^{\lfloor n/2\rfloor}
+   \binom{2k}k^2\binom{3k}k\binom{n+k}{3k}4^{n-2k}.
+\]
+The singular expansion at $1/16$ gives
+$D_n\sim2\,16^n/(\pi^{3/2}n^{3/2})$, with a full expansion in
+descending powers of $n$. Thus a nonzero linear weight has absolute
+convergence for $|C|>16$, divergence for $|C|<16$, convergence at
+$C=16$ exactly for $B=0$, and conditional convergence at $C=-16$
+when $B\ne0$. The expansion makes $nD_n/16^n$ eventually decreasing,
+so the alternating endpoint is an ordinary sum.
+
+Writing $Y=(C-4)^3/C$, transport gives
+\begin{equation}\label{eq:domb-weights}
+ (A+B\delta)H(1/C)=\frac{C}{C-4}
+ \left(A+\frac{4B}{C-4}
+       +\frac{2(C+2)B}{C-4}\thetaop\right)F_{1/3}(108/Y).
+\end{equation}
+For $|C|\ge16$, $C\ne16$, this map is invertible and $0<108/Y<1$.
+The period theorem, with Abel's theorem at $C=-16$, gives unconditional
+projective uniqueness. At $C=16$, the only convergent weight is constant
+and $H(1/16)=\tfrac43F_{1/3}(1)$, so the endpoint theorem applies.
+
+\begin{proposition}\label{prop:domb-CM}
+The primitive Domb identities with integer denominator and a CM fiber
+are, up to simultaneous sign,
+\[
+\begin{array}{rrr|r|l}
+ A&B&C&D&\alpha\\\hline
+ 1&3&-32&-48&2\\
+ 1&5&64&-60&8\sqrt3/3.
+\end{array}
+\]
+Here $D$ is the endomorphism-order discriminant. Both sums converge
+absolutely.
+\end{proposition}
+\begin{proof}
+The two invariants above the level-three parameter $Y$ are
+$3$-isogenous; hence at CM their trace is an integer. That trace is
+the monic polynomial $Y^3-126Y^2+2944Y$. Since $Y\in\Q$, it follows
+that $Y\in\Z$, and
+\[
+ Y=C^2-12C+48-\frac{64}C
+ \quad\Longrightarrow\quad C\mid64.
+\]
+The convergence filter leaves $C\in\{\pm16,\pm32,\pm64\}$.
+Their images form the set
+\[
+ \{Y\}=\{108,500,686,1458,3375,4913\};
+\]
+the exact level-three CM test retains $108,1458,3375$, of discriminants
+$-12,-48,-60$. The first is the excluded positive endpoint.
+Transporting the established standard pairs $(2,15)$ and $(4,33)$
+at the other two parameters gives the stated values. Uniqueness
+excludes any other coefficient pair.
+\end{proof}
+
+The list is unconditional within the CM locus. Exhaustion of all
+Domb identities would additionally require quadratic-period independence
+at $z=108C/(C-4)^3$, for integer $|C|\ge16$, $C\ne16$. Integrality of
+the intermediate denominator was a consequence of CM, and cannot be
+used to remove this extra hypothesis.
+
+\section{Modular coordinates and returning correspondences}
+\label{sec:moonshine}
+For $q=e^{2\pi i\tau}$, put
+\[
+ (k_\ell,d_\ell)=(24,64),(12,27),(8,16),\qquad
+ t_\ell=\left(\frac{\eta(\tau)}{\eta(\ell\tau)}\right)^{k_\ell}
+ \quad(\ell=2,3,4).
+\]
+The Hauptmoduls of \cite[Table~2]{CCY} express the denominator as the
+Fricke norm coordinate
+\[
+ C_1=j,\qquad C_\ell=t_\ell+2d_\ell+d_\ell^2/t_\ell.
+\]
+Indeed Fricke sends $t_\ell$ to $d_\ell^2/t_\ell$. In the normalized
+McKay--Thompson convention $T_g=q^{-1}+O(q)$ \cite{CN},
+\begin{equation}\label{eq:moonshine-shifts}
+ C_1=T_{1A}+744,\quad C_2=T_{2A}+104,\quad
+ C_3=T_{3A}+42,\quad C_4=T_{4A}+24.
+\end{equation}
+This follows from $t_\ell=q^{-1}-k_\ell+O(q)$. At level four the
+elliptic model has invariant $j(2\tau)=(C_4-16)^3/C_4$; the rescaling
+of $\tau$ preserves CM.
+
+\begin{proposition}[Integral coordinates and CM]
+Every integer $C>64$ with $C\nmid4096$ occurs on the positive convergent
+level-four branch and corresponds to a non-CM point.
+\end{proposition}
+\begin{proof}
+The positive continuous function $t_4(iy)$, $y\ge1/2$, takes the
+value $16$ at $y=1/2$ and tends to infinity. It therefore takes
+$t=(C-32+\sqrt{C(C-64)})/2>16$, at which $C_4=C$. But
+\[
+ j(2\tau)=C^2-48C+768-4096/C
+\]
+is rational and nonintegral, whereas a singular modulus is an algebraic
+integer.
+\end{proof}
+For instance, $C=65$ gives $T_{4A}=41$ and $j(2\tau)=117649/65$.
+These points satisfy the functional Moonshine identities; no
+inverse-$\pi$ evaluation at them is asserted.
+
+\begin{proposition}[A returning correspondence]
+Let $C_\ell$ have invariance group $\Gamma_\ell$. If
+\[
+ C_\ell(g\tau)=C_\ell(\tau),\qquad g\in\mathrm{GL}_2^+(\Q),
+\]
+and the projective action of $g$ does not belong to $\Gamma_\ell$,
+then $\tau$ is imaginary quadratic.
+\end{proposition}
+\begin{proof}
+A Hauptmodul separates points of its quotient, so
+$g\tau=\gamma\tau$ for some $\gamma\in\Gamma_\ell$. These groups
+have rational projective representatives. The nonscalar rational
+matrix $\gamma^{-1}g$ fixes a nonreal point; its fixed-point equation
+is therefore a rational quadratic with negative discriminant.
+\end{proof}
+Replication relates Hecke translates; it does not supply the returning
+equality. Deriving such an equality from the scalar period relation
+would be a genuine converse theorem.
+
+For precision, the corresponding differential problem has an exact
+form. Choose the lift $\tau(z)$ continued from the cusp, with
+$z=R_\ell/C_\ell(\tau)\sim R_\ell q$. Set $D=q\,d/dq$ and
+$r=\sqrt{1-R_\ell/C}$, continued from $r=1$. The modular
+parameterization \cite[Theorem~2.1]{CCY} gives
+\[
+ F_{s_\ell}(R_\ell/C)=-\frac{DC}{Cr},\qquad
+ \frac{\thetaop F}{F}
+ =1+\frac{R_\ell}{2(C-R_\ell)}-\frac{CD^2C}{(DC)^2}.
+\]
+Consequently, at an ordinary point with $DC\ne0$, the original identity
+is equivalent to
+\begin{equation}\label{eq:moonshine-jet}
+ -\frac{C'}{2iCr}
+ \left[A+B\left(1+\frac{R_\ell}{2(C-R_\ell)}
+                   -\frac{CC''}{(C')^2}\right)\right]=\alpha,
+\end{equation}
+where primes mean $d/d\tau$. The chosen lift is part of this statement.
+Differentiated replication does not by itself impose an additional
+relation at the original point.
+
+\section{Arithmetic correspondences and compact Shimura curves}
+\label{sec:extensions}
+\subsection{The finite-map principle}
+
+The arithmetic part of the argument belongs to finite morphisms of
+curves, rather than to any particular hypergeometric equation.
+
+\begin{proposition}[Arithmetic correspondence criterion]
+\label{prop:arithmetic-correspondence-packet}\label{prop:extension}
+Let $k$ be a number field and let a fixed curve carry an elliptic
+invariant $j$ and a parameter $t$ satisfying $P(t,j)=0$, with
+$P\in k[T,J]$ of $J$-degree at most $m$. Exclude a specified finite
+exceptional set, require $P(t,J)\ne0$ at every allowed parameter, and
+assume each fixed $j$ has only finitely many allowed parameters.
+If $[k(t):k]\le d$ and the fiber has CM by the order of discriminant
+$D$, then
+\[
+ h(D)\le[k:\Q]md.
+\]
+There are finitely many such CM parameters. If every admitted identity
+forces CM and has at most one rational coefficient line at each
+parameter, there are finitely many primitive integer pairs up to sign,
+apart from the separately specified exceptional contributions.
+\end{proposition}
+\begin{proof}
+CM reciprocity gives $h(D)=[\Q(j):\Q]$. The tower of residue fields
+gives
+\[
+ [\Q(j):\Q]\le[k(t,j):\Q]
+ \le[k:\Q]\,[k(t):k]\,[k(t,j):k(t)]\le[k:\Q]dm.
+\]
+Siegel's lower bound implies that only finitely many imaginary
+quadratic fields have bounded class number. For an order of conductor
+$f$ in a field of discriminant $d_0$, the conductor formula gives
+\[
+ h(f^2d_0)\ge\frac{h(d_0)}3\varphi(f)
+             \ge\frac{h(d_0)}3\sqrt{f/2}.
+\]
+Thus bounded order class number also bounds $f$. There are finitely
+many singular moduli, hence finitely many parameters by the finite-fiber
+hypothesis. A rational projective line contains exactly one primitive
+integer pair up to sign.
+\end{proof}
+
+For a modular curve with an honest $\Q$-defined $j$-map, a rational
+point has rational $j$, independently of the map's degree. A quotient
+requires the degree of the forgotten data. The diagram
+\[
+\begin{tikzcd}[column sep=large,row sep=large]
+ X_0(N) \arrow[r,"j"] \arrow[d,"\pi"'] & \mathbf P^1_j\\
+ X_0(N)/W \arrow[r,"t"'] & \mathbf P^1_t
+\end{tikzcd}
+\]
+encodes a correspondence: the norm
+$\operatorname{Nm}_{\Q(X_0(N))/\Q(X_0(N)/W)}(J-j)$ is monic of
+degree at most $|W|$ in $J$. At rational points of the quotient this
+gives $h(D)\le|W|$; if only the value of a degree-$\delta$ coordinate
+$t$ is rational, the bound is $|W|\delta$. A Fricke quotient therefore
+gives two, whereas larger Atkin--Lehner quotients need not. The maps
+must be defined over the asserted number field. Integrality of a
+particular coordinate additionally requires its monic arithmetic
+equations and is not preserved by every fractional linear change.
+
+\subsection{A class-number-four identity}
+\begin{proposition}\label{prop:level6-h4}
+Let
+\[
+ u_6(n)=\binom{2n}{n}\sum_{k=0}^n\binom nk^3,
+ \qquad \tau_0=\frac{-3+\sqrt{-21}}6.
+\]
+Then
+\begin{equation}\label{eq:level6-h4}
+ \sum_{n\ge0}(2+9n)\frac{u_6(n)}{(-112)^n}
+          =\frac{2\sqrt7}{\pi}
+\end{equation}
+is an absolutely convergent primitive identity. The elliptic parameter
+has endomorphism discriminant $-84$ and class number four; its rational
+coordinate lies on $X_0(6)/\langle w_2,w_3\rangle$.
+\end{proposition}
+\begin{proof}
+The exact modular inputs in \cite[Tables~2, 4, 15 and 55]{CCY} are
+\[
+ X_6=\frac{w}{(1-w)^2},\quad
+ w=\left(\frac{\eta(\tau)\eta(6\tau)}
+                   {\eta(2\tau)\eta(3\tau)}\right)^{12},\quad
+ G_6(X)=(1+4X)(1-32X).
+\]
+The associated weight-two form has coefficients $u_6(n)$. At
+$q=e^{2\pi i\tau_0}=-e^{-2\pi\sqrt{7/12}}$, the tabulated exact
+values are $X_6=-1/112$ and $\lambda_6=2/9$. Thus their
+Theorem~2.4, equation~(2.14), yields
+\[
+ \sum_{n\ge0}(2+9n)u_6(n)X_6^n
+ =\frac9{2\pi\sqrt{G_6(X_6)}}\sqrt{\frac{12}7}
+ =\frac{2\sqrt7}{\pi},
+\]
+since $\sqrt{G_6(-1/112)}=9\sqrt3/14$.
+The bound $u_6(n)\le4^n(\sum_k\binom nk)^3=32^n$ proves absolute
+convergence, and $\gcd(2,9)=1$.
+
+The primitive equation $6\tau_0^2+6\tau_0+5=0$ gives discriminant
+$-84$. Its reduced forms are
+\[
+ [1,0,21],\quad[2,2,11],\quad[3,0,7],\quad[5,4,5];
+\]
+the bound
+$a\le\sqrt{84/3}<6$ proves completeness. Hence its order
+$\mathcal O=\Z[\sqrt{-21}]$ has four classes.
+
+The quotient explains the rational coordinate intrinsically. Put
+$s=\sqrt{-21}$ and let
+\[
+ \mathfrak p_2=(2,1+s),\quad \mathfrak p_3=(3,s),\quad
+ \mathfrak n=\mathfrak p_2\mathfrak p_3=(6,3+s).
+\]
+The two ramified ideal classes have order two and are independent:
+the norm $a^2+21b^2$ represents none of $2,3,6$. They therefore
+generate the class group. On $\C/\mathfrak a$, the unique
+endomorphism-stable subgroup of order six is
+$\mathfrak n^{-1}\mathfrak a/\mathfrak a$; quotienting by its
+ramified $p$-part realizes $w_p$ as multiplication by
+$[\mathfrak p_p^{-1}]$. Hence all four CM pairs have the same image
+on the quotient. Their set is Galois stable, so this image is rational.
+For the standard subgroup at $\tau_0$, stability follows from
+$s=6\tau_0+3$, which preserves $\langle1/6\rangle$ modulo the period
+lattice.
+\end{proof}
+This example makes the quotient-degree bound necessary; it gives no
+converse for arbitrary level-six identities.
+
+\subsection{Local monodromy and compact triangle systems}
+The compact Shimura curve $X_6^*$ has triangle signature $(4,2,6)$.
+Its Clausen identity is
+\[
+ {}_2F_1(1/24,5/24;3/4;z)^2
+ ={}_3F_2(1/12,1/4,5/12;1/2,3/4;z).
+\]
+The rank-two equation has finite local projective monodromy of orders
+$4,2,6$, and infinite global hyperbolic triangle monodromy. This
+distinguishes its realization from the elliptic families above.
+
+\begin{proposition}[The compact monodromy obstruction]
+\label{prop:compact-monodromy-obstruction}
+Let $L$ be a rank-two complex local system on a smooth connected
+algebraic curve, with finite projective local monodromy at every point
+of the boundary in its smooth compactification. After any finite
+algebraic base change, no positive symmetric power of $L$ is
+projectively equivalent, on a nonempty algebraic open set, to the same
+symmetric power of $R^1f_*\C$ for a non-isotrivial elliptic family.
+Rank-one twists and algebraic meromorphic gauges do not alter this
+conclusion.
+\end{proposition}
+\begin{proof}
+Pass to a common finite cover and compactify. The nonconstant elliptic
+invariant $j$ has a pole. After a finite local base change the elliptic
+family has multiplicative semistable reduction there, with monodromy
+$\bigl(\begin{smallmatrix}1&n\\0&1\end{smallmatrix}\bigr)$,
+$n\ne0$. Every positive symmetric power is a nonidentity unipotent
+matrix, hence has infinite projective order in characteristic zero.
+The pulled-back $L$ has finite projective local monodromy at that
+point: it is a power of an original boundary monodromy, or trivial
+over an interior point. This is a contradiction. Twists disappear
+projectively, and gauges conjugate monodromy.
+\end{proof}
+
+An isotrivial elliptic family also cannot realize this compact triangle
+system: its projective monodromy is finite. For comparison, the standard
+Gauss equation has a repeated exponent zero at the cusp and Wronskian
+$cz^{-1}(1-z)^{-1/2}$, $c\ne0$, so it has nontrivial unipotent
+monodromy there. Every nonconstant finite cover retains such a
+monodromy above the cusp. Thus the compact and standard systems, or
+their equal positive symmetric powers, cannot become projectively
+equivalent on a common finite algebraic cover. The obstruction is
+global; it neither excludes an isolated special-value identity nor a
+quaternionic abelian-surface realization.
+
+\subsection{CM degrees without an elliptic invariant}
+\label{subsec:compact-class-field}
+\begin{proposition}[Compact CM degree bound]
+\label{prop:compact-cm-degree}
+Let $D>1$ be the reduced discriminant of an indefinite quaternion
+algebra over $\Q$, and let $N$ be square-free and coprime to $D$.
+On the canonical model $X=X_0(D,N)$, let $W$ be an Atkin--Lehner
+subgroup, $Y=X/W$, and let $t:Y\to\mathbf P^1$ be a nonconstant
+$\Q$-morphism of degree $\delta$. If $P\in X(\Qbar)$ is CM by
+an optimally embedded order $R$, and $Q=\pi(P)$, then
+\begin{equation}\label{eq:compact-class-bound}
+ h(R)\le |W|\delta[\Q(t(Q)):\Q].
+\end{equation}
+Bounded parameter degree therefore gives finitely many CM points and
+parameters on this fixed curve.
+\end{proposition}
+\begin{proof}
+Put $K=\operatorname{Frac}(R)$ and let $H_R$ be its ring class field.
+For the stated canonical models and optimal embeddings,
+Gonz\'alez--Rotger \cite[Theorem~5.8(1)]{GonzalezRotger} prove
+\begin{equation}\label{eq:GR-class-field}
+ H_R=K\Q(P),\qquad [H_R:K]=h(R).
+\end{equation}
+Their reciprocity identifies this Galois action with the invertible
+ideal-class action, free on each fixed local-orientation branch by
+their Proposition~5.6. It is a statement about the field of the
+individual coarse point, including elliptic stabilizers.
+The field diagram
+\[
+\begin{tikzcd}[column sep=large,row sep=large]
+ \Q(P) \arrow[r,hook] & H_R=K\Q(P)\\
+ \Q(Q) \arrow[u,hook] & K \arrow[u,hook]\\
+ \Q(t(Q)) \arrow[u,hook] & \Q \arrow[u,hook] \arrow[ul,hook]
+\end{tikzcd}
+\]
+and the two finite maps give
+\[
+ h(R)\le[\Q(P):\Q]
+       \le|W|[\Q(Q):\Q]
+       \le|W|\delta[\Q(t(Q)):\Q].
+\]
+There is no extra factor two from adjoining $K$. Bounded class number
+gives finitely many orders, and each order has finitely many optimal
+embedding classes by the same Proposition~5.6.
+\end{proof}
+
+For $X_6^*=X_0(6,1)/W_6$, one has $|W_6|=4$. The coordinate taking
+$0,1,\infty$ at its unique CM points of discriminants $-4,-24,-3$
+is defined over $\Q$: these singleton CM sets are Galois stable.
+It has degree one, so $h(R)\le4[\Q(t):\Q]$. Equality occurs at a
+rational parameter. Indeed $R=\Z[\sqrt{-30}]$ has discriminant
+$-120$ and reduced forms
+\[
+ [1,0,30],\quad[2,0,15],\quad[3,0,10],\quad[5,0,6].
+\]
+The ramified classes above $2$ and $3$ independently generate its
+four-element class group, since $a^2+30b^2$ represents none of
+$2,3,6$. Their ideal actions are the Atkin--Lehner actions by
+\cite[Lemma~5.9]{GonzalezRotger}. Here the local-orientation factors
+are trivial, so these four points form the entire CM set. Its quotient
+is therefore a Galois-stable singleton. This is the $-120$ row of
+\cite[Theorem~1]{Yang}.
+
+The optimal-embedding hypothesis concerns the order itself. For example,
+$\Q(\sqrt{-3})$ embeds in the discriminant-six algebra, but its order
+of conductor two does not optimally embed in a maximal order: at a
+ramified quaternion prime the intersection with an embedded quadratic
+field is its maximal local order. No assertion for arbitrary levels,
+orders, or totally real ground fields is implicit here.
+
+\subsection{The period target belongs to the realization}
+\label{subsec:compact-period-target}
+Suppose a specified rank-two comparison matrix is
+\[
+ P=\begin{pmatrix}\omega&\omega_2\\\eta&\eta_2\end{pmatrix},
+ \qquad \det P=c(2\pi i),\qquad c\in\Qbar^\times.
+\]
+For a quaternionic abelian surface this must be a specified multiplicity
+summand after splitting the quaternion action over $\Qbar$, together
+with its algebraic polarization. A differential equation alone does
+not provide this realization.
+
+\begin{proposition}[Conditional rank-two mechanism]
+\label{prop:rank-two-torsor-cm}
+Assume that at every non-CM fiber the numerical comparison point is
+Zariski generic over $\Qbar$ in its full $\mathrm{GL}_2$ comparison
+torsor, with the determinant giving the Tate comparison coordinate.
+Then
+\[
+ a\omega^2+b\omega\eta=\alpha\pi,
+ \qquad a,b,\alpha\in\Qbar,\quad(a,b)\ne(0,0),
+\]
+forces CM.
+\end{proposition}
+\begin{proof}
+Trivialize the torsor over $\Qbar$. The left side is a nonzero quadratic
+function of the first column; the right side is
+$\alpha\det(P)/(2ic)$. These cannot agree identically on
+$\mathrm{GL}_2$: if $\alpha\ne0$, fix the first column and vary the
+second; if $\alpha=0$, vary the first column. Genericity excludes
+their equality at the comparison point.
+\end{proof}
+The determinant varies on the torsor; it is not a fixed numerical
+$2\pi i$ defining an algebraic variety over $\Qbar$. Genericity is
+the extra period-conjecture input, beyond the computation of the
+Mumford--Tate group or of its tensor invariants.
+
+Now suppose the chosen branch has a verified normalization
+\begin{equation}\label{eq:compact-normalized-square}
+ \mathcal F(t)=\frac{r(t)\omega(t)^2}{\Omega_0^2},\qquad
+ \frac{\thetaop\mathcal F}{\mathcal F}
+       =u(t)+v(t)\frac{\eta(t)}{\omega(t)},\qquad rv\ne0,
+\end{equation}
+with algebraic $r,u,v$ at the parameter. Transport identifies its
+coefficient space with $a\omega^2+b\omega\eta$, and the natural
+target is
+\begin{equation}\label{eq:compact-natural-target}
+ (A+B\thetaop)\mathcal F(t)\in\Qbar\,\frac{\pi}{\Omega_0^2}.
+\end{equation}
+Conditional CM forcing and the compact degree bound give finitely many
+bounded-degree parameters on a fixed compact curve. For finiteness of
+primitive pairs one must also prove slope uniqueness. It follows if
+$\eta/\omega$ is transcendental: two independent pairs eliminate
+$\pi$ and give an algebraic linear relation between $\omega$ and
+$\eta$. Chudnovsky supplies this when the CM realization reduces
+algebraically to elliptic de Rham cohomology, with $\omega$ a nonzero
+holomorphic period on a rational homology cycle and $\eta$ an independent
+de Rham class evaluated on that same cycle. An arbitrary algebraic
+combination of CM cycles may instead be an endomorphism eigencycle;
+the rational-cycle condition must be retained. Singular parameters
+and vanishing derivative coefficients require separate treatment.
+
+\begin{proposition}[Weight obstruction]
+\label{prop:compact-weight-obstruction}
+Assume $\omega,\eta,\Omega_0$ are actual degree-one periods of abelian
+varieties over $\Qbar$, and assume genericity of their numerical
+comparison point in the tensor torsor generated by these varieties
+and the Tate object. Then no value of
+\eqref{eq:compact-normalized-square} with a linear weight can equal
+$\alpha/\pi$ for $\alpha\in\Qbar^\times$.
+\end{proposition}
+\begin{proof}
+Such an equality says
+$\pi(a\omega^2+b\omega\eta)=\alpha\Omega_0^2$.
+The central weight homotheties multiply degree-one periods by
+$\lambda$ and the Tate period by $\lambda^2$. The two sides have
+weights four and two. Genericity would turn the equality into an
+identity on the torsor, incompatible with these distinct characters
+and the nonzero right side.
+\end{proof}
+For the standard cusp normalization, the denominator is $\pi^2$,
+of weight four, so this obstruction does not apply. For a compact
+normalization by an actual degree-one period squared, both
+$\mathcal F$ and its natural target $\pi/\Omega_0^2$ have weight zero.
+
+This difference is already visible unconditionally in Yang's example.
+Let
+\[
+ d_n=\frac{(1/12)_n(1/4)_n(5/12)_n}{(1/2)_n(3/4)_n n!},
+ \qquad \Omega_{-4}=\sqrt\pi\,\frac{\Gamma(1/4)}{\Gamma(3/4)}.
+\]
+\begin{proposition}[A compact CM value outside $\Qbar/\pi$]
+The primitive, absolutely convergent identity
+\begin{equation}\label{eq:yang-example}
+ \sum_{n\ge0}(9+598n)d_n\left(\frac{8748}{15625}\right)^n
+     =90\sqrt5\,\frac{\pi}{\Omega_{-4}^2}
+\end{equation}
+has right side outside $\Qbar/\pi$.
+\end{proposition}
+\begin{proof}
+The $D=-52$ row of \cite[Theorem~1]{Yang} gives
+$(M,N,R_1,R_2,R_3)=(2^2 3^7,5^6,64584,972,1)$ and multiplier
+$4M^{3/4}N^{1/4}\pi/(12^{1/4}\Omega_{-4}^2)$.
+Dividing the coefficients and multiplier by $108$ gives
+\eqref{eq:yang-example}. Its parameter is in $(0,1)$.
+The beta integral identifies the normalization as an actual CM period:
+\[
+ \Omega_{-4}=B(1/4,1/2)
+       =2\int_1^\infty\frac{dX}{\sqrt{X^3-X}}.
+\]
+Chudnovsky's theorem, in \cite[Corollary~6]{Waldschmidt}, makes this
+nonzero period of $y^2=X^3-X$ algebraically independent of $\pi$.
+Membership of the right side in $\Qbar/\pi$ would contradict that
+independence.
+\end{proof}
+
+\subsection{The exact role of the construction theorems}
+\label{subsec:triangle-source-packets}
+The external constructions enter the theory at distinct stages.
+Chen--Glebov--Goenka \cite[Theorems~4.1--4.2 and 6.1--6.9]{CGG}
+identify the elliptic Picard--Fuchs equations and their hypergeometric
+periods on specified simply connected domains. Their specialization
+theorems require a quadratic parameter
+$\tau=(-b+\sqrt{-d})/(2a)$, as stated in their equation~(22).
+For such $\tau$ with $E_6(\tau)\ne0$, their Theorem~8.1 proves
+\[
+ \frac{E_4(\tau)}{E_6(\tau)}
+ \left(E_2(\tau)-\frac3{\pi\operatorname{Im}\tau}\right)
+       \in\Q(j(\tau)),
+\]
+and supplies an integer clearing the denominator. At $j=1728$ this
+quotient is undefined; their precursor identity~(21) is used instead.
+
+The arithmetic mechanism is a torsion trace. On an algebraic model,
+for the nonreal endomorphism $\mu=a\tau$ of its period lattice,
+their equations~(28)--(33) give
+\[
+ \mu(\mu-\bar\mu)e_2^*(\Lambda)
+       =\sum_{0\ne P\in E[(\mu)]}x(P).
+\]
+The trace is algebraic, the nonzero multiplier permits solving for
+$e_2^*$, and conjugation descends the coefficient to $\Q(j)$.
+On a non-CM curve every multiplier is an integer, so this argument
+loses precisely the factor $\mu-\bar\mu$. It computes the CM
+coefficient; it does not prove the converse.
+
+Yang's compact theorem instead supplies the first-solution constant
+\[
+ C_1=\frac4{12^{1/4}}\frac{\pi}{\Omega_{-4}^2},
+\]
+and $C_1^{-1}$ for the second local solution. Its Hecke and algebraic
+equations evaluate derivative coefficients at specified CM points.
+The reciprocal constants make the local branch part of the problem,
+and \eqref{eq:yang-example} prevents replacing this target by
+$\Qbar/\pi$ automatically.
+
+Takeuchi's classification \cite{Takeuchi} classifies arithmetic triangle
+groups, rather than the CM points at rational uniformizer values.
+Similarly, \cite[Theorem~2.2]{AG} uses three compatible equations
+on Frobenius solutions $w_0=y_0^2$, $w_1=y_0y_1$, $w_2=y_1^2/2$:
+\[
+ aw_0+b\thetaop w_0=1/\pi,\qquad
+ aw_1+b\thetaop w_1=ir,\qquad
+ aw_2+b\thetaop w_2=-\pi(\beta+r^2)/2.
+\]
+Here $\beta$ denotes their auxiliary parameter, distinct from the
+multiplier of our original identity. The first equation does not
+imply the other two. Their $1/\pi^2$ Calabi--Yau construction uses
+a different system and explicitly conjectural specialization
+properties after their equation~(41). In each case the valid
+sequence is realization, a separate CM criterion, reciprocity, and
+CM evaluation; no construction theorem removes the missing scalar
+CM implication.

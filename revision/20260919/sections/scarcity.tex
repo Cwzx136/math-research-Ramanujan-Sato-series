@@ -1,0 +1,480 @@
+\section{Arithmetic separation and counting}
+\label{sec:C-density}
+
+The period criteria above concern a single algebraic fiber.  We now use
+the variation of that fiber to obtain unconditional restrictions on the
+set of possible identities.  Two different principles apply.  Near the
+cusp, independent Gauss systems and the Bombieri--Andr\'e specialization
+theorem separate identities whose multipliers have bounded degree.
+On a compact parameter interval, symmetric-square monodromy and
+Habegger--Pila counting give a subpower bound when all arithmetic heights
+are bounded.  Neither argument assumes the period hypothesis of
+Theorem~\ref{thm:main-conditional}.
+
+For $d\geq1$, let $\mathscr E_d$ be the set of triples
+$(\ell,\epsilon,t)$, with $1\leq\ell\leq4$, $\epsilon\in\{\pm1\}$,
+and $t\in\mathbb N$, for which there is a primitive standard identity
+\begin{equation}\label{rev:eq:exceptional-occurrence}
+ (A+B\thetaop)F_{s_\ell}\!\left(\frac{\epsilon R_\ell}{t}\right)
+       =\frac{\alpha}{\pi},
+ \qquad [\mathbb Q(\alpha^2):\mathbb Q]\leq d.
+\end{equation}
+Thus $t$ is the absolute denominator, while $(\ell,\epsilon)$ retains
+the level and its sign.  By Theorem~\ref{thm:unconditional}, each such
+triple determines at most one primitive coefficient pair up to sign.
+
+\begin{theorem}[Separation in absolute denominator]
+\label{thm:C-absolute-gaps}
+Fix $d\geq1$.  For every integer $H\geq0$, there exists $T_H$ such that
+\[
+ \#\{(\ell,\epsilon,t)\in\mathscr E_d:
+                      M\leq t\leq M+H\}\leq1
+ \qquad(M\geq T_H).
+\]
+Equivalently, for fixed levels $\ell_1,\ell_2$, signs
+$\epsilon_1,\epsilon_2$, and integer $D\geq0$, there are only finitely many
+$t$ for which
+\[
+ (\ell_1,\epsilon_1,t),\qquad
+ (\ell_2,\epsilon_2,t+D)\in\mathscr E_d,
+\]
+unless $D=0$ and $(\ell_1,\epsilon_1)=(\ell_2,\epsilon_2)$.
+In particular, distinct absolute denominators have gaps tending to
+infinity, jointly across all four levels and both signs.
+\end{theorem}
+
+The theorem imposes no height bound on $A,B$, or $\alpha$, and no fixed
+field of definition for $\alpha$.  The square in its degree hypothesis
+is natural: taking the squared ratio of two identities eliminates
+their common transcendental factor.
+
+\subsection{The Gauss systems and their products}
+
+Write
+\[
+ \varphi_s(z)={}_2F_1\!\left(\frac{s}{2},\frac{1-s}{2};1;z\right),
+ \qquad F_s=\varphi_s^2,\qquad G_s=\thetaop F_s,
+\]
+and let $\mathcal V_s$ denote the rank-two local system of solutions of
+\begin{equation}\label{eq:C-gauss-operator}
+ z(1-z)y''+\left(1-\frac32z\right)y'
+                      -\frac{s(1-s)}4y=0.
+\end{equation}
+Clausen's identity identifies the third-order system of $F_s$ with
+$\operatorname{Sym}^2\mathcal V_s$.  Its arithmetic and geometric
+roles will be kept distinct: the Taylor coefficients make $F_s,G_s$
+$G$-functions, whereas monodromy controls their functional relations.
+
+\begin{lemma}[Product monodromy]\label{rev:lem:product-monodromy}
+The connected algebraic monodromy of $\mathcal V_s$ is
+$\operatorname{SL}_2$ for every standard signature $s$.
+Let
+\[
+ r_i=\epsilon_iR_{\ell_i},\qquad s_i=s_{\ell_i},\qquad
+ \rho_1(x)=\frac{r_1}{x},\quad
+ \rho_2(x)=\frac{r_2}{x+D},\qquad D\in\mathbb Z_{\geq0}.
+\]
+Unless $D=0$ and $(\ell_1,\epsilon_1)=(\ell_2,\epsilon_2)$,
+the connected algebraic monodromy of
+$\rho_1^*\mathcal V_{s_1}\oplus\rho_2^*\mathcal V_{s_2}$ is
+\[
+                 \operatorname{SL}_2\times\operatorname{SL}_2.
+\]
+Consequently the four functions
+\begin{equation}\label{rev:eq:independent-four}
+ F_{s_1}(r_1u),\quad G_{s_1}(r_1u),\quad
+ F_{s_2}\!\left(\frac{r_2u}{1+Du}\right),\quad
+ G_{s_2}\!\left(\frac{r_2u}{1+Du}\right)
+\end{equation}
+are algebraically independent over $\mathbb C(u)$.
+\end{lemma}
+
+\begin{proof}
+Put $a=s/2$ and $b=(1-s)/2$.  Abel's identity gives a Wronskian
+proportional to $1/(z\sqrt{1-z})$, so the monodromy determinant has
+finite image.  At zero the nontrivial unipotent local monodromy fixes
+the line of $\varphi_s$.  At one, the connection formula reads
+\[
+ \varphi_s(z)=
+ \frac{\Gamma(1/2)}{\Gamma(1-a)\Gamma(1-b)}u(z)
+ +\frac{\Gamma(-1/2)}{\Gamma(a)\Gamma(b)}
+             (1-z)^{1/2}v(z),
+\]
+where $u(1)=v(1)=1$.  Both coefficients are nonzero.  Hence the
+reflection at one moves the fixed line of the unipotent at zero.
+The two conjugate one-parameter unipotent groups generate
+$\operatorname{SL}_2$; the finite determinant image shows that this
+is precisely the identity component.
+
+Let $H$ be the joint algebraic monodromy of the two pullbacks.  Its
+identity component projects onto both copies of $\operatorname{SL}_2$.
+By the Lie-algebra form of Goursat's lemma, a proper connected subgroup
+with these projections would have Lie algebra
+\begin{equation}\label{rev:eq:goursat-graph}
+ \mathfrak h=\{(X,\phi X):X\in\mathfrak{sl}_2\}
+\end{equation}
+for an isomorphism $\phi:\mathfrak{sl}_2\to\mathfrak{sl}_2$.
+Normality of $H^0$ in $H$ would then require, for every $(M,N)\in H$,
+\begin{equation}\label{rev:eq:adjoint-intertwining}
+       \phi\operatorname{Ad}(M)=\operatorname{Ad}(N)\phi.
+\end{equation}
+We rule this out by examining the singularities, including the only
+case in which the two sets of singularities coincide.
+
+The finite singular sets are
+\[
+                  \{0,r_1\},\qquad\{-D,r_2-D\}.
+\]
+Every point of either set has noncentral local monodromy.  At Gauss
+argument one this is the reflection with eigenvalues $1,-1$.  At
+infinity the exponent difference is $1/2-s$.  It is nonintegral
+unless $s=1/2$.  In that remaining case, scalar monodromy at infinity
+would, by the product relation between the three local monodromies,
+make the reflection at one a scalar multiple of the unipotent at
+zero, which is impossible.  If the finite singular sets differ, a
+loop around a point belonging to only one gives $(M,1)$ or $(1,N)$
+with a noncentral entry.  Equation~\eqref{rev:eq:adjoint-intertwining}
+would make that entry central, a contradiction.
+
+If the sets coincide and the systems are not identical, their common
+configuration is necessarily
+\[
+ \ell_1=\ell_2=\ell,\qquad
+ \epsilon_1=-1,\quad\epsilon_2=1,\qquad D=R_\ell.
+\]
+Indeed $D>0$ then forces $r_1=-D$ and $r_2=D$, and the four radii
+are distinct.  A loop about $x=0$ corresponds to Gauss infinity in
+the first system and Gauss argument one in the second.  These local
+maps are unramified.  For its monodromy pair $(M,N)$, the adjoint
+traces are
+\begin{equation}\label{rev:eq:collision-traces}
+ \begin{split}
+ \operatorname{tr}\operatorname{Ad}(N)&=-1,\\
+ \operatorname{tr}\operatorname{Ad}(M)
+  &=1-2\cos(2\pi s)
+    =\begin{cases}
+       0,&s=1/6,\\
+       1,&s=1/4,\\
+       2,&s=1/3,\\
+       3,&s=1/2.
+      \end{cases}
+ \end{split}
+\end{equation}
+The formula uses only the eigenvalues, so also covers the
+nondiagonalizable monodromy when $s=1/2$.  The unequal traces
+contradict~\eqref{rev:eq:adjoint-intertwining}.  Thus $H^0$ is the
+full product in every permitted case.
+
+To pass from local systems to the selected functions, evaluate at an
+ordinary point.  Each group factor moves the nonzero solution column
+$(\varphi_s,\varphi_s')$ through a Zariski-dense subset of $\mathbb A^2$.  The
+quadratic map
+\begin{equation}\label{rev:eq:symmetric-square-projection}
+          (v,w)\longmapsto(v^2,2zvw)
+\end{equation}
+is dominant for $z\ne0$ and sends this column to $(F_s,G_s)$.
+The two group factors act independently.  A functional polynomial
+relation among the four functions would therefore vanish on
+$\mathbb A^4$ at every ordinary point; all its coefficients would
+vanish.  Substituting $u=1/x$ proves the asserted independence.
+\end{proof}
+
+The same argument has a useful one-system consequence.
+
+\begin{lemma}[Affine functional independence]
+\label{lem:C-functional-affine-independence}
+For a standard signature, $1,F_s,G_s$ are linearly independent over
+$\mathbb C(z)^{\mathrm{alg}}$, on every continued branch.
+\end{lemma}
+\begin{proof}
+Make the coefficients of a proposed relation single-valued on a finite
+algebraic cover.  The connected monodromy remains
+$\operatorname{SL}_2$, since passing to a finite-index subgroup does
+not change its connected Zariski closure.  By the dominant map
+\eqref{rev:eq:symmetric-square-projection}, continuation of the
+selected solution makes the proposed affine equation vanish at every
+point of $\mathbb A^2$.  Its three coefficients are therefore zero.
+This is the affine form of irreducibility of
+$\operatorname{Sym}^2\mathcal V_s$: its three-dimensional monodromy
+orbit cannot satisfy an inhomogeneous first-order equation over an
+algebraic extension of the base function field.
+\end{proof}
+
+\subsection{Specialization and the norm of a period relation}
+
+We use the following form of the Bombieri--Andr\'e theorem, as stated
+in \cite[Theorem~3.13 and Remark~3.14]{BaldiBinyaminiUrbanik2026}.
+Its coefficient field is fixed; its polynomial coefficients have no
+height restriction.  Both features are essential here.
+
+Recall that a $G$-function over $\mathbb Q$ is a power series satisfying
+a linear differential equation over $\mathbb Q(u)$, whose coefficient
+sizes and common denominators up to order $n$ grow at most exponentially
+in $n$.  The standard $F_s$ have this property: their coefficients become
+integers after multiplication by $R_\ell^n$, and their defining
+hypergeometric equations are linear.  Differentiation and rational
+substitution vanishing at the origin preserve this class.
+
+\begin{theorem}[Bombieri--Andr\'e, archimedean form]
+\label{rev:thm:bombieri-andre}
+Let $g_1,\ldots,g_m\in\mathbb Q[[u]]$ be $G$-functions, and let
+$\mathcal B\subset\mathbb P^1\times\mathbb A^m$ be the Zariski closure
+over $\mathbb Q$ of their graph.  Write
+\[
+ \mu'=\operatorname{trdeg}_{\mathbb Q(u)}
+       \mathbb Q(u)(g_i^{(j)}:1\leq i\leq m,\ j\geq0)>0.
+\]
+There are constants $c_1\geq e$ and $c_2>0$, depending only on the functions, with
+the following property.  Let $\delta\geq1$ and let
+$\xi\in\mathbb Q\setminus\{0\}$ lie strictly inside all convergence
+discs.  Put $h=h(\xi)$, the absolute logarithmic Weil height.  If
+\begin{equation}\label{rev:eq:bombieri-andre-bounds}
+ \begin{split}
+ h&\geq c_1\delta^{\mu'}(1+\log\delta),\\
+ |\xi|&\leq
+ \exp\!\left[-c_2\delta^{\mu'/(\mu'+1)}
+       h^{1/(\mu'+1)}\log\bigl(h^{1/(\mu'+1)}\bigr)\right],
+ \end{split}
+\end{equation}
+there is no polynomial $P\in\mathbb Q[T_1,\ldots,T_m]$ of degree
+at most $\delta$ such that
+\[
+ P(g_1(\xi),\ldots,g_m(\xi))=0,
+ \qquad
+ \dim(\mathcal B_\xi\cap V(P))<\dim\mathcal B-1.
+\]
+\end{theorem}
+
+The dimension inequality is the precise meaning of a strongly
+nontrivial specialized relation.  The cited theorem is stated for an
+arbitrary number field and place; the form above takes
+$K=\mathbb Q$ and the real place.  Its statement for degree $\delta$
+also gives degree at most $\delta$, by applying it to each smaller
+degree.  Nonhomogeneous relations are allowed by adjoining the
+constant $1$ to the tuple, as explained in the cited remark.
+
+\begin{lemma}[Reciprocal-integer specialization]
+\label{lem:C-reciprocal-specialization}
+Let $g_1,\ldots,g_m$ be $G$-functions over $\mathbb Q$, holomorphic at
+zero and algebraically independent over $\mathbb Q(u)$.  For each
+fixed $\delta\geq1$, their values at $u=1/t$ satisfy no nonzero
+polynomial relation over $\mathbb Q$ of total degree at most $\delta$
+for all sufficiently large positive integers $t$.
+\end{lemma}
+\begin{proof}
+Functional independence gives
+$\mathcal B=\mathbb P^1\times\mathbb A^m$, so every nonzero
+specialized relation is strongly nontrivial.  The differential field
+has finite transcendence degree $\mu'$: each $G$-function satisfies a
+linear differential equation over $\mathbb Q(u)$, so finitely many
+derivatives generate it.  At $\xi=1/t$ one has $h=\log t$ and
+$|\xi|=e^{-h}$.  For fixed $\delta$, the first inequality in
+\eqref{rev:eq:bombieri-andre-bounds} eventually holds; the negative
+logarithm required by the second is
+$O(h^{1/(\mu'+1)}\log h)=o(h)$.  The theorem applies, uniformly in
+the coefficients of the proposed relation.
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{thm:C-absolute-gaps}]
+Fix the two signed levels and the gap $D$, excluding the identical
+case.  Let $\mathbf g=(g_1,g_2,g_3,g_4)$ be the tuple in
+\eqref{rev:eq:independent-four}.  The rational hypergeometric
+parameters make $F_s$ a $G$-function.  Differentiation and rational
+substitution vanishing at zero preserve $G$-functions, hence every
+$g_i$ is a $G$-function over $\mathbb Q$, holomorphic at zero.
+Lemma~\ref{rev:lem:product-monodromy} gives their algebraic
+independence.
+
+Suppose the two identities occur at absolute denominators $t$ and
+$t+D$.  Their multipliers are nonzero by
+Theorem~\ref{thm:B-value-independent}.  Set
+\[
+ \beta=\frac{\alpha_1^2}{\alpha_2^2},\qquad
+ K=\mathbb Q(\beta),\qquad e=[K:\mathbb Q]\leq d^2,
+\]
+and regard
+\[
+ U_1=A_1T_1+B_1T_2,\qquad U_2=A_2T_3+B_2T_4
+\]
+as linear forms on $\mathbb A^4$.  Cancelling $\pi$ between the
+squared identities gives
+\[
+             (U_1^2-\beta U_2^2)(\mathbf g(1/t))=0.
+\]
+The descent to the fixed coefficient field is the polynomial norm
+\begin{equation}\label{rev:eq:norm-descent}
+ Q=N_{K/\mathbb Q}(U_1^2-\beta U_2^2)
+   =\prod_{\sigma:K\hookrightarrow\mathbb C}
+               (U_1^2-\sigma(\beta)U_2^2)
+       \in\mathbb Q[T_1,T_2,T_3,T_4].
+\end{equation}
+Each factor is nonzero, since $U_1,U_2$ are nonzero forms in disjoint
+pairs of variables.  Thus $Q\ne0$, it is homogeneous of degree
+$2e\leq2d^2$, and $Q(\mathbf g(1/t))=0$.
+Lemma~\ref{lem:C-reciprocal-specialization} excludes this for all
+sufficiently large $t$.
+
+For fixed $H$, there are only finitely many ordered pairs of signed
+levels and gaps $0\leq D\leq H$.  Taking the largest of their
+thresholds proves the interval assertion.  The already established
+uniqueness of the primitive coefficient direction identifies repeated
+representations of the same signed-level occurrence.
+\end{proof}
+
+Notice that the norm in~\eqref{rev:eq:norm-descent} conjugates only
+the algebraic coefficient $\beta$.  It does not assert that a Galois
+conjugate of a multiplier occurs on the chosen analytic branch.  This
+distinction is what allows an unrestricted coefficient field for
+$\alpha$ while applying a specialization theorem over $\mathbb Q$.
+
+\subsection{Counting in complete height windows}
+\label{sec:C-semirational-counting}
+
+For a real number $y$ and $d\geq1$, use the polynomial coefficient
+height
+\[
+ H_d(y)=\min\{\|q\|_\infty:
+     0\ne q\in\mathbb Z[T]\text{ primitive},\quad
+     \deg q\leq d,\quad q(y)=0\},
+\]
+where $\min\varnothing=\infty$ and $\|q\|_\infty$ is the largest
+absolute coefficient.  On tuples, $H_d$ is the maximum coordinate
+height.  This is the $d$-height used by Habegger--Pila; in particular
+$H_d(y)<\infty$ is equivalent to $[\mathbb Q(y):\mathbb Q]\leq d$.
+
+\begin{theorem}[Habegger--Pila, semirational counting]
+\label{thm:C-HP-counting}
+Let $Z\subseteq\mathbb R^m\times\mathbb R^n$ be definable in a fixed
+o-minimal structure, with coordinate projections $\pi_1,\pi_2$.
+For every $d\geq1$ and $\varepsilon>0$, there is $c>0$ such that,
+whenever $T\geq1$ and $\Sigma\subseteq Z$ satisfy
+\[
+ H_d(\pi_1P)\leq T\quad(P\in\Sigma),\qquad
+                  \#\pi_2(\Sigma)>cT^\varepsilon,
+\]
+there exists a continuous definable path $\gamma:[0,1]\to Z$ such
+that $\pi_1\gamma$ is semialgebraic and real analytic on $(0,1)$,
+and $\pi_2\gamma$ is nonconstant.
+\end{theorem}
+
+This is \cite[Corollary~7.2]{HabeggerPilaCounting} with a fixed member
+of its definable family.  Only the first projection is required to be
+semialgebraic; no degree or height restriction is placed on the second.
+Our choice of the two projections will use this distinction explicitly.
+
+Fix a compact interval $I\subset[-1,1)$ and define the normalized
+incidence surface
+\begin{equation}\label{eq:C-normalized-surface}
+ X_s=\{(z,a,b)\in(I\setminus\{0\})\times\mathbb R^2:
+                      \pi(aF_s(z)+bG_s(z))=1\}.
+\end{equation}
+The chosen branch is analytic on a neighborhood of $I$, so $X_s$ is
+definable in $\mathbb R_{\mathrm{an}}$.  Its nonempty fibers over $z$
+are affine lines.  These lines fill the surface and therefore prevent a direct
+application of counting only the usual transcendental part.  The
+relevant assertion concerns paths that move in the parameter.
+
+\begin{lemma}\label{lem:C-vertical-arcs}
+Every continuous semialgebraic path in $X_s$ has constant $z$ coordinate.
+\end{lemma}
+\begin{proof}
+If the parameter varies, semialgebraic cell decomposition and a local
+inverse give a nonempty interval on which the path is
+$(z,a(z),b(z))$, with $a,b$ real analytic and algebraic over
+$\mathbb R(z)$.  Its incidence equation is an affine functional
+relation between $1,F_s,G_s$, contrary to
+Lemma~\ref{lem:C-functional-affine-independence}.  That lemma allows
+arbitrary complex constants; no algebraicity of the constants defining
+the semialgebraic path is needed.
+\end{proof}
+
+\begin{theorem}[Counting normalized identities]
+\label{thm:C-normalized-counting}
+For a standard signature $s$, a compact interval $I\subset[-1,1)$,
+$d\geq1$, and every $\varepsilon>0$,
+\[
+ \#\{(z,a,b)\in X_s:H_d(z,a,b)\leq T\}
+                    =O_{s,I,d,\varepsilon}(T^\varepsilon).
+\]
+\end{theorem}
+\begin{proof}
+Duplicate the parameter by setting
+\[
+ Z_s=\{((z,a,b),t):(z,a,b)\in X_s,\ t=z\}.
+\]
+The two projections fit in the commutative square
+\[
+ \begin{tikzcd}[column sep=large,row sep=large]
+ Z_s \arrow[r,"\pi_1"] \arrow[d,"\pi_2"'] &
+ X_s \arrow[d,"p"] \\
+ I\setminus\{0\} \arrow[r,equal] & I\setminus\{0\},
+ \end{tikzcd}
+ \qquad p(z,a,b)=z.
+\]
+If more than $cT^\varepsilon$ distinct parameters occur, the
+Habegger--Pila theorem produces a path in $Z_s$ whose first projection
+is a semialgebraic path in $X_s$ and whose parameter is nonconstant.
+This contradicts Lemma~\ref{lem:C-vertical-arcs}.  Thus the asserted
+bound holds for the number of parameters.
+
+Above each counted parameter there is at most one algebraic pair
+$(a,b)$.  Indeed, two pairs would give a nonzero algebraic linear
+relation between $F_s(z)$ and $G_s(z)$, excluded by
+Theorem~\ref{thm:B-value-independent}.  Counting parameters therefore
+counts the complete normalized triples.
+\end{proof}
+
+\begin{theorem}[Counting complete primitive tuples]
+\label{thm:C-primitive-counting}
+Fix a standard pair $(s,R)$, $d\geq1$, and $\varepsilon>0$.  The number
+of ordinarily convergent primitive identities
+\[
+ \pi(A+B\thetaop)F_s(R/C)=\alpha,\qquad
+ A,B,C\in\mathbb Z,\quad C\ne0,\quad\gcd(A,B)=1,
+\]
+for which
+\[
+                  \max\{|A|,|B|,|C|,H_d(\alpha)\}\leq T
+\]
+is $O_{s,R,d,\varepsilon}(T^\varepsilon)$.  Both simultaneous signs
+are included.
+\end{theorem}
+\begin{proof}
+Theorem~\ref{thm:unconditional} excludes $z=1$.  All other ordinarily
+convergent integer denominators lie in the fixed interval
+\[
+                         I_R=[-1,R/(R+1)].
+\]
+The multiplier is real and nonzero.  Normalize the identity by
+\[
+                 (z,a,b)=\left(\frac RC,\frac A\alpha,
+                                                \frac B\alpha\right)
+                 \in X_s.
+\]
+If $q$ is a primitive polynomial of degree at most $d$ and height at
+most $T$ annihilating $\alpha$, then, for $A\ne0$,
+$X^d q(A/X)$ is a nonzero integer polynomial annihilating $A/\alpha$.
+Removing its content yields
+\[
+ H_d(A/\alpha)\leq T^{d+1},\qquad
+ H_d(B/\alpha)\leq T^{d+1},\qquad
+ H_d(R/C)\leq\max(R,T).
+\]
+The bound for a zero numerator follows from $H_d(0)=1$.  Apply
+Theorem~\ref{thm:C-normalized-counting} with exponent
+$\varepsilon/(d+1)$.  It gives $O(T^\varepsilon)$ normalized triples.
+
+A normalized triple coming from an integer identity determines a
+rational coefficient direction.  Such a direction contains exactly
+two primitive integer vectors, and fixing either vector determines $\alpha$.
+Thus normalization has fibers of size at most two on the tuples being
+counted, proving the result.
+\end{proof}
+
+These theorems supply two different forms of arithmetic scarcity.
+The separation theorem uses only the degree of $\alpha^2$; the
+counting theorem controls the complete tuple in degree and height.
+They leave open the possibility of an isolated non-CM identity or an
+infinite sequence whose denominators and heights grow sufficiently
+rapidly.  In particular, neither conclusion supplies the missing
+pointwise CM implication.

@@ -1,0 +1,92 @@
+\contentsline {section}{\tocsection {}{1}{The classification problem}}{1}{section.1}%
+\contentsline {section}{\tocsection {}{2}{Elliptic period squares}}{3}{section.2}%
+\contentsline {subsection}{\tocsubsection {}{2.1}{The determinant and the first jet}}{3}{subsection.2.1}%
+\contentsline {subsection}{\tocsubsection {}{2.2}{The transcendence input}}{3}{subsection.2.2}%
+\contentsline {subsection}{\tocsubsection {}{2.3}{The identity line}}{4}{subsection.2.3}%
+\contentsline {subsection}{\tocsubsection {}{2.4}{The four standard realizations}}{5}{subsection.2.4}%
+\contentsline {subsection}{\tocsubsection {}{2.5}{Value independence and uniqueness}}{5}{subsection.2.5}%
+\contentsline {subsection}{\tocsubsection {}{2.6}{Ordinary convergence and the endpoint}}{6}{subsection.2.6}%
+\contentsline {section}{\tocsection {}{3}{Comparison tensors and the CM implication}}{6}{section.3}%
+\contentsline {subsection}{\tocsubsection {}{3.1}{Quadratic genericity}}{6}{subsection.3.1}%
+\contentsline {subsection}{\tocsubsection {}{3.2}{The modular two-jet}}{7}{subsection.3.2}%
+\contentsline {subsection}{\tocsubsection {}{3.3}{Sufficient numerical conjectures}}{8}{subsection.3.3}%
+\contentsline {subsection}{\tocsubsection {}{3.4}{Completing the comparison tensor}}{8}{subsection.3.4}%
+\contentsline {subsection}{\tocsubsection {}{3.5}{Propagation to a second cycle}}{9}{subsection.3.5}%
+\contentsline {section}{\tocsection {}{4}{CM arithmetic and the classification}}{10}{section.4}%
+\contentsline {subsection}{\tocsubsection {}{4.1}{The modular correspondence}}{10}{subsection.4.1}%
+\contentsline {subsection}{\tocsubsection {}{4.2}{The canonical CM coefficient line}}{11}{subsection.4.2}%
+\contentsline {subsection}{\tocsubsection {}{4.3}{Finite exhaustion}}{12}{subsection.4.3}%
+\contentsline {subsection}{\tocsubsection {}{4.4}{Exact evaluation of the classified lines}}{13}{subsection.4.4}%
+\contentsline {subsection}{\tocsubsection {}{4.5}{Linear Euler companions}}{13}{subsection.4.5}%
+\contentsline {section}{\tocsection {}{5}{Arithmetic realizations of the identity line}}{14}{section.5}%
+\contentsline {subsection}{\tocsubsection {}{5.1}{From a finite polynomial to a de Rham line}}{14}{subsection.5.1}%
+\contentsline {subsection}{\tocsubsection {}{5.2}{Algebraization and the density of stable complements}}{15}{subsection.5.2}%
+\contentsline {subsection}{\tocsubsection {}{5.3}{The arithmetic classification}}{16}{subsection.5.3}%
+\contentsline {subsection}{\tocsubsection {}{5.4}{An exact comparison at one ordinary prime}}{17}{subsection.5.4}%
+\contentsline {section}{\tocsection {}{6}{Arithmetic separation and counting}}{18}{section.6}%
+\contentsline {subsection}{\tocsubsection {}{6.1}{The Gauss systems and their products}}{19}{subsection.6.1}%
+\contentsline {subsection}{\tocsubsection {}{6.2}{Specialization and the norm of a period relation}}{20}{subsection.6.2}%
+\contentsline {subsection}{\tocsubsection {}{6.3}{Counting in complete height windows}}{21}{subsection.6.3}%
+\contentsline {section}{\tocsection {}{}{The remaining assertion}}{22}{section*.2}%
+\contentsline {section}{\tocsection {Appendix}{A}{Models and ancillary period consequences}}{23}{appendix.A}%
+\contentsline {subsection}{\tocsubsection {}{A.1}{A simultaneous de Rham calculation}}{23}{subsection.A.1}%
+\contentsline {subsection}{\tocsubsection {}{A.2}{What one scalar relation determines}}{23}{subsection.A.2}%
+\contentsline {subsection}{\tocsubsection {}{A.3}{Functoriality under gauges and pullbacks}}{24}{subsection.A.3}%
+\contentsline {subsection}{\tocsubsection {}{A.4}{A general conditional finiteness principle}}{24}{subsection.A.4}%
+\contentsline {section}{\tocsection {Appendix}{B}{The finite CM certificate and the identity tables}}{24}{appendix.B}%
+\contentsline {subsection}{\tocsubsection {}{B.1}{Standard classes}}{25}{subsection.B.1}%
+\contentsline {subsection}{\tocsubsection {}{B.2}{Linear Euler companions}}{26}{subsection.B.2}%
+\contentsline {section}{\tocsection {Appendix}{C}{Integral realizations and the limits of prime tests}}{27}{appendix.C}%
+\contentsline {subsection}{\tocsubsection {}{C.1}{The finite Clausen theorem}}{27}{subsection.C.1}%
+\contentsline {subsection}{\tocsubsection {}{C.2}{Cartier and Gauss--Manin differentiation}}{28}{subsection.C.2}%
+\contentsline {subsection}{\tocsubsection {}{C.3}{Projective Frobenius and rational-prime density}}{29}{subsection.C.3}%
+\contentsline {subsection}{\tocsubsection {}{C.4}{The analytic order in Tang's inequality}}{29}{subsection.C.4}%
+\contentsline {subsection}{\tocsubsection {}{C.5}{Unweighted zeros and supersingularity}}{30}{subsection.C.5}%
+\contentsline {subsection}{\tocsubsection {}{C.6}{Higher precision and the missing comparison}}{30}{subsection.C.6}%
+\contentsline {subsection}{\tocsubsection {}{C.7}{Exact compatibility, finite precision, and a common tensor}}{31}{subsection.C.7}%
+\contentsline {section}{\tocsection {Appendix}{D}{Scalar comparison and its refinements}}{32}{appendix.D}%
+\contentsline {subsection}{\tocsubsection {}{D.1}{The restricted directions and known independence}}{32}{subsection.D.1}%
+\contentsline {subsection}{\tocsubsection {}{D.2}{Functional transcendence and specialization}}{32}{subsection.D.2}%
+\contentsline {subsection}{\tocsubsection {}{D.3}{A real refinement of cycle propagation}}{33}{subsection.D.3}%
+\contentsline {subsection}{\tocsubsection {}{D.4}{The almost-holomorphic coordinate}}{33}{subsection.D.4}%
+\contentsline {subsection}{\tocsubsection {}{D.5}{Coordinates of tensor completion}}{34}{subsection.D.5}%
+\contentsline {subsection}{\tocsubsection {}{D.6}{The local annihilator condition}}{34}{subsection.D.6}%
+\contentsline {subsection}{\tocsubsection {}{D.7}{Formal obstructions to automatic completion}}{34}{subsection.D.7}%
+\contentsline {subsection}{\tocsubsection {}{D.8}{Why logarithm methods need additional data}}{35}{subsection.D.8}%
+\contentsline {section}{\tocsection {Appendix}{E}{Analytic refinements of the scalar relation}}{36}{appendix.E}%
+\contentsline {subsection}{\tocsubsection {}{E.1}{The cusp and a discrete coefficient lattice}}{36}{subsection.E.1}%
+\contentsline {subsection}{\tocsubsection {}{E.2}{Rational multipliers of growing height}}{37}{subsection.E.2}%
+\contentsline {subsection}{\tocsubsection {}{E.3}{Finiteness on a fixed algebraic curve}}{37}{subsection.E.3}%
+\contentsline {subsection}{\tocsubsection {}{E.4}{The differential of the incidence relation}}{38}{subsection.E.4}%
+\contentsline {subsection}{\tocsubsection {}{E.5}{Finiteness within one isogeny class}}{39}{subsection.E.5}%
+\contentsline {section}{\tocsection {Appendix}{F}{Specialization beyond a first-order weight}}{39}{appendix.F}%
+\contentsline {paragraph}{\tocparagraph {}{}{What this does and does not prove.}}{42}{section*.3}%
+\contentsline {subsection}{\tocsubsection {}{F.1}{All polynomial weights and fixed elliptic pullbacks}}{42}{subsection.F.1}%
+\contentsline {subsection}{\tocsubsection {}{F.2}{A general elliptic-family version}}{44}{subsection.F.2}%
+\contentsline {section}{\tocsection {Appendix}{G}{Frobenius quotients and canonical normalization}}{45}{appendix.G}%
+\contentsline {subsection}{\tocsubsection {}{G.1}{Lucas congruences as a polynomial Frobenius structure}}{45}{subsection.G.1}%
+\contentsline {subsection}{\tocsubsection {}{G.2}{Finite transport}}{46}{subsection.G.2}%
+\contentsline {subsection}{\tocsubsection {}{G.3}{Algebraic gauges and the half-density threshold}}{47}{subsection.G.3}%
+\contentsline {subsection}{\tocsubsection {}{G.4}{Geometric hypotheses in the transport theorem}}{48}{subsection.G.4}%
+\contentsline {subsection}{\tocsubsection {}{G.5}{Boundary terms and finite-jet obstructions}}{49}{subsection.G.5}%
+\contentsline {section}{\tocsection {Appendix}{H}{Functoriality and further elliptic branches}}{50}{appendix.H}%
+\contentsline {subsection}{\tocsubsection {}{H.1}{Quadratic companions}}{50}{subsection.H.1}%
+\contentsline {subsection}{\tocsubsection {}{H.2}{The level-nine pullback}}{51}{subsection.H.2}%
+\contentsline {subsection}{\tocsubsection {}{H.3}{Domb numbers}}{52}{subsection.H.3}%
+\contentsline {section}{\tocsection {Appendix}{I}{Modular coordinates and returning correspondences}}{53}{appendix.I}%
+\contentsline {section}{\tocsection {Appendix}{J}{Arithmetic correspondences and compact Shimura curves}}{53}{appendix.J}%
+\contentsline {subsection}{\tocsubsection {}{J.1}{The finite-map principle}}{53}{subsection.J.1}%
+\contentsline {subsection}{\tocsubsection {}{J.2}{A class-number-four identity}}{54}{subsection.J.2}%
+\contentsline {subsection}{\tocsubsection {}{J.3}{Local monodromy and compact triangle systems}}{55}{subsection.J.3}%
+\contentsline {subsection}{\tocsubsection {}{J.4}{CM degrees without an elliptic invariant}}{55}{subsection.J.4}%
+\contentsline {subsection}{\tocsubsection {}{J.5}{The period target belongs to the realization}}{56}{subsection.J.5}%
+\contentsline {subsection}{\tocsubsection {}{J.6}{The exact role of the construction theorems}}{57}{subsection.J.6}%
+\contentsline {section}{\tocsection {Appendix}{K}{Two certificate mechanisms}}{58}{appendix.K}%
+\contentsline {subsection}{\tocsubsection {}{K.1}{An explicit exclusion for two rationally proportional multipliers}}{58}{subsection.K.1}%
+\contentsline {subsection}{\tocsubsection {}{K.2}{Complete converses within two rational-certificate families}}{61}{subsection.K.2}%
+\contentsline {section}{\tocsection {Appendix}{L}{Finite exclusions and a modular-jet family}}{64}{appendix.L}%
+\contentsline {subsection}{\tocsubsection {}{L.1}{Certified finite exclusion in the level-four family}}{64}{subsection.L.1}%
+\contentsline {subsection}{\tocsubsection {}{L.2}{Additional exact finite searches}}{65}{subsection.L.2}%
+\contentsline {subsection}{\tocsubsection {}{L.3}{An explicit non-CM test family and an exact infinite exclusion}}{66}{subsection.L.3}%
+\contentsline {section}{\tocsection {Appendix}{}{Disclosure of AI assistance}}{67}{section*.4}%
+\contentsline {section}{\tocsection {Appendix}{}{References}}{68}{section*.5}%

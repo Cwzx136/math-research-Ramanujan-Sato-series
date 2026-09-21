@@ -1,0 +1,471 @@
+\section{Arithmetic realizations of the identity line}
+\label{sec:weighted-cartier-criterion}\label{sec:prime-tests}
+
+The coefficient line has a second realization in characteristic $p$.
+The resulting criterion is unconditional, but its hypothesis concerns
+reductions at primes.  We shall keep this hypothesis separate from the
+complex period relation.
+
+\subsection{From a finite polynomial to a de Rham line}
+For $s\in\{1/6,1/4,1/3,1/2\}$ and $p>3$, put
+\[
+ U_p(x)=\sum_{n<p}\frac{(s)_n(1-s)_n}{(n!)^2}x^n,
+ \qquad T_p(z)=\sum_{n<p}c_s(n)z^n,
+ \qquad W_p(z)=(A+B\thetaop)T_p(z).
+\]
+Thus $W_p$ is the canonical truncation of the proposed identity.
+Let $z=4x(1-x)$, write $\Omega=dX/y$ on the standard elliptic
+model, and put
+\[
+ Q(x)=\frac{2x(1-x)}{1-2x},\qquad
+ \nu_{A,B}=A\Omega+BQ(x)\nabla_x\Omega\in H_x,
+ \qquad H_x=H^1_{\mathrm{dR}}(E_{s,x}).
+\]
+We exclude finitely many primes at which the parameter, this basis,
+or a specified nonzero coefficient fails to be integral or a unit.
+All subsequent density statements are insensitive to these exclusions.
+
+The precise unconditional polynomial input from
+\cite[\S7, equation (7.4) and Lemma 7.2]{BRSTT} is
+\begin{equation}\label{eq:finite-clausen-p2}
+ T_p(4x(1-x))\equiv U_p(x)^2\pmod{p^2\Z_p[x]}.
+\end{equation}
+Differentiating this identity gives, after specialization away from
+$1-2x=0$,
+\begin{equation}\label{eq:cartier-weighted-factorization}
+ W_p(z)\equiv U_p(x)\bigl(AU_p(x)+BQ(x)U_p'(x)\bigr)
+                                                   \pmod{p^2}.
+\end{equation}
+In particular, this assertion makes no CM assumption.  The source's
+CM supercongruence is a different result; its hypothesis and first-order
+term are recorded in Appendix~\ref{subsec:precision-versus-transfer}.
+
+\begin{lemma}[The Cartier realization]
+\label{lem:cartier-hypergeometric-bridge}
+Let $k$ be a perfect residue field at a good place, with
+$x(1-x)(1-2x)\ne0$.  The reduction is ordinary if and only if
+$U_p(x)\ne0$.  In that case, for $B\ne0$ in $k$,
+\begin{equation}\label{eq:rev:cartier-line}
+ W_p(z)=0
+ \quad\Longleftrightarrow\quad
+ k\nu_{A,B}=\ker(\operatorname{Cartier})
+             =\operatorname{im}(F\bmod p).
+\end{equation}
+The displayed line is the unique Frobenius-stable complement to the
+Hodge line $F^1H_x$.  These statements hold over every perfect residue
+field, including quadratic extensions of $\mathbf F_p$.
+\end{lemma}
+\begin{proof}
+The Hasse invariant in our differential normalization is
+$(-6)^{(p-1)/2}U_p(x)$.  More generally, Cartier evaluation of
+$\nu_{A,B}$ is, up to this fixed nonzero factor and the Frobenius
+twist, the linear functional
+\[
+             (A,B)\longmapsto AU_p(x)+BQ(x)U_p'(x).
+\]
+The normalization and its compatibility with Gauss--Manin differentiation
+are proved in Appendix~\ref{rev:cartier-calculation}.  Conceptually,
+this calculation identifies the top row of the diagram
+\[
+\begin{tikzcd}[column sep=large]
+ k^2 \arrow[r,"{(A,B)\mapsto\nu_{A,B}}"]
+       \arrow[dr,swap,"(AU_p+BQU_p')^{1/p}"]
+   & H_x \arrow[d,"\operatorname{Cartier}"]\\
+   & H^0(E_{s,x},\Omega^1)^{(p)},
+\end{tikzcd}
+\]
+after rescaling its target basis by the fixed nonzero normalization.
+The diagonal map is semilinear, as is Cartier.
+The conjugate-filtration exact sequence is
+\begin{equation}\label{eq:rev:conjugate-sequence}
+ 0\longrightarrow H^1(E_{s,x},\mathcal O)^{(p)}
+ \xrightarrow{F}H_x
+ \xrightarrow{\operatorname{Cartier}}
+ H^0(E_{s,x},\Omega^1)^{(p)}\longrightarrow0.
+\end{equation}
+Its first image is a line.  Since the Gauss--Manin coefficient of
+$\Xi$ in $Q\nabla_x\Omega$ is nonzero, $\nu_{A,B}$ spans a
+complement to $F^1H_x$ when $B\ne0$.  At an ordinary fiber $U_p(x)$
+is a unit, so \eqref{eq:cartier-weighted-factorization} identifies
+its vanishing with the kernel in \eqref{eq:rev:conjugate-sequence}.
+Finally $F\bmod p$ kills the Hodge line and has rank one.  A stable
+complement must therefore equal its image; at an ordinary fiber that
+image is indeed a complement.
+\end{proof}
+
+At a supersingular fiber the first factor in
+\eqref{eq:cartier-weighted-factorization} vanishes for every pair
+$(A,B)$.  Such zeros do not assert stability of a complementary line.
+This distinction determines the density argument.
+
+\subsection{Algebraization and the density of stable complements}
+\label{subsec:B-tang-packet}\label{subsec:B-hodge-complements}
+For a number field $K$ and a set $M$ of finite places, define
+\begin{equation}\label{eq:rev:weighted-density}
+ d_K(M;X)=
+ \frac{\displaystyle\sum_{\substack{v\in M\\p_v\le X}}
+ [K_v:\Q_{p_v}]\frac{\log p_v}{p_v-1}}
+ {[K:\Q]\displaystyle\sum_{p\le X}\frac{\log p}{p-1}},
+ \qquad
+ \underline d_K(M)=\liminf_Xd_K(M;X),\quad
+ \overline d_K(M)=\limsup_Xd_K(M;X).
+\end{equation}
+Here $p_v$ is the rational residue characteristic, not the norm of
+$v$.  Finite sets have density zero, and
+\begin{equation}\label{eq:B-density-complement}
+               \underline d_K(M)=1-\overline d_K(M^c).
+\end{equation}
+
+\begin{theorem}[Tang's algebraization inequality]
+\label{thm:B-Tang-external}
+Let $X/K$ be a geometrically irreducible quasi-projective variety of
+dimension $N$, let $P\in X(K)$, and let $\mathcal D\subset T_X$
+be an involutive subbundle of rank $d$.  Suppose that its smooth
+formal leaf through $P$ is Zariski dense.  For every embedding
+$\sigma:K\hookrightarrow\mathbb C$, assume a holomorphic map
+$\gamma_\sigma:\mathbb C^d\to X_\sigma(\mathbb C)$ takes zero
+to $P_\sigma$ and induces that leaf germ biholomorphically.
+Suppose these maps have finite Nevanlinna orders $\rho_\sigma$,
+and put $\rho=\max_\sigma\rho_\sigma$.
+
+Spread these data over $\mathcal O_K[1/n]$.  Let $M_{\mathrm{bad}}$
+be the places where the reduced distribution is not closed under
+restricted $p_v$th powers, and put
+$\alpha_{\mathrm{bad}}=\overline d_K(M_{\mathrm{bad}})$.
+Then either $N=d$, or
+\begin{equation}\label{eq:B-Tang-inequality}
+                  1\le\frac{N}{N-d}\rho\alpha_{\mathrm{bad}}.
+\end{equation}
+\end{theorem}
+This is the quantitative form of
+\cite[\S\S5.1.1--5.1.4 and Theorem 5.1.5]{Tang}.  The order is
+computed using an ample Hermitian line bundle on a projective
+compactification; the needed normalization is given in
+Appendix~\ref{subsec:B-growth-sharp}.  The use of an upper density
+for the bad places is essential.
+
+\begin{lemma}[Naturality of the density]
+\label{lem:B-density-transport}
+For a finite extension $K'/K$, let $M'$ consist of all places above
+$M$.  Then $d_{K'}(M';X)=d_K(M;X)$.  If $M$ contains every place
+above a set $S$ of rational primes of lower natural density $\delta$,
+apart from finitely many exceptions, then
+$\underline d_K(M)\ge\delta$.
+\end{lemma}
+\begin{proof}
+The first assertion is the local degree formula
+\[
+ \sum_{w\mid v}[K'_w:\Q_{p_v}]
+            =[K':K][K_v:\Q_{p_v}].
+\]
+For the second, sum the local degrees over each rational prime and
+apply partial summation to the positive decreasing weight
+$w(t)=\log t/(t-1)$.  The bound
+$\#\{p\le t:p\in S\}\ge(\delta-\epsilon)\pi(t)$, valid for
+large $t$, gives the corresponding weighted bound up to a constant.
+Division by $\sum_{p\le X}w(p)\sim\log X$ and then
+$\epsilon\downarrow0$ proves the assertion.
+\end{proof}
+Thus all places over an admitted rational prime must be retained.
+For instance, an inert prime in a quadratic field contributes its
+full weight here, although its prime ideal has norm $p^2$ and the
+set of such prime ideals has Dirichlet density zero.
+
+\begin{theorem}[An algebraic complement cannot be too often stable]
+\label{thm:B-complement-general}\label{lem:complement-density-bound}
+\label{lem:B-full-complement-dense}
+Let $A/K$ be an abelian variety of positive dimension and let
+$W\subset H^1_{\mathrm{dR}}(A/K)$ be a $K$-linear complement to
+$F^1H^1_{\mathrm{dR}}(A/K)$.  Let $M_W$ be the good places where
+its reduction is stable under crystalline Frobenius modulo the
+residue characteristic.  Then
+\begin{equation}\label{eq:B-complement-density}
+                         \underline d_K(M_W)\le\frac34.
+\end{equation}
+No simplicity or non-CM assumption is needed.
+\end{theorem}
+\begin{proof}
+Let $g=\dim A$ and let $G=\mathcal E(A^\vee)$ be the universal
+vector extension.  Its defining sequence realizes the Hodge
+filtration as tangent spaces:
+\begin{equation}\label{eq:rev:universal-extension-diagram}
+\begin{tikzcd}[column sep=small]
+ 0\arrow[r]&V\arrow[r]\arrow[d,phantom,"\scriptstyle\operatorname{Lie}" description]
+ &G\arrow[r]\arrow[d,phantom,"\scriptstyle\operatorname{Lie}" description]
+ &A^\vee\arrow[r]\arrow[d,phantom,"\scriptstyle\operatorname{Lie}" description]&0\\
+ 0\arrow[r]&F^1H^1_{\mathrm{dR}}(A)\arrow[r]
+ &H^1_{\mathrm{dR}}(A)\arrow[r]&H^1(A,\mathcal O_A)\arrow[r]&0.
+\end{tikzcd}
+\end{equation}
+At good places this identification is integral, and the restricted
+$p$th power on $\operatorname{Lie}G$ is crystalline Frobenius
+modulo $p$; these are the comparison facts used in
+\cite[proof of Theorem 2.3.5 and Lemma 5.2.6]{Tang}.
+
+The exponential leaf of $W$ is Zariski dense in $G$.  Indeed, let
+$H$ be its connected algebraic closure and $U=H\cap V$.
+Surjectivity on tangent spaces shows that $H\to A^\vee$ is
+surjective.  A subgroup of a vector group in characteristic zero
+is a vector group, so $H/U\simeq A^\vee$ splits the quotient
+extension $G/U$.  On extension classes this would make zero the
+restriction
+\[
+ (V/U)^*\lhook\joinrel\longrightarrow V^*
+       \xrightarrow{\ \sim\ }H^1(A^\vee,\mathcal O_{A^\vee}).
+\]
+The last map is the universal extension class.  Its injectivity
+forces $U=V$, and hence $H=G$.
+
+Translation of $W$ now defines a rank-$g$ involutive distribution
+on the $2g$-dimensional group $G$.  At every complex embedding
+its exponential uniformization has order at most two, by the
+commutative-group estimate in
+\cite[proof of Proposition 2.3.4, footnote 20]{Tang}.
+Restricted-power stability of this distribution is precisely the
+condition defining $M_W$.  Theorem~\ref{thm:B-Tang-external}
+therefore gives
+\[
+ 1\le\frac{2g}{g}\rho\,\overline d_K(M_W^c)
+                \le4\overline d_K(M_W^c).
+\]
+Equation~\eqref{eq:B-density-complement} finishes the proof.
+\end{proof}
+
+\subsection{The arithmetic classification}
+\label{subsec:B-Tang-application}
+We need one Galois-theoretic input that counts rational primes,
+including those of higher residue degree.
+
+\begin{theorem}[Supersingular density for $\Q$-curves]
+\label{thm:B-qcurve-density}\label{lem:qcurve-density}
+Let $E$ over a number field be geometrically isogenous to every
+Galois conjugate.  Outside finitely many rational primes,
+supersingularity is independent of the place above the rational
+prime.  Its rational-prime set has natural density zero if $E$ is
+non-CM, and density $1/2$ if $E$ is CM.
+\end{theorem}
+\begin{proof}
+For non-CM $E$, the one-dimensional rational spaces of isogenies
+between its conjugates assemble its Tate representation into a
+projective representation of $G_\Q$.  Serre's open image theorem
+\cite{Serre} makes every sufficiently large residual image contain
+$\operatorname{PSL}_2(\mathbf F_\lambda)$.  At a supersingular
+rational prime its projective Frobenius has bounded order, with a
+bound depending only on a fixed Galois field of definition.
+Elements of bounded order have proportion $O(1/\lambda)$ in these
+images.  Chebotarev, followed by $\lambda\to\infty$, gives
+density zero.  Appendix~\ref{rev:qcurve-proof} proves both the
+projective construction and the uniform order bound, so this
+argument includes primes of higher residue degree.
+
+In the CM case, Deuring's reduction theorem \cite{Deuring} says
+that good rational primes unramified in the CM field are
+supersingular exactly when inert in that imaginary quadratic
+field.  Their density is $1/2$ by Chebotarev.  Specialization of
+the isogenies shows independence of the place in both cases.
+\end{proof}
+
+\begin{theorem}[Weighted-density CM criterion]
+\label{thm:weighted-density-cm}
+Let $z\in\Q\setminus\{0,1\}$, let
+$x=(1-\sqrt{1-z})/2$, and let $(A,B)\in\Q^2\setminus\{0\}$.
+If
+\[
+       \underline\delta\{p:W_p(z)\equiv0\pmod p\}>\frac34,
+\]
+then $E_{s,x}$ has CM.  In particular it suffices that the
+congruence hold at all but finitely many ordinary rational primes.
+\end{theorem}
+\begin{proof}
+Suppose $E_{s,x}$ is non-CM.  The standard modular correspondences
+make it a $\Q$-curve over $K=\Q(x)$, so its supersingular rational
+primes have density zero by Theorem~\ref{thm:B-qcurve-density}.
+If $B=0$, \eqref{eq:cartier-weighted-factorization} excludes every
+ordinary zero outside a finite set.  If $B\ne0$, the fixed line
+$K\nu_{A,B}$ complements the Hodge line.  At every admitted
+ordinary rational prime, Lemma~\ref{lem:cartier-hypergeometric-bridge}
+makes it Frobenius-stable at \emph{every} place of $K$ above that
+prime.  Indeed $W_p(z)$ is rational, and the same polynomial
+calculation applies at both conjugate parameters and over their
+residue fields.  Lemma~\ref{lem:B-density-transport} consequently
+gives lower weighted-place density greater than $3/4$, contrary to
+Theorem~\ref{thm:B-complement-general}.  If all but finitely many
+ordinary primes are admitted, the non-CM supposition gives density
+one and the same contradiction.
+\end{proof}
+
+\begin{proposition}[The CM density dichotomy]
+\label{prop:cm-weighted-slope}
+Suppose $E_{s,x}$ has CM, and denote its complementary CM eigenline
+by $L_x^{\mathrm{CM}}$, as in \eqref{eq:cm-canonical-splitting}.
+For every fixed nonzero rational pair $(A,B)$,
+\[
+ \delta\{p:W_p(z)=0\bmod p\}=
+ \begin{cases}
+ 1,&K\nu_{A,B}=L_x^{\mathrm{CM}},\\
+ 1/2,&K\nu_{A,B}\ne L_x^{\mathrm{CM}}.
+ \end{cases}
+\]
+In the first case the zero set is cofinite; in the second its
+ordinary part is finite.
+\end{proposition}
+\begin{proof}
+The companion eigenline descends to $K$ because Galois preserves
+the pair of CM eigenspaces and fixes the Hodge line.  At an
+ordinary prime $p$, the CM field splits.  Its two eigenvalues lie
+in $\Q_p$ and are fixed by coefficient Frobenius; functoriality
+therefore makes crystalline Frobenius preserve both eigenlines.
+Modulo $p$ it kills the Hodge line and has rank one, whence
+\[
+                  \operatorname{im}(F\bmod p)
+                          =L_x^{\mathrm{CM}}\bmod p.
+\]
+The equality descends from a field defining the CM action.  Thus
+the Cartier criterion identifies ordinary weighted zeros with
+equality of the reductions of $K\nu_{A,B}$ and
+$L_x^{\mathrm{CM}}$.  Distinct algebraic lines have distinct
+reductions outside finitely many places: their exterior product
+is nonzero and has only finitely many prime divisors.  At every
+supersingular prime the Hasse factor $U_p(x)$ vanishes, so every
+pair gives a weighted zero.  Deuring's density $1/2$ proves all
+assertions, including the case $B=0$.
+\end{proof}
+
+\begin{theorem}[Arithmetic classification of primitive rows]
+\label{thm:weighted-row-classification}
+Fix $\ell\in\{1,2,3,4\}$.  Among integer triples with
+$\gcd(A,B)=1$, $|C|\ge R_\ell$ and
+$C\ne R_\ell$, the following conditions are equivalent:
+\begin{enumerate}
+\item the lower natural density of
+ $\{p:W_p(R_\ell/C)\equiv0\pmod p\}$ is greater than $3/4$;
+\item this set of primes is cofinite;
+\item up to simultaneous sign of $A,B$, the triple is one of the
+ standard rows at level $\ell$ in Section~\ref{sec:standard}.
+\end{enumerate}
+\end{theorem}
+\begin{proof}
+The first condition forces CM.  The finite classification in
+Section~\ref{sec:enumeration} leaves the tabulated parameters.
+At each parameter Proposition~\ref{prop:cm-weighted-slope}
+selects exactly the complementary CM eigenline, which is the
+complex identity line by Proposition~\ref{prop:cm-matrix-certificate}
+and projective uniqueness.  Thus the first condition gives the
+third, and the third gives the second.  The remaining implication
+is immediate.
+\end{proof}
+Consequently, on the original convergence domain, CM forcing is
+equivalent to the assertion that every complex identity has
+weighted-zero lower density greater than $3/4$.  The arithmetic
+criterion describes the missing comparison statement; it does
+not prove that statement.
+
+\subsection{An exact comparison at one ordinary prime}
+\label{sec:one-prime-c}
+There is a second arithmetic endpoint: exact preservation of the
+characteristic-zero Hodge line by a single ordinary Frobenius
+already characterizes CM.
+
+\begin{theorem}[One-prime CM criterion]\label{thm:one-prime-c}
+Let $E/K$ be an elliptic curve over a number field and let $v\mid p$
+be a place of good ordinary reduction.  Write $L=K_v$, let
+$k=\mathbf F_{p^f}$ be its residue field, and put
+\[
+ K_0=\operatorname{Frac}W(k),\qquad
+ D=H^1_{\mathrm{cris}}(E_k/W(k))[1/p],\qquad\Phi=\varphi^f.
+\]
+Through crystalline--de Rham comparison, extend the $K_0$-linear
+endomorphism $\Phi$ to $H=H^1_{\mathrm{dR}}(E/L)$.  Then
+\[
+ E\text{ has geometric CM}
+ \quad\Longleftrightarrow\quad
+                    \Phi(F^1H)\subseteq F^1H.
+\]
+This formulation allows $L/K_0$ to be ramified and selects no
+Frobenius lift on $L$.
+\end{theorem}
+\begin{proof}
+We use the $p$-adic Lefschetz theorem in the following precise form
+\cite[Theorem 4.24]{MaulikPoonen}.  Let $\mathcal X$ be a smooth
+proper $p$-adic formal scheme over the valuation ring of a complete
+discretely valued characteristic-zero field with perfect residue
+field.  A line bundle $\mathcal L_0$ on its special fiber has some
+tensor power $\mathcal L_0^{\otimes p^m}$ lifting to
+$\mathcal X$ if and only if its crystalline Chern class, transported
+to de Rham cohomology, belongs to $F^1H^2_{\mathrm{dR}}(\mathcal X)$.
+Ramification is permitted.
+
+Let $\mathcal E/\mathcal O_L$ be the good model and let
+$\pi_q:E_k\to E_k$ be $q$-power Frobenius, $q=p^f$.
+Its graph is the divisor
+$\Gamma=(\pi_q,-1)^*\{0\}$ on $E_k\times E_k$.
+The polarization identifies the mixed K\"unneth component of
+$c_1(\mathcal O(\Gamma))$ with the crystalline action of
+$\pi_q$, namely $\Phi$.  Under this identification the obstruction
+to the graph class lying in $F^1$ is exactly the map
+\begin{equation}\label{eq:rev:frobenius-obstruction}
+                 F^1H\xrightarrow{\ \Phi\ }H
+                           \longrightarrow H/F^1H.
+\end{equation}
+Indeed the polarization gives $F^1H\simeq(H/F^1H)^*$ after
+trivializing the one-dimensional determinant.  Projection of the
+correspondence tensor to $(H/F^1H)^{\otimes2}$ is consequently
+the same obstruction.  The two unmixed K\"unneth components
+are divisor classes on the factors and already lie in $F^1$.
+
+If \eqref{eq:rev:frobenius-obstruction} vanishes, the quoted
+Lefschetz theorem lifts $\mathcal O(\Gamma)^{\otimes p^m}$
+to the formal completion of $\mathcal E\times\mathcal E$.
+Formal GAGA algebraizes the lift to a line bundle $\mathcal L$
+\cite[Example 4.5(b)]{MaulikPoonen}.  For a line bundle on a
+product of principally polarized elliptic curves, the negative
+off-diagonal block of its associated homomorphism to the dual
+is an endomorphism.  This construction is additive in the line
+bundle and commutes with base change:
+\[
+\begin{tikzcd}[column sep=large]
+ \operatorname{Pic}(\mathcal E\times\mathcal E)
+      \arrow[r,"\text{correspondence}"]\arrow[d,"\mathrm{sp}"']
+   &\operatorname{End}(\mathcal E)\arrow[d,"\mathrm{sp}"]\\
+ \operatorname{Pic}(E_k\times E_k)
+      \arrow[r,"\text{correspondence}"']
+   &\operatorname{End}(E_k).
+\end{tikzcd}
+\]
+For the graph divisor its value is $\pi_q$; hence $\mathcal L$
+gives an endomorphism $u$ specializing to $[p^m]\pi_q$.
+Ordinary Frobenius has eigenvalue valuations $0,f$, so this
+specialization is nonscalar.  A scalar generic endomorphism would
+specialize to multiplication by an integer, which has equal
+valuations on both eigenvalues.  Thus $u$ is nonscalar.  Geometric
+homomorphism groups of abelian varieties are unchanged by extension
+of algebraically closed fields; consequently $E_{\overline K}$
+has a nonscalar endomorphism and has CM.
+
+Conversely, suppose $E$ has CM.  After a finite local extension,
+all its geometric endomorphisms extend to the good model.
+Specialization embeds its rational geometric endomorphism algebra
+in that of the ordinary special fiber.  Both are imaginary
+quadratic fields, so the embedding is an isomorphism.  Thus
+$\pi_q$ is the specialization of a characteristic-zero
+quasiendomorphism.  Its action preserves the Hodge filtration,
+and crystalline--de Rham comparison is functorial for this action
+\cite[Theorem 4.21]{MaulikPoonen}.  The vanishing of
+\eqref{eq:rev:frobenius-obstruction} descends from that extension
+to $L$.
+\end{proof}
+
+\begin{remark}\label{rem:one-prime-scope-c}
+The lifting argument applies to any special-fiber endomorphism
+whose crystalline action preserves the characteristic-zero Hodge
+filtration.  Ordinarity guarantees that Frobenius is nonscalar;
+at supersingular reduction a power of Frobenius can be scalar
+even for a non-CM characteristic-zero curve.  Furthermore,
+stability of the complementary line modulo $p$ in
+Lemma~\ref{lem:cartier-hypergeometric-bridge} is a different
+condition from exact stability of the Hodge line here.
+Appendix~\ref{prop:one-prime-precision-c} shows that no fixed
+finite precision substitutes for exactness.  No implication
+from the original complex scalar identity to this exact
+Frobenius condition is established.
+\end{remark}

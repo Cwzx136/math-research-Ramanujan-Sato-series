@@ -1,0 +1,56 @@
+\section{The finite CM certificate and the identity tables}
+\label{app:cm-certificate}
+
+The arithmetic theorem reduces enumeration to orders of class number at
+most two. This appendix specifies the resulting finite certificate.
+For an order of discriminant $D$, let $H_D$ be its monic ring class
+polynomial. At levels two and three write
+\[
+ P_\ell(J,C)=J^2-T_\ell(C)J+N_\ell(C).
+\]
+If $h(D)=2$, irreducibility gives the particularly short test
+\[
+ P_\ell(J,C)=H_D(J)
+ \quad\Longleftrightarrow\quad
+ T_\ell(C)=\operatorname{Tr}(j_D),\quad
+ N_\ell(C)=\operatorname{Nm}(j_D).
+\]
+Thus equality of two degree-two characteristic polynomials replaces
+expanded resultant calculations. For $h(D)=1$, substitution of its
+integer root gives the corresponding one-variable test. Exact
+factorization, rather than a bound on the size of $C$, exhausts their
+integer solutions.
+
+The conductor verification and defining correspondences are stated in
+Section~\ref{sec:enumeration}. Its finite scan gives exactly
+\begin{align*}
+\mathcal D_1={}&\{-3,-4,-7,-8,-11,-12,-16,-19,-27,-28,-43,-67,-163\},\\
+\mathcal D_2={}&\{-15,-20,-24,-32,-35,-36,-40,-48,-51,-52,-60,-64,\\
+&-72,-75,-88,-91,-99,-100,-112,-115,-123,-147,-148,\\
+&-187,-232,-235,-267,-403,-427\}.
+\end{align*}
+Here $\mathcal D_i$ denotes the discriminants of orders with class number
+$i$. Nonmaximal orders are included.
+The executed certificate uses Arb complex intervals to certify the
+integer class-polynomial coefficients and independently compares them
+with PARI. It checks the integer roots both by exact factorization and
+by resultants. These computations certify the finite algebraic step;
+the period and modular arguments prove the evaluations.
+
+\input{verified/cm_summary.tex}
+
+\subsection{Standard classes}
+The nome and its parameter $N$ use the convention in
+\eqref{eq:alpha}. We choose $B>0$. Every row is ordinarily convergent;
+the row $C=-64$ at level four is conditional, and all other rows are
+absolutely convergent.
+
+\input{revision/20260919/standard_tables.tex}
+
+\subsection{Linear Euler companions}
+The coefficient transport of Theorem~\ref{thm:euler} gives the following
+primitive representatives and signed multipliers. Its boundary argument
+is necessary: it is the reason that 36 standard classes give 35
+ordinary Euler classes.
+
+\input{revision/20260919/euler_tables.tex}

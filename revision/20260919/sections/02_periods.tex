@@ -1,0 +1,345 @@
+\section{Elliptic period squares}\label{sec:general-period-square}
+
+The distinction between existence and uniqueness becomes transparent in
+de Rham cohomology. A first-order identity selects a line in a
+two-dimensional algebraic space. Complex multiplication supplies that
+line; Chudnovsky's theorem makes it unique. The unproved converse asks
+whether the complex period pairing can select it in any other way.
+
+\subsection{The determinant and the first jet}
+Put $K=\Qbar$ and $\Pi=2\pi i$. Let $E\to X$ be a smooth elliptic
+family over a smooth algebraic curve over $K$, and write
+\[
+ \mathcal H=H^1_{\mathrm{dR}}(E/X),\qquad
+ \mathcal L=f_*\Omega^1_{E/X}\subset\mathcal H.
+\]
+Here $f:E\to X$ is the structure morphism. Choose a local algebraic
+frame $(\lambda,\mu)$ of $\mathcal H$, with $\lambda$ spanning
+$\mathcal L$ and normalized cup product $\langle\lambda,\mu\rangle=1$.
+At an algebraic fiber $P\in X(K)$, viewed over $\C$, the comparison
+isomorphism respects the determinant:
+\[
+\begin{tikzcd}[column sep=large]
+ \bigwedge^2 H^1_{\mathrm{dR}}(E_P)\otimes_K\C
+   \arrow[r,"\bigwedge^2\mathrm{comp}"]
+   \arrow[d,"{\langle\ ,\ \rangle}"']
+ &\bigwedge^2 H^1_B(E_P,\Q)\otimes_\Q\C
+   \arrow[d,"\mathrm{ev}_{\gamma_1\wedge\gamma_2}"]\\
+ \C\arrow[r,"\times\Pi"']&\C .
+\end{tikzcd}
+\]
+The oriented integral basis $(\gamma_1,\gamma_2)$ is chosen compatibly
+with this normalization. Thus the Legendre relation is
+\begin{equation}\label{eq:general-legendre}
+ \omega_1h_2-\omega_2h_1=\Pi,
+ \qquad \omega_j=\int_{\gamma_j}\lambda,\quad
+ h_j=\int_{\gamma_j}\mu.
+\end{equation}
+The determinant is a Tate period; an individual product $\omega h$
+need not be one.
+
+Let $D$ be an algebraic derivation, $\gamma$ a nonzero locally flat
+integral cycle, and $k$ a nonzero algebraic function. Suppose the
+analytic function under consideration has the realization
+\begin{equation}\label{eq:general-square}
+ H=k\frac{\omega^2}{\Pi^2},\qquad
+ \omega=\int_\gamma\lambda,\quad h=\int_\gamma\mu.
+\end{equation}
+Write
+\begin{equation}\label{eq:general-connection}
+ \nabla_D\lambda=p\lambda+q\mu,\qquad u=D\log k+2p.
+\end{equation}
+A specialization $P\in X(K)$ is \emph{admissible} if all these data
+are regular there and $k(P)q(P)\ne0$. The condition $q(P)\ne0$ says
+that the Kodaira--Spencer map evaluated on $D$ is nonzero. At such a
+point the coefficient map
+\begin{equation}\label{eq:general-coefficient-class}
+ \begin{gathered}
+ T_P:K^2\xrightarrow{\ \sim\ }\mathcal H_P,\qquad
+ (A,B)\longmapsto\nu_{A,B},\\
+ \nu_{A,B}=(A+B D\log k)\lambda+2B\nabla_D\lambda .
+ \end{gathered}
+\end{equation}
+is an isomorphism. Differentiating the period pairing gives
+\begin{equation}\label{eq:general-jet}
+ (A+BD)H(P)
+   =\frac{k\omega}{\Pi^2}\int_\gamma\nu_{A,B}
+   =\frac{k}{\Pi^2}\bigl((A+Bu)\omega^2+2Bq\omega h\bigr).
+\end{equation}
+All quantities in a fiber formula are henceforth evaluated at $P$.
+This construction is intrinsic: replacing $\lambda$ by $a\lambda$
+and $k$ by $k/a^2$ replaces $\nu_{A,B}$ by $a\nu_{A,B}$, leaving the
+period pairing and the selected line unchanged.
+
+\subsection{The transcendence input}
+\begin{theorem}[Chudnovsky]\label{thm:B-chudnovsky}
+Let $E/K$ be an elliptic curve, $(\lambda,\mu)$ an algebraic de Rham
+basis with $\lambda$ holomorphic, and $\gamma$ a nonzero integral
+cycle. Then
+\begin{equation}\label{eq:chudnovsky}
+ R=\frac h\omega,\qquad S=\frac\pi\omega
+ \quad\text{are algebraically independent over }K.
+\end{equation}
+\end{theorem}
+We specify the source and normalization, because the power of
+$\omega$ in this assertion is essential. For a Weierstrass equation
+$y^2=4X^3-g_2X-g_3$ over $K$, take $\lambda=dX/y$ and
+$\mu=X\,dX/y$. Uniformization gives $h_j=-\eta_j$, where $\eta_j$
+is the zeta quasi-period of the \emph{full} lattice period $\omega_j$.
+Consequently
+\begin{equation}\label{eq:B-legendre-convention}
+ \omega_2\eta_1-\omega_1\eta_2=2\pi i.
+\end{equation}
+Corollary~4 of \cite{Waldschmidt}, equivalently Corollary~31 of
+\cite[p.~166]{WaldschmidtSurvey}, gives precisely
+\eqref{eq:chudnovsky}. To see its origin in the elliptic-logarithm
+form of Chudnovsky's theorem, complete a primitive $\omega_1$ to a
+period basis and take the algebraic two-torsion point with logarithm
+$v=\omega_2/2$. Then $\wp(v)\in K$, $v$ and $\omega_1$ are
+$\Q$-linearly independent, and
+\[
+ \zeta(v)-\frac{\eta_1}{\omega_1}v
+   =\frac12\left(\eta_2-\frac{\eta_1\omega_2}{\omega_1}\right)
+   =-\frac{\pi i}{\omega_1}.
+\]
+This is the second independent quantity in the cited theorem.
+Replacing the Weierstrass basis by any algebraic basis as above
+changes $R$ by an invertible algebraic affine transformation and $S$
+by a nonzero algebraic factor. Multiplying the cycle by a nonzero
+integer only rescales $S$. These operations preserve algebraic
+independence. In particular,
+\begin{equation}\label{eq:general-ratio-transcendence}
+                         h/\omega\notin K.
+\end{equation}
+
+\subsection{The identity line}
+\begin{theorem}\label{thm:general-identity-line}
+At an admissible specialization let
+\[
+ \mathcal R_P=\{(A,B)\in K^2:(A+BD)H(P)\in K/\Pi\}.
+\]
+Then $\dim_K\mathcal R_P\le1$, and a nonzero coefficient pair never
+has value zero. If $E_P$ has CM, $\mathcal R_P$ is exactly the
+inverse image under $T_P$ of the CM eigenline complementary to
+$\mathcal L_P$. More explicitly, if that eigenline is
+$K(\mu-r\lambda)$, then
+\begin{equation}\label{eq:general-cm-slope}
+ \mathcal R_P=K\bigl(-(u+2qr),1\bigr).
+\end{equation}
+Thus a rational coefficient pair exists exactly when
+$u+2qr\in\Q$, and its primitive integer representative is unique
+up to sign.
+
+If $\Pi,\omega^2,\omega h$ are $K$-linearly independent at every
+admissible non-CM fiber in question, then
+$\mathcal R_P\ne0$ is equivalent to CM.
+\end{theorem}
+\begin{proof}
+The holomorphic period $\omega$ is nonzero: integration identifies
+integral homology with a lattice in $\C$. By
+\eqref{eq:general-ratio-transcendence}, evaluation on $\gamma$ is
+injective on the two-dimensional $K$-space $\mathcal H_P$.
+Equation~\eqref{eq:general-jet} and the isomorphism $T_P$ therefore
+make $(A,B)\mapsto(A+BD)H(P)$ injective. Its inverse image of the
+one-dimensional space $K/\Pi$ has dimension at most one.
+
+Suppose $E_P$ has CM. A nonreal endomorphism $\varphi$ has distinct
+algebraic eigenvalues $a,b$ on $\mathcal H_P$, with $a$ on the
+holomorphic line. Its other eigenline has the form
+$K\nu$, where $\nu=\mu-r\lambda$ and $r\in K$. The cycles
+$\gamma,\varphi_*\gamma$ are independent over $\Q$, since a
+rational dependence would make the nonreal eigenvalue $a$ rational.
+If their determinant in an oriented integral basis is
+$m\in\Z\setminus\{0\}$, compatibility of the endomorphism with
+the comparison isomorphism gives
+\begin{equation}\label{eq:general-cm-determinant}
+ (b-a)\omega\int_\gamma\nu=m\Pi,\qquad
+ c_P:=\frac{\omega(h-r\omega)}{\Pi}
+       =\frac{m}{b-a}\in K^\times.
+\end{equation}
+Hence the pair in \eqref{eq:general-cm-slope} has value
+$2kq c_P/\Pi\ne0$. Uniqueness identifies its line with all of
+$\mathcal R_P$. The rational and primitive assertions follow from
+its representative with second coordinate one.
+
+Finally a scalar identity is equivalent to
+\begin{equation}\label{eq:general-period-relation}
+ k(A+Bu)\omega^2+2kBq\omega h=\alpha\Pi.
+\end{equation}
+The two coefficients on the left cannot both vanish for a nonzero
+pair. The asserted independence therefore excludes a non-CM fiber.
+\end{proof}
+
+This last independence hypothesis is equivalent, at the specified
+fiber, to exclusion of \emph{all algebraic} coefficient identities:
+the triangular coefficient transformation in
+\eqref{eq:general-period-relation} is invertible. For the original
+problem only rational coefficient directions need be excluded. The
+distinction will be retained in the converse criteria below.
+
+\begin{corollary}[CM period independence]\label{prop:B-CM-independent}
+If $E/K$ has CM, every nonzero holomorphic period $\omega$ and
+$\pi$ are algebraically independent. For the corresponding
+second-kind period there are $c,d\in K$, $d\ne0$, such that
+\begin{equation}\label{eq:B-CM-quasiperiod}
+                        h=c\omega+d\frac\pi\omega.
+\end{equation}
+\end{corollary}
+\begin{proof}
+Equation~\eqref{eq:general-cm-determinant} gives this formula with
+$c=r$ and $d=2ic_P$. Consequently
+\[
+ K(\omega,\pi)=K(R,S),\qquad
+ \omega=\frac{dS}{R-c},\quad \pi=\frac{dS^2}{R-c}.
+\]
+Chudnovsky's theorem makes this field have transcendence degree two.
+This proves the exact CM consequence also stated in
+\cite[Corollary~6]{Waldschmidt} and
+\cite[Corollary~32]{WaldschmidtSurvey}; the algebraic discriminant
+factor in the former normalization does not affect the assertion.
+\end{proof}
+
+\subsection{The four standard realizations}\label{sec:families}
+The general construction becomes uniform after the quadratic change
+\begin{equation}\label{eq:clausen}
+ x=\frac{1-\sqrt{1-z}}2,\quad z=4x(1-x),\qquad
+ F_s(z)=f_s(x)^2,\quad f_s(x)={}_2F_1(s,1-s;1;x).
+\end{equation}
+The square root is nonnegative on $[-1,1]$. The equality follows
+from Clausen's identity and the Gauss quadratic transformation,
+first as analytic germs and then along this real interval.
+The models $E_{s,x}$ and their de Rham calculation are given in
+Appendix~\ref{rev:period-models}. With
+$\lambda=dX/y$ and $\mu=X\,dX/y$ they give the following common
+normalization.
+
+\begin{lemma}\label{lem:period}
+The cycle analytic at the nodal fiber $x=0$ has an orientation for
+which
+\begin{equation}\label{eq:normalization}
+ \omega_s(x)=\frac{2\pi}{\sqrt6}f_s(x),\qquad
+ F_s(z)=\frac{3\omega_s(x)^2}{2\pi^2}.
+\end{equation}
+For $z\in[-1,1)\setminus\{0\}$ the fiber is smooth and
+\begin{equation}\label{eq:logderivative}
+ \begin{gathered}
+ \frac{\thetaop F_s}{F_s}
+    =u_s+v_s\frac{h_s}{\omega_s},\\
+ u_s=-\frac{x(1-x)}{6(1-2x)}\frac{\Delta_s'}{\Delta_s},\quad
+ v_s=-\frac{\varepsilon_s}{3(1-2x)}\ne0,
+ \end{gathered}
+\end{equation}
+where $\varepsilon_s=1$ for $s=1/6,1/4,1/3$ and
+$\varepsilon_{1/2}=2$.
+\end{lemma}
+\begin{proof}
+The Gauss--Manin connection in Appendix~\ref{rev:period-models}
+shows that $\omega_s$ satisfies the Gauss equation
+\[
+ x(1-x)\omega_s''+(1-2x)\omega_s'-s(1-s)\omega_s=0.
+\]
+All four cubics specialize to $(X-1)(2X+1)^2$ at zero. The residue
+at the node on the normalization is $\pm1/\sqrt{-6}$; the small
+cycle therefore has limiting period $\pm2\pi/\sqrt6$.
+The Gauss equation has a unique analytic solution with this chosen
+positive value. This proves the first formula, and
+\eqref{eq:clausen} proves the second. The same connection and
+$\thetaop=x(1-x)(1-2x)^{-1}d/dx$ give
+\eqref{eq:logderivative}. Euler's integral for $f_s$ is positive
+for real $x<1$, so the period does not vanish on the interval in use.
+\end{proof}
+Thus $k=-6$, $D=\thetaop$, and $2q=v_s$ in the general theory.
+In particular its nondegeneracy hypothesis holds at every standard
+parameter below the positive endpoint.
+
+\subsection{Value independence and uniqueness}\label{sec:unique}
+\begin{theorem}\label{thm:B-value-independent}
+For algebraic $z\in[-1,1)\setminus\{0\}$ the two values
+$F_s(z),\thetaop F_s(z)$ are algebraically independent over $K$.
+If $q_0=e^{2\pi i\tau}$ is the nome obtained by completing the
+selected primitive cycle to an oriented period basis, then
+$q_0,F_s(z),\thetaop F_s(z)$ are algebraically independent.
+\end{theorem}
+\begin{proof}
+Put $F=F_s(z)$ and $G=\thetaop F_s(z)$. Equations
+\eqref{eq:normalization} and \eqref{eq:logderivative} give
+\[
+ F=\frac3{2S^2},\qquad G=F(u_s+v_sR),\qquad
+ K(F,G)=K(R,S^2).
+\]
+The last field has transcendence degree two by Chudnovsky's theorem.
+
+For the nome statement use the full conclusion of Nesterenko's
+theorem, in \cite[Theorem~1.1]{Fonseca}:
+\[
+ \operatorname{trdeg}_K K(q_0,E_2(\tau),E_4(\tau),E_6(\tau))\ge3.
+\]
+The period formulas in \cite[Proposition~4.7]{Fonseca}, in our
+second-kind convention, are
+\[
+ E_2=-2FR,\qquad E_4=\frac{g_2}{3}F^2,\qquad E_6=g_3F^3.
+\]
+They place this field inside $K(q_0,F,G)$, a field with three
+generators. Its transcendence degree is therefore three. If the
+chosen cycle is an integer multiple of a primitive cycle, passing
+to that primitive cycle changes these formulas only by nonzero
+algebraic scaling factors and gives the same conclusion.
+\end{proof}
+
+\begin{corollary}\label{prop:B-relation-space}
+At every such parameter the space
+\[
+ \{(A,B,\alpha)\in K^3:AF_s(z)+B\thetaop F_s(z)=\alpha/\pi\}
+\]
+has dimension at most one, and its nonzero elements have
+$\alpha\ne0$. In particular there is at most one primitive integer
+pair up to sign, and
+\begin{equation}\label{eq:translog}
+                    \thetaop F_s(z)/F_s(z)\notin K.
+\end{equation}
+\end{corollary}
+\begin{proof}
+Theorem~\ref{thm:general-identity-line} gives the assertion; the
+multiplier is uniquely determined by the coefficient pair. Equivalently,
+linear independence of $F_s$ and $\thetaop F_s$ makes projection onto
+the $\alpha$ coordinate injective on the displayed relation space.
+\end{proof}
+
+\subsection{Ordinary convergence and the endpoint}\label{sec:endpoint}
+Stirling's formula gives
+\begin{equation}\label{eq:asymptotic}
+ c_s(n)\sim
+ \frac{n^{-3/2}}{\Gamma(1/2)\Gamma(s)\Gamma(1-s)}.
+\end{equation}
+For a nonzero pair $(A,B)$, the series is absolutely convergent for
+$|z|<1$ and divergent for $|z|>1$. At $z=1$ it converges precisely
+when $B=0$. At $z=-1$ the $A$ part converges absolutely, while the
+$B$ part, if present, converges conditionally: the positive sequence
+$nc_s(n)$ tends to zero and its successive ratio is
+$1-1/(2n)+O(n^{-2})$. Abel's theorem identifies this sum with the
+radial value used above.
+
+\begin{proposition}
+No nonzero algebraic coefficient pair gives an ordinarily convergent
+value in $K/\pi$ at $z=1$.
+\end{proposition}
+\begin{proof}
+Only $B=0$ is possible. The four smooth endpoint fibers have
+$j$-invariants $1728,8000,54000,1728$, respectively, and all have
+CM. One may verify this directly: $j=1728$ has an order-four
+automorphism; $y^2=x^3+4x^2+2x$, of invariant $8000$, is
+2-isogenous to an algebraically isomorphic curve; and the
+invariant $54000$ occurs on a curve 2-isogenous to $y^2=x^3+1$.
+The isogenies are recorded in Appendix~\ref{rev:period-models}.
+Corollary~\ref{prop:B-CM-independent} makes $\omega_s(1/2)$ and
+$\pi$ algebraically independent. But a nonzero identity at this
+endpoint would make
+$\pi F_s(1)=3\omega_s(1/2)^2/(2\pi)$ algebraic, a contradiction.
+\end{proof}
+
+The endpoint proposition and Corollary~\ref{prop:B-relation-space}
+prove projective uniqueness throughout the ordinary convergence
+range. They do not turn the independence of $h/\omega$ and
+$\pi/\omega$ into independence of $\pi,\omega^2,\omega h$.
+The latter is precisely the additional comparison required for CM
+forcing.

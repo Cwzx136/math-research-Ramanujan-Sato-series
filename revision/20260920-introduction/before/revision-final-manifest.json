@@ -1,0 +1,179 @@
+{
+  "completed_at": "2026-09-20T09:39:32.0569734+08:00",
+  "title": "Ramanujan--Sato identities: period lines and arithmetic CM criteria",
+  "author": "ZiXian Chang-Wang",
+  "original_pages": 118,
+  "revised_pages": 68,
+  "main_text_pages": 22,
+  "appendices_start_page": 23,
+  "source_manifest": {
+    "path": "revision\\20260919\\static-check.json",
+    "sha256": "4A7830C41BE6CCA6D58EE7A395D5C08590916DDD3DE249EBE4A1DAE7BDB257E6",
+    "matched_inputs": 21
+  },
+  "inputs": [
+    {
+      "path": "paper_revised.tex",
+      "sha256": "6DB61F39088A9DA00BEEBC15C9C0F99907E1897EE23F8B5E29A92AA2B4EF7508"
+    },
+    {
+      "path": "revision\\20260919\\sections\\introduction.tex",
+      "sha256": "B6A0EDB12F9BEF92159CE45E67F31F4244C6652BF2163596DBC2C0C262362A5B"
+    },
+    {
+      "path": "revision\\20260919\\sections\\02_periods.tex",
+      "sha256": "A13A6E4819A5E38DFD31752BE0C0A537301C6827A876E2003638C3E5AE4B4642"
+    },
+    {
+      "path": "revision\\20260919\\sections\\comparison.tex",
+      "sha256": "40CD6A4FD8BF43D70D9239E0C587450BBBC6EC1F31372922926C3D268F4EF4CF"
+    },
+    {
+      "path": "revision\\20260919\\sections\\classification.tex",
+      "sha256": "B0B67BB6FD28E41F73DE7A7584FB59B557A5AB1391622F5E83F83DDD907EA175"
+    },
+    {
+      "path": "revision\\20260919\\sections\\arithmetic.tex",
+      "sha256": "0E8C2AFDBF35E1EEB399EF6B3D756AB57FF7620B8032291CD262D0949A76E015"
+    },
+    {
+      "path": "revision\\20260919\\sections\\scarcity.tex",
+      "sha256": "0D2751E517F20FBCD28BAAF213F6B9550F7424B50AF156C1B67D7EB7C072B26D"
+    },
+    {
+      "path": "revision\\20260919\\appendices\\period_models.tex",
+      "sha256": "5508AAE3A3EF0B040ECB5DFCD2C8479648BCADB6781D22CFCCB91221951A0921"
+    },
+    {
+      "path": "revision\\20260919\\appendices\\cm_certificates.tex",
+      "sha256": "514126D42E9C8172DB07B6BB77249AE0C14DA528F83EC144601C5D879D6CADAD"
+    },
+    {
+      "path": "verified\\cm_summary.tex",
+      "sha256": "E949E3ED5113A911A7E0359F908FE1DCC7B2DBC1B170F34EC44940ADC8802259"
+    },
+    {
+      "path": "revision\\20260919\\standard_tables.tex",
+      "sha256": "365E0E9710B0ABD80A6763954A50AA4D2FAFA72F33008F938E9A07DDCFD78CCD"
+    },
+    {
+      "path": "revision\\20260919\\euler_tables.tex",
+      "sha256": "F6FDDE37A103D94DE321B89D8AD813365CCE9357BA1CDD229A319E266D3E6B34"
+    },
+    {
+      "path": "revision\\20260919\\appendices\\arithmetic_details.tex",
+      "sha256": "80E33ABBBB47D5CCC8A9DD6FEBDF7D7C7C18C0AA634C77EFA8FB15332DA64F6A"
+    },
+    {
+      "path": "revision\\20260919\\appendices\\comparison_obstructions.tex",
+      "sha256": "35138237756E6E5D7B86E9D9EE5378171F52718F5F95933D7A1C2A62EE724B3F"
+    },
+    {
+      "path": "revision\\20260919\\appendices\\analytic_refinements.tex",
+      "sha256": "3795DBC020C591B8E9082C0DBCEB3F4578837A36A24299713AC348AD96167F4D"
+    },
+    {
+      "path": "revision\\20260919\\appendices\\scarcity_refinements.tex",
+      "sha256": "9FAB305E53B0A8C4C56B811E6C53B800C16A5573F7292716DEAC3AD3DA09C3F1"
+    },
+    {
+      "path": "revision\\20260919\\appendices\\truncations.tex",
+      "sha256": "561F5C861EA82F058F88470D795A5121F973EA0B7FB956A87414D1D6D707656F"
+    },
+    {
+      "path": "revision\\20260919\\appendices\\extensions.tex",
+      "sha256": "DD72185CE183B6DB49D2D0832C7464D8A4B32B66F65341AFCC9BB395CBD3033E"
+    },
+    {
+      "path": "revision\\20260919\\appendices\\pade_wz.tex",
+      "sha256": "5A785A59950D68CF4AEA35C166EB1295B52348538C27727C27A142E9BDD7F613"
+    },
+    {
+      "path": "revision\\20260919\\appendices\\searches.tex",
+      "sha256": "C33A705273BB83245AA52163E9F5F4639D581439984DDA0ADC21B901D8816EDC"
+    },
+    {
+      "path": "revision\\20260919\\bibliography.tex",
+      "sha256": "209FAD15D078EAA55AF5F4E8DC1EABDC296FE064D92AE1D739F18194BB73EE1C"
+    }
+  ],
+  "output": {
+    "path": "paper_revised.pdf",
+    "sha256": "81BF7CD66BF03B81209190467717A22A562881349F65832C5B7B055306EFD21E",
+    "bytes": 1126829
+  },
+  "originals": [
+    {
+      "path": "D:\\Agent's home\\Math\\Research\\Ramanujan-Sato\\paper.tex",
+      "sha256": "4E84A62F276EB35F911CAFDE599869BB3BC5863F16F61E17302D8D5E4E7D8698",
+      "unchanged": true
+    },
+    {
+      "path": "D:\\Agent's home\\Math\\Research\\Ramanujan-Sato\\paper.pdf",
+      "sha256": "CC21FC55AF09AF7F8D07D7ED84B2505446E514DD491282B223BDC8D9F002BED6",
+      "unchanged": true
+    },
+    {
+      "path": "D:\\Agent's home\\Math\\Research\\Ramanujan-Sato\\hint_paper.tex",
+      "sha256": "2049594A9F9787757D5B39CA881C70A4FF11BA8A018B73FEAC36F142BA680894",
+      "unchanged": true
+    },
+    {
+      "path": "D:\\Agent's home\\Math\\Research\\Ramanujan-Sato\\hint_paper.pdf",
+      "sha256": "6E2EEEBB8E514C2243E74C343BBCA7E52B6A958C166E04DF551A1722244707F3",
+      "unchanged": true
+    }
+  ],
+  "audits": [
+    {
+      "path": "revision\\20260919\\audits\\final_periods_comparison.md",
+      "sha256": "C7059F7E5B4068B32610BAF3151089E55BA802165AB962B6150B7F55EFD4047F",
+      "verdict": "PASS",
+      "type": "AI adversarial review"
+    },
+    {
+      "path": "revision\\20260919\\audits\\final_arithmetic.md",
+      "sha256": "4BC710642F9E6D8B4595204CACFEF30B8CD74C2BA35914AA3C1A5F0DACBECE55",
+      "verdict": "PASS",
+      "type": "AI adversarial review"
+    },
+    {
+      "path": "revision\\20260919\\audits\\final_scope_architecture.md",
+      "sha256": "832F6844B657F9F6A02402784DBA06740151FEC864146A141CB1BC578C6854F3",
+      "verdict": "PASS",
+      "type": "AI adversarial review"
+    }
+  ],
+  "build": {
+    "compiler": "pdfTeX (MiKTeX 25.12)",
+    "passes": 3,
+    "log": "paper_revised.log",
+    "log_sha256": "C505D8671BCAA0AE5ACA29AA32A01F892EB90AB106A7C264AF466CAE2B8ECFF9",
+    "nonfatal_warnings": [
+      "pdfTeX warning (font expansion): font should be expanded before its first use"
+    ],
+    "unresolved_references": [],
+    "overflowing_boxes": []
+  },
+  "source_checks": {
+    "duplicate_labels": [],
+    "missing_references": [],
+    "missing_citations": [],
+    "diagrams": 13
+  },
+  "visual_review": {
+    "all_68_pages_rendered": true,
+    "all_six_contact_sheets_inspected": true,
+    "enlarged_pages_inspected": [
+      3,
+      8,
+      26,
+      45
+    ],
+    "defects_found": [],
+    "qa_record": "tmp\\rewrite-20260919\\pdf-qa.json",
+    "qa_warning_scan_note": "The earlier case-sensitive warning scan omitted the nonfatal pdfTeX font-expansion warning; the final build record above includes it."
+  },
+  "mathematical_status": "Unconditional CM forcing remains unresolved; unrestricted exhaustion is conditional on quadratic-period independence.",
+  "review_limit": "AI-assisted review, not human peer review or formal verification. Archived large computations were not rerun for this editorial revision."
+}

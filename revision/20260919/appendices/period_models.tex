@@ -1,0 +1,189 @@
+\section{Models and ancillary period consequences}\label{rev:period-models}
+
+\subsection{A simultaneous de Rham calculation}
+The elliptic models used in the standard realization are
+$E_{s,x}:y^2=4X^3-g_2(x)X-g_3(x)$, with
+\[
+\begin{array}{c|c|c|c}
+s&g_2&g_3&\Delta=g_2^3-27g_3^2\\ \hline
+1/6&3&1-2x&108x(1-x)\\
+1/4&3(1+3x)&1-9x&729x(1-x)^2\\
+1/3&3(1+8x)&1-20x-8x^2&1728x(1-x)^3\\
+1/2&3(1-x+x^2)&(1+x)(2-x)(1-2x)/2&729x^2(1-x)^2/4
+\end{array}
+\]
+The discriminants show that the fibers are smooth throughout the
+real interval used in the paper except at $x=0$.
+
+There is one connection formula for all four rows. For periods of
+$\lambda=dX/y$ and $\mu=X\,dX/y$, it is
+\begin{equation}\label{eq:GM}
+ \begin{gathered}
+ \frac d{dx}\begin{pmatrix}\omega\\h\end{pmatrix}
+ =\begin{pmatrix}p&q\\-g_2q/12&-p\end{pmatrix}
+     \begin{pmatrix}\omega\\h\end{pmatrix},\\
+ \qquad p=-\frac{\Delta'}{12\Delta},\quad
+ q=\frac{3(2g_2g_3'-3g_3g_2')}{2\Delta}.
+ \end{gathered}
+\end{equation}
+For completeness, this follows by reduction modulo exact
+differentials, without choosing any analytic periods. Put
+$P=4X^3-g_2X-g_3$ and $r=-g_2q/12$. The elementary identity
+\[
+ d\left(\frac{Q}{y}\right)
+ =\left(Q_XP-\frac12QP_X\right)\frac{dX}{y^3}
+\]
+with
+\[
+ Q_1=-2qX^2+2pX+qg_2/3,\qquad
+ Q_2=2pX^2+2rX-pg_2/3-g_2'/12
+\]
+gives
+\[
+ \partial_x\lambda=p\lambda+q\mu+d(Q_1/y),\qquad
+ \partial_x\mu=r\lambda-p\mu+d(Q_2/y).
+\]
+The displayed $p,q,r$ are obtained by matching the coefficients of
+$X$; their common denominator is the discriminant. Integration over
+a flat cycle proves \eqref{eq:GM}.
+
+In the four rows, respectively,
+\[
+ q=-\frac{\varepsilon_s}{6x(1-x)},\qquad
+ \varepsilon_s=(1,1,1,2).
+\]
+Eliminating $h$ in \eqref{eq:GM} gives
+\[
+ \omega''-\frac{q'}q\omega'
+ -\left(p'+p^2-\frac{q'}q p-\frac{g_2q^2}{12}\right)\omega=0.
+\]
+Substitution of the factored discriminants reduces this equation to
+$x(1-x)\omega''+(1-2x)\omega'-s(1-s)\omega=0$.
+This supplies the differential equation used in
+Lemma~\ref{lem:period}; the residue at the node determines its
+normalization, so no numerical matching of periods is involved.
+
+At $x=1/2$, the invariants are $1728,8000,54000,1728$. The two
+less immediate CM assertions follow from the standard quotient by
+the point $(0,0)$ of a curve $y^2=x^3+ax^2+bx$:
+\[
+ (a,b)\longmapsto(-2a,a^2-4b),\qquad
+ j=\frac{256(a^2-3b)^3}{b^2(a^2-4b)}.
+\]
+For $(a,b)=(4,2)$ the quotient has parameters $(-8,8)$ and is
+isomorphic over $K$ to the original curve by a scaling with square
+$-2$. Composing the 2-isogeny with this isomorphism gives an
+endomorphism of degree two, which cannot be an integer
+multiplication. The original curve therefore has CM and invariant
+$8000$. The curve $y^2=x^3+1$ has CM; translation of its rational
+two-torsion point gives parameters $(-3,3)$, whose quotient has
+parameters $(6,-3)$ and invariant $54000$. CM is invariant under
+isogeny, proving the remaining assertion.
+
+\subsection{What one scalar relation determines}
+These consequences describe the value field of a hypothetical
+identity; none supplies its missing CM converse.
+
+\begin{proposition}\label{prop:B-value-field}
+Write $F=F_s(z)$, $G=\thetaop F_s(z)$ at a standard algebraic
+parameter $z\in[-1,1)\setminus\{0\}$. Suppose
+$AF+BG=\alpha/\pi$ with $A,B,\alpha\in K$ and
+$(A,B)\ne(0,0)$. For $L=cF+dG$ with $Ad-Bc\ne0$, the three
+numbers $q_0,\pi,L$ are algebraically independent. Moreover
+\[
+ \operatorname{trdeg}_K K(\pi,F,G)=2,\qquad
+ \ker\bigl(K[P,X,Y]\to K[\pi,F,G]\bigr)
+       =\bigl(P(AX+BY)-\alpha\bigr).
+\]
+\end{proposition}
+\begin{proof}
+Corollary~\ref{prop:B-relation-space} gives $\alpha\ne0$.
+The invertible linear change $(F,G)\mapsto(AF+BG,L)$ and
+Theorem~\ref{thm:B-value-independent} show that $q_0,AF+BG,L$
+are independent. Replacing the nonzero second coordinate by
+$\alpha/\pi$ proves the first claim. The relation also gives
+$K(\pi,F,G)=K(F,G)$, of transcendence degree two. Finally
+\[
+ K[P,X,Y]/\bigl(P(AX+BY)-\alpha\bigr)
+       \simeq K[X,Y,(AX+BY)^{-1}],
+\]
+and evaluation on the algebraically independent pair $(F,G)$ is
+injective on this localization.
+\end{proof}
+
+\begin{proposition}\label{prop:B-period-field}
+If $a\omega^2+b\omega h=\alpha\pi$, with
+$a,b,\alpha\in K$ and $\alpha\ne0$, at such a standard parameter,
+then $q_0,\omega,h$ are algebraically independent.
+\end{proposition}
+\begin{proof}
+Theorem~\ref{thm:B-value-independent} makes $q_0,R,S$
+algebraically independent. The scalar relation gives the invertible
+field change
+\[
+ S=\frac{a\omega+bh}{\alpha},\qquad
+ \omega=\frac{\alpha S}{a+bR},\qquad h=R\omega.
+\]
+Its denominators are nonzero because $\alpha\pi\ne0$.
+Thus $K(q_0,\omega,h)=K(q_0,R,S)$ has transcendence degree three.
+\end{proof}
+
+\subsection{Functoriality under gauges and pullbacks}
+Suppose $\widetilde H(t)=g(t)H(\phi(t))$, with algebraic $g,\phi$,
+$\delta=t\,d/dt$, and $D=z\,d/dz$. At an algebraic point $t_0$
+where these data are regular, put
+$r_\phi=\delta\phi/\phi$ and suppose $g\phi r_\phi\ne0$.
+The chain rule is the exact coefficient transport
+\begin{equation}\label{eq:general-pullback-transport}
+ (A+B\delta)\widetilde H(t_0)
+ =g(t_0)\bigl(A+B\delta\log g+B r_\phi D\bigr)H(\phi(t_0)).
+\end{equation}
+Its triangular coefficient matrix has determinant $r_\phi\ne0$.
+It therefore carries algebraic identity lines bijectively, and
+preserves all rational projective directions when
+$\delta\log g,r_\phi\in\Q$. More invariantly, the condition for
+preserving $\mathbf P^1(\Q)$ is that the induced transformation
+belong to $\mathrm{PGL}_2(\Q)$. The algebraic factor $g(t_0)$ only
+rescales the multiplier.
+
+These qualifications are essential. At a ramification point with
+$r_\phi=0$, the nonzero pair $(-\delta\log g,1)$ can have value
+zero; for example $g=1$ and $\phi=z_0+(t-1)^2$ give
+$\delta\widetilde H(1)=0$ even over a non-CM fiber. Also,
+\eqref{eq:general-pullback-transport} concerns specified analytic
+branches. Ordinary convergence must be checked for each defining
+series, and any independence hypothesis must apply at the new
+image parameter $\phi(t_0)$.
+
+\subsection{A general conditional finiteness principle}
+\begin{theorem}\label{thm:general-finiteness}
+Suppose the data of Section~\ref{sec:general-period-square} descend
+to a number field $K_0$, and let $\overline X/K_0$ be a smooth
+projective compactification of the base. Let
+$t:\overline X\to\mathbf P^1$ be a finite $K_0$-morphism of degree $d$, and
+assume $j(E)$ is nonconstant. Fix $e$. If the quadratic-period
+independence in Theorem~\ref{thm:general-identity-line} holds for
+the non-CM fibers at admissible points with
+$[\Q(t(P)):\Q]\le e$, only finitely many such points support a
+nonzero rational coefficient identity. At each one the primitive
+integer pair is unique up to sign.
+\end{theorem}
+\begin{proof}
+The identity-line theorem forces CM. A fiber of $t$ has degree
+$d$, so
+\[
+ [\Q(j(E_P)):\Q]\le[K_0(P):\Q]
+                       \le de[K_0:\Q].
+\]
+By the ring class field theorem, a singular modulus for the full
+endomorphism order of discriminant $\Delta$ has degree
+$h(\Delta)$ over $\Q$ \cite{CoxCM}. The finiteness theorem for
+imaginary quadratic orders of bounded class number therefore
+leaves finitely many possible $j$-invariants. The nonconstant map
+$j:\overline X\to\mathbf P^1$ has finite fibers, giving finitely
+many points. The uniqueness assertion is unconditional by
+Theorem~\ref{thm:general-identity-line}.
+\end{proof}
+This argument proves finiteness without asserting an effective
+algorithm at arbitrary degree. Isotrivial CM families and the
+nonadmissible fibers require separate treatment.

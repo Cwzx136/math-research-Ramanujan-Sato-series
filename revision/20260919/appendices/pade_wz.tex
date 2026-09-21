@@ -1,0 +1,689 @@
+\section{Two certificate mechanisms}
+\label{rev:certificate-mechanisms}
+
+The two constructions below impose arithmetic restrictions through
+explicit auxiliary identities. Pad\'e approximation separates two
+rationally related values; rational telescoping classifies identities
+within two fixed deformation families. Neither construction is known
+to be necessary for an arbitrary standard identity.
+
+\subsection{An explicit exclusion for two rationally proportional multipliers}
+
+The preceding specialization arguments exclude nearby pairs
+asymptotically.  A direct Pad\'e construction gives an explicit threshold
+when the ratio of the two multipliers is rational.  We use the polynomial
+construction of David--Hirata-Kohno--Kawashima
+\cite[Proposition~3.6]{DHK2022}, and prove the determinant and all
+growth estimates needed here.
+
+\begin{theorem}[Explicit two-point independence]
+\label{thm:C-pade-explicit}
+For the four standard levels, define
+\[
+ (\Lambda_1,\Lambda_2,\Lambda_3,\Lambda_4)
+   =\left(\frac{46}{5},\frac{22}{3},\frac{13}{2},6\right),
+ \qquad U=6\log2+3(7\log7-6\log6),
+\]
+and put $T_\ell=U+6\Lambda_\ell+6\log R_\ell$.
+Let $a_1,a_2$ be distinct nonzero integers and
+$M=\max(|a_1|,|a_2|)$.  If the integer $b$ satisfies
+\begin{equation}\label{eq:C-pade-threshold}
+ b>M^7\exp(T_\ell),
+\end{equation}
+then the following seven numbers are linearly independent over $\Q$:
+\[
+ 1,\quad F_s(a_i/b),\quad
+ (\theta F_s)(a_i/b),\quad(\theta^2F_s)(a_i/b)
+ \qquad(i=1,2),\qquad s=s_\ell.
+\]
+In particular, this concerns ordinary absolutely convergent series.
+\end{theorem}
+
+We first establish the required determinant independently.
+
+\begin{lemma}[The two-point Pad\'e determinant]
+\label{lem:C-pade-determinant}
+Fix $s\in\{1/6,1/4,1/3,1/2\}$ and put
+\[
+ d_j=\frac{(1/2)_j(s)_j(1-s)_j}{(j!)^3},\qquad c_k=d_{k+1}.
+\]
+Let $a_1,a_2$ be distinct nonzero rational numbers, $n\ge1$, and
+$0\le h\le6$.  Write
+\[
+ G_h(t)=t^h(t-a_1)^{3n}(t-a_2)^{3n}
+       =\sum_k g_{h,k}t^k,
+ \qquad
+ P_h(t)=\sum_k\frac{g_{h,k}}{c_k}\binom{k+n}{n-1}^{\!3}t^k.
+\]
+For $q=0,1,2$, define the rational linear functional
+\[
+ \psi_{i,q}(t^k)=(k+1)^q c_k a_i^{k+1},\qquad
+ Q_{h,i,q}(z)=\psi_{i,q}\!\left(
+           \frac{P_h(z)-P_h(t)}{z-t}\right).
+\]
+Then the seven columns $(P_h(z),Q_{h,i,q}(z))$, $0\le h\le6$,
+form an invertible matrix for every $z$.  Moreover, if
+$\mathcal F_0=F_s-1$, $\mathcal F_1=\theta F_s$, and
+$\mathcal F_2=\theta^2F_s$, then
+\begin{equation}\label{eq:C-pade-remainder}
+ P_h(z)\mathcal F_q(a_i/z)-Q_{h,i,q}(z)
+   =\sum_{j\ge0}\frac{\psi_{i,q}(t^{n+j}P_h(t))}{z^{n+j+1}}.
+\end{equation}
+The equality is formal at infinity and convergent for
+$|z|>\max(|a_1|,|a_2|)$.
+\end{lemma}
+
+\begin{proof}
+Write $\theta=t\,d/dt$ and
+\[
+ A(X)=(X+3/2)(X+1+s)(X+2-s),\qquad B(X)=(X+1)^3.
+\]
+The recurrence $c_{k+1}/c_k=A(k)/B(k+1)$ gives the construction in
+\cite[Proposition~3.6]{DHK2022}.  We verify the features needed here.
+Expanding the divided difference gives the right side of
+\eqref{eq:C-pade-remainder} initially with $t^{j}$ and $z^{j+1}$,
+starting at $j=0$.  For $0\le j<n$, the recurrence and
+$t^jH(\theta)=H(\theta-j)t^j$ give the exact identity
+\[
+ \psi_{i,q}(t^jP_h)=\frac{a_i}{(n-1)!^3}
+ \operatorname{ev}_{a_i}(\theta+1)^q
+ \prod_{r=1}^{j}A(\theta-r)
+ \prod_{r=1}^{n-1-j}B(\theta+r)\,[t^jG_h(t)].
+\]
+The differential operator has order at most
+\[
+ q+3j+3(n-1-j)\le3n-1
+\]
+on $t^{h+j}(t-a_1)^{3n}(t-a_2)^{3n}$.  It vanishes, proving the
+formal equality.  Since $c_k$ and $c_k^{-1}$ have polynomial growth,
+the stated convergence follows.
+
+Order the lower rows by $(i,q)=(1,2),(1,1),(1,0),(2,2),(2,1),(2,0)$
+and denote the determinant by $\Delta(z)$.  Replacing these six rows
+by their remainders does not change the determinant.  Each remainder
+has order at least $n+1$ at infinity, whereas $\deg P_h=6n+h$.
+Thus $\Delta(z)$ is constant.  Only the leading term in column
+$h=6$ can contribute, so
+\begin{equation}\label{eq:C-pade-delta-moments}
+ \Delta=L_n\det\bigl(\psi_{i,q}(t^nP_h(t))\bigr)_{
+                    (i,q),\,0\le h\le5},\qquad
+ L_n=c_{6n+6}^{-1}\binom{7n+6}{n-1}^{\!3}.
+\end{equation}
+
+Put $H(X)=\prod_{k=1}^{n}A(X-k)$ and
+$V_h=t^{n+h}(t-a_1)^{3n}(t-a_2)^{3n}$.  The same recurrence,
+coefficient by coefficient, gives
+\[
+ \psi_{i,q}(t^nP_h(t))
+  =\frac{a_i}{(n-1)!^3}
+    \operatorname{ev}_{a_i}H(\theta)(\theta+1)^{q-3}V_h.
+\]
+Expand $H(X)$ in powers of $X+1$.  Terms with a nonnegative
+power of $\theta+1$ vanish at $a_i$, since their differential
+order is at most $3n-1$.  The remaining three rows are a triangular
+combination, with diagonal coefficient $H(-1)$, of the functionals
+\[
+ \varphi_{a,r}(t^k)=\frac{a^k}{(k+1)^{r+1}},\quad r=0,1,2,
+ \qquad
+ H(-1)=\prod_{k=1}^n(1/2-k)(s-k)(1-s-k)\ne0.
+\]
+For integers $u\ge0$, define
+\[
+ C_{n,u}(a,b)=\det\left(
+  \varphi_{a_i,r}\bigl(t^{u+h}(t-a)^{3n}(t-b)^{3n}\bigr)
+                         \right)_{(i,r),\,0\le h\le5},
+ \quad (a_1,a_2)=(a,b).
+\]
+It follows that the moment determinant in
+\eqref{eq:C-pade-delta-moments} equals
+\begin{equation}\label{eq:C-pade-moment-reduction}
+ \frac{(a_1a_2)^3H(-1)^6}{(n-1)!^{18}}C_{n,n}(a_1,a_2).
+\end{equation}
+
+Here is a direct factorization of $C_{n,u}$.  In the ordered variables
+$(X_0,X_1,X_2,Y_0,Y_1,Y_2)$, let
+\[
+ \mathcal P=\prod_Z Z^u(Z-a)^{3n}(Z-b)^{3n}
+               \prod_{i<j}(Z_j-Z_i).
+\]
+Expanding the determinant expresses $C_{n,u}$ as the product of the
+six functionals $\varphi_{a,r}^{X_r},\varphi_{b,r}^{Y_r}$ applied
+to $\mathcal P$.  Its degree is $6u+36n+15$.
+Scaling the three $X$ variables by $a$ shows divisibility by
+$a^{3u+9n+3}$, and scaling the $Y$ variables gives the same power
+of $b$.
+
+We next prove divisibility by $(b-a)^{18n+9}$.  Away from $a=0$,
+\[
+ \partial_a\varphi_{a,r}(f)
+ =\varphi_{a,r}(\partial_af)
+    +a^{-1}\varphi_{a,r}(\theta f).
+\]
+After $v$ derivatives with respect to $a$, each term therefore applies
+the six moment functionals to
+\[
+ \prod_{r=0}^2\theta_{X_r}^{v_r}\partial_a^j\mathcal P,
+ \qquad j+v_0+v_1+v_2\le v,
+\]
+up to a scalar regular at any fixed nonzero $a$.  Expand each power
+of $\theta_{X_r}$ in the monic polynomial basis
+\[
+ T_{r,k}(\theta)=
+ \begin{cases}
+  (\theta+1)^k,&k\le r+1,\\
+  (\theta+1)^{r+1}\theta^{k-r-1},&k\ge r+1.
+ \end{cases}
+\]
+Only $k_r\le v_r$ occur.  On setting $b=a$, if some
+$k_r<r+1$, the composed $X_r$ functional equals the
+$Y_{r-k_r}$ functional.  The polynomial $\partial_a^j\mathcal P$
+is antisymmetric in these variables: the factor outside its
+Vandermonde is symmetric, even after parameter differentiation.
+The two identical functionals consequently give zero.
+
+If all $k_r\ge r+1$, cancellation of the three inverse Euler
+operators leaves evaluation at $X_0=X_1=X_2=a$ after an operator
+of total differential order $q=\sum_r k_r-6$.
+Before parameter differentiation and on $b=a$, the polynomial
+has total vanishing order at least $18n+3$ in
+$(X_0-a,X_1-a,X_2-a)$: the three powers contribute $18n$ and
+their Vandermonde contributes $3$.  The $j$ parameter derivatives
+lower that order by at most $j$.  Thus the evaluation is zero when
+\[
+ q+j\le v-6<18n+3.
+\]
+All derivatives of order $v<18n+9$ vanish on the diagonal, proving
+the asserted factor.  Comparing degrees gives
+\begin{equation}\label{eq:C-pade-coalescence}
+ C_{n,u}(a,b)=\kappa_{n,u}
+       (ab)^{3u+9n+3}(b-a)^{18n+9}.
+\end{equation}
+
+It remains to show $\kappa_{n,u}\ne0$.  Put
+\[
+ J_{n,u}=\det\left(
+  \int_0^1 t^{u+h}(t-1)^{3n}
+          \frac{(-\log t)^r}{r!}\,dt
+                  \right)_{0\le r,h\le2}.
+\]
+The determinant expansion and symmetrization express this as $1/3!$
+times an integral over $(0,1)^3$ whose integrand is
+\[
+ \prod_{j=1}^3t_j^u(t_j-1)^{3n}
+   \det(t_j^h)_{h,j}
+   \det\!\left(\frac{(-\log t_j)^r}{r!}\right)_{r,j}.
+\]
+On $0<t_1<t_2<t_3<1$, the ordinary Vandermonde is positive and
+the logarithmic Vandermonde has sign $(-1)^3$.  The weight also
+has constant sign.  Their product is symmetric and nonzero off
+the diagonals, so the integral is nonzero.  In
+\eqref{eq:C-pade-coalescence}, set $b=1$, divide by
+$a^{3u+9n+3}$, and let $a\to0$ after scaling the $X$ variables.
+The two three-variable blocks separate, giving
+\[
+ \kappa_{n,u}=(-1)^{9n}J_{n,u}J_{n,u+3n+3}\ne0.
+\]
+Equations \eqref{eq:C-pade-delta-moments}--
+\eqref{eq:C-pade-coalescence} now give
+\[
+ \Delta=\frac{L_nH(-1)^6\kappa_{n,n}}{(n-1)!^{18}}
+       (a_1a_2)^{12n+6}(a_2-a_1)^{18n+9}\ne0,
+\]
+as required.
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{thm:C-pade-explicit}]
+We first bound the common denominators in the preceding construction.
+Write $d_j=Q_j/R^j$, where the four integer sequences $Q_j$ are
+\[
+ \frac{(6j)!}{(3j)!(j!)^3},\qquad
+ \frac{(4j)!}{(j!)^4},\qquad
+ \frac{(3j)!(2j)!}{(j!)^5},\qquad
+ \frac{(2j)!^3}{(j!)^6}.
+\]
+Put $\mathcal L(x)=\operatorname{lcm}(1,\ldots,\lfloor x\rfloor)$.
+Legendre's factorial formula expresses the valuation at each prime $p$
+as a sum, over $p^v$, of the step functions
+\[
+ \lfloor6u\rfloor-\lfloor3u\rfloor,\quad
+ \lfloor4u\rfloor,\quad
+ \lfloor3u\rfloor+\lfloor2u\rfloor,\quad
+ 3\lfloor2u\rfloor,\qquad u=\{j/p^v\}.
+\]
+The thresholds for contributions $1,2,3$ are respectively
+\[
+ (1/6,1/2,5/6),\quad(1/4,1/2,3/4),\quad
+ (1/3,1/2,2/3),\quad(1/2,1/2,1/2).
+\]
+For $j\le N$, a contribution of at least $r$ implies
+$p^v\le N/t_r$, with the corresponding threshold $t_r$.
+Consequently every $Q_j$, $1\le j\le N$, divides the indicated
+integer in this list:
+\[
+ \mathcal L(6N)\mathcal L(2N)\mathcal L(6N/5),\quad
+ \mathcal L(4N)\mathcal L(2N)\mathcal L(4N/3),
+\]
+\[
+ \mathcal L(3N)\mathcal L(2N)\mathcal L(3N/2),\qquad
+ \mathcal L(2N)^3.
+\]
+Let $D_N$ and $E_N$ be the least common denominators of, respectively,
+$\{d_j^{-1}:1\le j\le N\}$ and $\{d_j:1\le j\le N\}$.
+Since $E_N\mid R^N$, the prime number theorem gives
+\begin{equation}\label{eq:C-pade-denominators}
+ \log D_N\le\Lambda_\ell N+o(N),\qquad
+ \log E_N\le N\log R_\ell.
+\end{equation}
+
+Take the polynomials from Lemma~\ref{lem:C-pade-determinant} and
+$N=6n+7$.  The binomial factors and $a_i$ are integers; $D_N$
+therefore clears the coefficients of every $P_h$.  Applying
+$\psi_{i,q}$ to the divided differences introduces only coefficients
+$c_k$ with $k+1\le N$, so $D_NE_N$ clears all the $Q_{h,i,q}$
+as well.  Evaluation at integer $b$ introduces no further denominator.
+By \eqref{eq:C-pade-denominators},
+\begin{equation}\label{eq:C-pade-cost}
+ \log(D_NE_N)\le6n(\Lambda_\ell+\log R_\ell)+o(n).
+\end{equation}
+
+We estimate the remainders directly.  The coefficient of $t^k$ in
+$G_h(t)$ has absolute value at most
+$2^{6n}M^{6n+h-k}$.  Its diagonal binomial factor is at most
+$\binom{7n+6}{n-1}^{3}$.  Stirling's formula and the polynomial
+growth of $c_k,c_k^{-1}$ give, for a fixed integer $K$, a bound
+\[
+ |\psi_{i,q}(t^{n+j}P_h(t))|
+ \le e^{Un+o(n)}(n+j+1)^K M^{7n+h+j+1}.
+\]
+Indeed, the exponent $-k$ from $G_h$ cancels the $k$ in
+$a_i^{k+n+j+1}$; the remaining coefficient dependence is polynomial.
+As $b>M$, summing \eqref{eq:C-pade-remainder} gives, uniformly
+over the seven choices of $h$,
+\begin{equation}\label{eq:C-pade-error}
+ |P_h(b)\mathcal F_q(a_i/b)-Q_{h,i,q}(b)|
+ \le\exp\{n[U+7\log M-\log b]+o(n)\}.
+\end{equation}
+The polynomial in $j$ is harmless in this fixed-ratio geometric sum.
+
+Suppose a nonzero rational relation exists among
+$1,\mathcal F_q(a_i/b)$.  Clearing denominators gives integer
+coefficients $\lambda_0,\lambda_{i,q}$.  By the nonzero determinant,
+for every $n$ at least one $h$ gives a nonzero rational number
+\[
+ L_h=\lambda_0P_h(b)+\sum_{i,q}\lambda_{i,q}Q_{h,i,q}(b).
+\]
+The assumed relation writes $L_h$ as minus the corresponding sum
+of remainders.  Since $D_NE_NL_h$ is a nonzero integer,
+\eqref{eq:C-pade-cost} and \eqref{eq:C-pade-error} imply
+\[
+ 1\le|D_NE_NL_h|
+ \le\exp\{n[T_\ell+7\log M-\log b]+o(n)\}\longrightarrow0,
+\]
+contradicting \eqref{eq:C-pade-threshold}.  The replacement
+$\mathcal F_0=F_s-1$ is an invertible rational change of the value
+vector and proves the stated result.
+\end{proof}
+
+\begin{corollary}[An explicit opposite-sign exclusion]
+\label{cor:C-pade-opposite}
+At level $\ell$, let $b$ be a positive integer.  If
+\[
+ b\ge10^{50},\quad10^{40},\quad10^{35},\quad10^{33}
+ \qquad\text{for }\ell=1,2,3,4\text{ respectively},
+\]
+then the two denominators $C=R_\ell b$ and $C=-R_\ell b$ cannot
+both support standard identities with nonzero algebraic multipliers
+whose ratio is rational.  In particular, they cannot both support
+identities with rational nonzero multipliers.
+\end{corollary}
+
+\begin{proof}
+Take $(a_1,a_2)=(1,-1)$, so $M=1$.  The four displayed integers
+exceed $\exp(T_\ell)$.  For an exact check, use $e<11/4$ and
+\[
+ \exp(T_\ell)
+ =\frac{2^6 7^{21}R_\ell^6}{6^{18}}e^{6\Lambda_\ell}
+ <\frac{2^6 7^{21}R_\ell^6}{6^{18}}
+       (11/4)^{\lceil6\Lambda_\ell\rceil};
+\]
+comparison with each indicated power of ten is an integer inequality.
+Subtracting a rational multiple of one asserted identity from the
+other would give a nonzero rational relation among the two copies
+of $F_s,\theta F_s$, contrary to
+Theorem~\ref{thm:C-pade-explicit}.
+\end{proof}
+
+This result imposes no degree or height bound on the individual
+multipliers; it restricts their ratio to $\Q$.  It excludes a pair
+of identities and does not exclude an isolated non-CM identity.
+The seven-number independence proved here is over $\Q$, not over
+$\Qbar$.  The determinant argument therefore does not supply
+unconditional CM forcing.
+
+\subsection{Complete converses within two rational-certificate families}
+\label{sec:C-wz-converses}
+
+A rational Wilf--Zeilberger certificate supplies a second way to impose
+arithmetic restrictions without assuming a period conjecture.  The
+restriction is to an explicitly specified deformation of the summand.
+We do not assume, or prove, that an arbitrary scalar identity admits
+such a deformation.
+
+We first allow three affine parameter shifts and a varying linear
+weight.  For $0<s<1$, $z\in\C\setminus\{0,1\}$, and
+$\lambda\in\C^\times$, put
+\begin{align}
+ U(n,k)&=z^n\frac{(1/2+k)_n(s)_n(1-s)_n}
+ {(1+k)_n(1+2k)_n(1)_n},\label{eq:C-wz-affine-U}\\
+ H(k)&=\lambda^k
+ \frac{\Gamma(k+1)^2\Gamma(s)\Gamma(1-s)}
+ {\Gamma(k+s)\Gamma(k+1-s)},\qquad T(n,k)=\frac{U(n,k)}{H(k)}.
+ \label{eq:C-wz-affine-H}
+\end{align}
+Here a determination of $\lambda^k$ is fixed; only its unit-shift
+ratio is used in the rational calculation.  At $k=0$ one has
+$H(0)=1$ and $U(n,0)=c_s(n)z^n$.  The level-three specialization of
+this deformation occurs in Guillera's parameterized WZ
+identity.\footnote{J.~Guillera, \emph{On WZ-pairs which prove
+Ramanujan series}, arXiv:0904.0406v3, equation~(37),
+\url{https://arxiv.org/abs/0904.0406v3}.  That formula is a forward
+identity; the rational-certificate converse below is proved directly.}
+For $P(n,k)=A+Bn+Dk$, a rational certificate means an arbitrary
+$R\in\C(n,k)$ such that
+\begin{equation}\label{eq:C-wz-affine-identity}
+\begin{split}
+ P(n,k+1)T(n,k+1)-P(n,k)T(n,k)
+ ={}&R(n+1,k)T(n+1,k)\\
+ &-R(n,k)T(n,k).
+\end{split}
+\end{equation}
+The equation is interpreted after division by $T(n,k)$ as a rational
+identity.  No bound on the numerator or denominator degrees of $R$
+is imposed.
+
+\begin{theorem}[An affine-shift certificate converse]
+\label{thm:C-wz-affine}
+Assume $(A,B)\ne(0,0)$.  A rational certificate
+\eqref{eq:C-wz-affine-identity} exists precisely in the following two
+cases, up to a common nonzero scalar multiplying $A,B,D,R$:
+\[
+\begin{array}{c|c|c|c}
+ s&z&\lambda&(A,B,D)\\\hline
+ 1/3\text{ or }2/3&1/2&1&(1/6,1,1)\\
+ 1/3\text{ or }2/3&-4&1&(4/15,1,2/5).
+\end{array}
+\]
+The corresponding certificates, respectively, are unique and equal to
+\[
+ R=\frac{2n(3k+3n+2)}{3(2k+n+1)},\qquad
+ R=\frac{n(12k+3n+5)}{15(2k+n+1)}.
+\]
+Among the four standard families, ordinary convergence leaves only
+$z=1/2$, $s=1/3$, $C=216$, with primitive coefficient pair $(1,6)$.
+Its elliptic fiber has CM of discriminant $-24$.
+\end{theorem}
+\begin{proof}
+Set $L=4/\lambda$.  Direct unit shifts give
+\begin{align*}
+ q:=\frac{T(n+1,k)}{T(n,k)}
+ &=\frac{z(n+k+1/2)(n+s)(n+1-s)}
+ {(n+1)(n+k+1)(n+2k+1)},\\
+ K:=\frac{T(n,k+1)}{T(n,k)}
+ &=\frac{L(n+k+1/2)(k+s)(k+1-s)}
+ {(n+k+1)(n+2k+1)(n+2k+2)}.
+\end{align*}
+Make the invertible rational substitution $R=nX/(n+2k+1)$.
+Clearing denominators yields
+\begin{equation}\label{eq:C-wz-affine-polynomial}
+\begin{split}
+ &z(n+k+1/2)(n+s)(n+1-s)X(n+1,k)\\
+ &\quad-n(n+k+1)(n+2k+2)X(n,k)\\
+ &=L(n+k+1/2)(k+s)(k+1-s)(A+Bn+D(k+1))\\
+ &\quad-(A+Bn+Dk)(n+k+1)(n+2k+1)(n+2k+2).
+\end{split}
+\end{equation}
+We show that $X$ is a polynomial in $n$.  Regard $k$ as
+transcendental and work over an algebraic closure of $\C(k)$.
+If $X$ has a pole, choose the first and last poles in one finite
+chain under integer translation.  Cancellation at the endpoints
+requires a root of the first coefficient of $X$ in
+\eqref{eq:C-wz-affine-polynomial}, shifted by a positive integer,
+to equal a root of the second coefficient.  Those root sets are
+\[
+ \{-k-1/2,-s,s-1\},\qquad \{0,-k-1,-2k-2\}.
+\]
+The constant roots in the first set lie strictly between $-1$ and
+$0$.  The only nonconstant pair having equal coefficients of $k$
+has difference $-1/2$.  All remaining comparisons have unequal
+coefficients of the transcendental $k$.  Thus none gives the required
+positive integral difference, and $X$ has no pole.
+
+If $d=\deg_nX$, the left side of
+\eqref{eq:C-wz-affine-polynomial} has degree $d+3$, with leading
+coefficient $(z-1)\operatorname{lc}_n(X)$; its right side has degree
+at most four.  Hence $X=u(k)n+v(k)$.  The coefficients of $n^4,n^3$
+force
+\begin{equation}\label{eq:C-wz-affine-uv}
+\begin{split}
+ u&=-\frac B{z-1},\\
+ v&=-\frac{2A(z-1)+8Bkz-4Bk+3Bz-2B+2Dk(z-1)}
+ {2(z-1)^2}.
+\end{split}
+\end{equation}
+Let $E(n,k)$ be $(z-1)^2$ times the left side minus the right side
+of \eqref{eq:C-wz-affine-polynomial}, after
+\eqref{eq:C-wz-affine-uv} is substituted, and write
+$E_{ij}=[n^ik^j]E$.  The classification is now a finite coefficient
+calculation, as follows.
+
+First suppose $B\ne0$ and divide by $B$ so that $B=1$.  Two
+coefficients are
+\[
+ E_{04}=-D(L-4)(z-1)^2,\qquad
+ E_{03}=-\tfrac12(2A+5D)(L-4)(z-1)^2.
+\]
+If $L\ne4$, they force $A=D=0$.  At this specialization
+$E_{12}-3E_{22}/2=z$, contradicting $z\ne0$.  Thus $L=4$ and
+$\lambda=1$.  Next,
+\[
+ E_{22}=2(2z-1)((z-1)D+2).
+\]
+If $z=1/2$, the equation $E_{21}=0$ gives $D=1$.  With
+$w=s^2-s$, the coefficients
+\[
+ E_{20}=(-2A+12w+3)/16,\qquad E_{02}=(4A+3w)/4
+\]
+give $w=-2/9$ and $A=1/6$, hence $s=1/3$ or $2/3$.
+
+If $z\ne1/2$, one instead has $D=-2/(z-1)$.  Then
+\begin{align*}
+ E_{21}&=\frac{4A(z-1)(2z-1)-z^2+7z-4}{2},\\
+ E_{12}&=2A(z-1)(2z-1)+5z-4.
+\end{align*}
+Their difference is $(z+4)(z-1)/2$.  Consequently $z=-4$, and
+$E_{12}=0$ gives $A=4/15$.  Finally,
+\[
+ E_{02}=4(z-1)\{A(z-1)+(s^2-s)(z-2)\}
+\]
+gives $s^2-s=-2/9$ once more.
+
+If $B=0$, then $A\ne0$.  The same $E_{04},E_{03}$ force $L=4$.
+In this case
+\begin{align*}
+ E_{22}&=2D(z-1)(2z-1),\\
+ E_{21}&=\tfrac12\{4A(z-1)(2z-1)+D(z-1)(5z-2)\}.
+\end{align*}
+Their vanishing, with $z\ne1$, implies $D=0,z=1/2$.  But then
+$E_{20}=-A/8\ne0$.  Thus no additional case occurs.
+
+Substitution in the full polynomial identity proves sufficiency and
+gives the two displayed certificates.  For uniqueness, subtract two
+certificates.  The same pole argument makes their difference
+correspond to a polynomial $X$, whose nonzero leading term could not
+vanish in the homogeneous version of
+\eqref{eq:C-wz-affine-polynomial} because $z\ne1$.
+
+At $k=0$, the $z=-4$ survivor has $B\ne0$ and its summands have
+magnitude proportional to $4^n n^{-1/2}$; they do not tend to zero.
+It cannot define an ordinarily convergent standard identity.  The
+other survivor has $C=108/(1/2)=216$.  Formula~\eqref{eq:P3} gives
+\[
+ P_3(J,216)=J^2-4834944J+14670139392=H_{-24}(J).
+\]
+Both corresponding elliptic invariants are therefore singular moduli
+of discriminant $-24$.
+\end{proof}
+
+For completeness the convergent identity follows directly from the
+certificate, without analytic continuation in its auxiliary
+parameter.  This also specifies the analytic step that a rational
+certificate alone does not supply.
+\begin{corollary}\label{cor:C-wz-affine-value}
+The ordinary sum at the convergent survivor is
+\[
+ (1+6\thetaop)F_{1/3}(1/2)=\frac{3\sqrt3}{\pi}.
+\]
+\end{corollary}
+\begin{proof}
+Use $(A,B,D)=(1,6,6)$ and $s=1/3,z=1/2,\lambda=1$.
+For every nonnegative integer $k$, the series
+\[
+ S(k)=\sum_{n\ge0}(1+6n+6k)\frac{U(n,k)}{H(k)}
+\]
+converges absolutely.  The certificate has zero boundary at $n=0$
+and at infinity: its rational factor has polynomial growth, whereas
+the summand ratio tends to $1/2$.  Telescoping therefore gives
+$S(k+1)=S(k)$ on the nonnegative integers.
+
+For integers $k\ge1$ and $0<s<1$,
+\[
+ \frac{(k+1/2)_n}{(k+1)_n}\le1,\qquad
+ \frac{(s)_n}{n!}\le1,\qquad
+ \frac{(1-s)_n}{(1+2k)_n}\le1.
+\]
+Thus $0<U(n,k)\le2^{-n}$; for fixed $n\ge1$ one also has
+$U(n,k)\to0$ as $k\to\infty$.  The terms
+$(1+6n+6k)U(n,k)/k$ are dominated by $(7+6n)2^{-n}$, a summable
+bound independent of the integer $k\ge1$.  Dominated convergence
+and the gamma-ratio asymptotic give, respectively,
+\begin{align*}
+ \frac1k\sum_{n\ge0}(1+6n+6k)U(n,k)&\longrightarrow6,\\
+ \frac{H(k)}k&\longrightarrow
+ \Gamma(s)\Gamma(1-s)=\frac\pi{\sin\pi s}.
+\end{align*}
+Hence $S(0)=\lim_{k\to\infty}S(k)=6\sin(\pi/3)/\pi$.
+Only integer values of $k$ have been used; no claim that a
+one-periodic analytic function must be constant enters the proof.
+\end{proof}
+
+The second converse allows an unrestricted rational dependence of
+the auxiliary coefficients and of the normalization ratio.  It
+shows that such a change does not enlarge the earlier terminating
+mechanism.
+\begin{theorem}[Rational auxiliary gauges of the terminating family]
+\label{thm:C-wz-EZ-gauge}
+Let $0<s<1$, let $(a,b,t)$ be a permutation of $(1/2,s,1-s)$,
+and let $z\in\C\setminus\{0,1\}$.  Set
+\[
+ U(n,k)=z^n\frac{(a)_n(b)_n(-k)_n}
+ {(1)_n^2(1+t+k)_n},\qquad T(n,k)=U(n,k)/H(k),
+\]
+where $h(k)=H(k+1)/H(k)\in\C(k)^\times$.  Let
+$A,B\in\C(k)$ be not both identically zero.  An arbitrary rational
+$R(n,k)$ satisfying
+\begin{equation}\label{eq:C-wz-EZ-gauge-identity}
+\begin{split}
+ &[A(k+1)+nB(k+1)]T(n,k+1)-[A(k)+nB(k)]T(n,k)\\
+ &\hspace{18mm}=R(n+1,k)T(n+1,k)-R(n,k)T(n,k)
+\end{split}
+\end{equation}
+exists if and only if
+\begin{gather*}
+ s=a=b=t=1/2,\qquad z=-1,\qquad A(k)=B(k)/4,\\
+ h(k)=\frac{k+3/2}{k+1}\frac{B(k+1)}{B(k)},\qquad
+ R(n,k)=-\frac{B(k)n^2}{2(k+1-n)},
+\end{gather*}
+with $B(k)\ne0$ as a rational function.  The certificate is unique.
+\end{theorem}
+\begin{proof}
+Put $x=k+1$ and $L(k)=(k+1)(k+1+t)/h(k)$.  The shift ratios are
+\begin{align*}
+ \frac{T(n+1,k)}{T(n,k)}&=
+ \frac{z(n+a)(n+b)(n-k)}{(n+1)^2(n+k+1+t)},\\
+ \frac{T(n,k+1)}{T(n,k)}&=
+ \frac{L(k)}{(k+1-n)(n+k+1+t)}.
+\end{align*}
+Substitute $R=n^2X/(k+1-n)$ and clear denominators to obtain
+\begin{equation}\label{eq:C-wz-EZ-polynomial}
+\begin{split}
+ &-z(n+a)(n+b)(k+1-n)X(n+1,k)\\
+ &\quad-n^2(n+k+1+t)X(n,k)\\
+ &=L(k)\{A(k+1)+nB(k+1)\}\\
+ &\quad-\{A(k)+nB(k)\}(k+1-n)(n+k+1+t).
+\end{split}
+\end{equation}
+The same pole-endpoint argument applies, now to the root sets
+$\{-a,-b,k+1\}$ and $\{0,-k-1-t\}$.  No root of the first set
+reaches a root of the second by a positive integer translation:
+$0<a,b<1$, and the nonconstant comparisons have incompatible
+coefficients of $k$.  Thus $X$ is polynomial in $n$.  The leading
+coefficient on the left is $(z-1)\operatorname{lc}_n(X)$ and the
+right side has degree at most three, so $X$ is constant in $n$.
+If $B=0$ identically, comparison of degrees forces $X=0$, and the
+$n^2$ coefficient then forces $A=0$, a contradiction.  Consequently
+\[
+ X=\frac{B(k)}{z-1},\qquad
+ \frac{A(k)}{B(k)}=w(x):=
+ \frac{z(a+b-t)-(z+1)x}{z-1}.
+\]
+The coefficients of $n$ and $1$ in
+\eqref{eq:C-wz-EZ-polynomial} give
+\[
+ L(k)\frac{B(k+1)}{B(k)}=M(x),\qquad
+ L(k)\frac{A(k+1)}{B(k)}=N(x),
+\]
+where
+\begin{align*}
+ M(x)&=\frac{z(ab-(a+b)x)}{z-1}-tw(x)+x(x+t),\\
+ N(x)&=w(x)x(x+t)-\frac{zabx}{z-1}.
+\end{align*}
+Their necessary compatibility condition is the polynomial identity
+\[
+ \mathcal Q(x):=(z-1)^2\{N(x)-w(x+1)M(x)\}=0.
+\]
+If $t=1/2$, take $a=s,b=1-s$.  The coefficients of $x^2,x,1$
+in $\mathcal Q$ are, respectively,
+\[
+ \frac{z^2-1}{2},\qquad
+ -\frac{z(2s-1)^2}{2},\qquad
+ -\frac{z(2s-1)^2(z+2)}8.
+\]
+They imply $s=1/2,z=-1$.  Otherwise, symmetry in $a,b$ permits
+$a=1/2,b=1-t$.  The coefficients are
+\[
+ \frac{(z+1)(4tz+2t-z-2)}2,
+\]
+\[
+ \frac{z(2t-1)(12tz+8t-3z+2)}4,
+ \qquad
+ \frac{z(2t-1)^2(4tz-z+2)}4.
+\]
+If $t\ne1/2$, the last gives $4tz-z=-2$ and the middle then gives
+$8t-4=0$, a contradiction.  The sole survivor is therefore
+$s=a=b=t=1/2,z=-1$.  At this survivor $w=1/4$ and $M=x^2$,
+which give the stated formulas for $A,h,R$.  Their direct
+substitution proves sufficiency.  The homogeneous pole and leading
+coefficient argument proves uniqueness as before.
+\end{proof}
+
+The last theorem identifies all its certificates with rational
+auxiliary gauges of Bauer's mechanism.  A one-periodic factor in
+$H$ is invisible to its rational unit-shift ratio, and is not fixed
+by the algebraic classification.  An analytic specialization still
+requires regularity and the relevant convergence argument.  Neither
+of these two theorems supplies a converse from a bare scalar value
+to the existence of a rational WZ certificate.  Their CM conclusions
+are complete within the displayed certificate families, while
+unconditional CM forcing for an arbitrary standard identity remains
+unresolved.
+

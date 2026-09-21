@@ -1,0 +1,251 @@
+\section{Introduction}\label{rev:sec:introduction}
+
+Ramanujan's series for $1/\pi$ connect hypergeometric functions with
+the arithmetic of elliptic curves. Their characteristic feature is a
+coefficient linear in the summation index: a suitable combination of
+a hypergeometric value and its first derivative becomes an algebraic
+multiple of $1/\pi$. Modular parametrization explains many such
+identities by evaluating at elliptic curves with complex multiplication
+(CM). The converse asks whether the special value itself detects CM.
+This distinction is central to a classification: constructing every
+identity arising from CM does not exclude an isolated identity on a
+non-CM fiber.
+
+We study this converse for the four standard hypergeometric branches
+of levels $1$--$4$, with primitive integer coefficients and an integer
+denominator. There are three questions: whether the coefficient slope
+is unique at a fixed parameter, whether every identity comes from CM,
+and whether the CM parameters admit a finite arithmetic enumeration.
+We prove uniqueness and carry out the CM classification unconditionally.
+The implication from a single complex identity to CM remains
+conditional on an explicit quadratic-period independence hypothesis.
+The paper develops the period geometry of this implication and proves
+unconditional arithmetic criteria and scarcity results around it.
+
+\subsection{Prior work and the converse problem}
+Ramanujan's 1914 paper \cite{Ramanujan1914} established the connection
+between modular equations and rapidly convergent approximations to
+$\pi$. Subsequent modular constructions organize these evaluations
+through singular moduli and transformations of hypergeometric
+functions. Chan--Chan--Liu \cite{CCL} give a general modular summation
+identity and applications to Domb numbers; Chan--Cooper
+\cite{ChanCooper} assemble rational analogues at levels $1$--$4$.
+Chen--Glebov--Goenka \cite{CGG} derive formulas for noncompact arithmetic
+triangle groups and identify their $36$ Clausen cases with the
+level-$1$--$4$ list of Chan--Cooper. Their enumeration uses rational
+uniformizer values at imaginary quadratic arguments. These works
+establish the evaluations that appear in our standard tables and
+provide the modular construction against which a converse can be tested.
+
+Related constructions extend the range of coefficients, parameters,
+and geometric realizations. Rogers \cite{RogersDomb} develops
+hypergeometric transformations leading to further $1/\pi$ formulas,
+and Almkvist--Guillera \cite{AG} study Ramanujan--Sato-like series.
+Campbell--Cooper--Ye \cite{CCY} give quadratic irrational analogues and
+explicit modular values. For compact Shimura curves, Yang \cite{Yang}
+constructs Ramanujan-type identities whose normalization can involve
+additional CM periods. These developments motivate the extensions in
+our appendices. They also require care with the chosen branch, the
+period target, and the convergence domain: these data belong to the
+identity being classified.
+
+The transcendence theory addresses a different part of the problem.
+Chudnovsky's algebraic-independence results, in the precise forms
+recorded by Waldschmidt \cite{Waldschmidt,WaldschmidtSurvey}, constrain
+an elliptic period and its quasi-period strongly enough to prove
+uniqueness of the coefficient slope. Nesterenko's theorem and the
+period expressions for modular forms, presented in \cite{Fonseca},
+give further independence statements. The quadratic-period independence
+sufficient for the CM converse is stronger than the particular consequences of
+these theorems used here. We isolate that relation and show how the
+elliptic period conjecture and numerical modular-value conjectures
+\cite{Fonseca,EterovicMSCD} would exclude it on non-CM fibers.
+The results of Kreutz--Shen--Vial \cite{KSV} describe complete
+de Rham--Betti comparison tensors; applying them requires the complete
+comparison data, which one scalar special value does not supply.
+
+Thus the $36$ standard evaluations are established identities. Our
+purpose is to organize their arithmetic exhaustion within the CM
+locus, identify the exact additional assertion needed for unrestricted
+exhaustion, and relate that assertion to intrinsic period lines,
+comparison tensors, and reduction at primes. The distinction between
+these conclusions is retained throughout.
+
+\subsection{Problem and principal results}
+
+For $s\in\{1/6,1/4,1/3,1/2\}$ let
+\[
+ F_s(z)={}_3F_2\!\left(\begin{matrix}1/2,s,1-s\\1,1\end{matrix};z\right)
+       =\sum_{n\ge0}c_s(n)z^n,
+ \qquad c_s(n)=\frac{(1/2)_n(s)_n(1-s)_n}{(n!)^3},
+ \qquad\thetaop=z\frac d{dz}.
+\]
+The pairs $(s_\ell,R_\ell)$ attached to levels $\ell=1,2,3,4$ are
+\[
+ (1/6,1728),\qquad(1/4,256),\qquad(1/3,108),\qquad(1/2,64).
+\]
+We use the power-series branch at zero and define
+\begin{equation}\label{eq:series}
+ \mathfrak S_\ell(A,B,C)
+  =\sum_{n\ge0}R_\ell^nc_{s_\ell}(n)(A+Bn)C^{-n}
+  =(A+B\thetaop)F_{s_\ell}(R_\ell/C),
+\end{equation}
+where the last expression always means the ordinarily convergent sum.
+
+\begin{definition}
+A primitive standard identity is an ordinarily convergent equality
+\[
+ \mathfrak S_\ell(A,B,C)=\frac\alpha\pi,
+ \qquad A,B,C\in\Z,\quad C\ne0,\quad\gcd(A,B)=1,
+ \quad\alpha\in\Qbar.
+\]
+Classes identify $(A,B,\alpha)$ with $(-A,-B,-\alpha)$, at the same
+level and denominator. The multiplier is initially allowed to be zero.
+\end{definition}
+
+The primitive condition concerns the coefficient pair. Requiring only
+$\gcd(A,B,C)=1$ would permit infinitely many multiples of the identity
+$(A,B,C)=(1,6,256)$ at level four. Analytic continuation is likewise
+excluded from the definition: at a convergence boundary, the value must
+be the sum of the original series.
+
+\begin{hypothesis}[Quadratic-period independence]\label{hyp:QPI}
+Let $z=R_\ell/C\in[-1,1)\setminus\{0\}$, with $C\in\Z$, and put
+$x=(1-\sqrt{1-z})/2$. For the algebraic elliptic curve $E_{s_\ell,x}$
+of Section~\ref{sec:families}, use the analytic cycle normalized by
+\[
+ \omega=\frac{2\pi}{\sqrt6}
+ {}_2F_1(s_\ell,1-s_\ell;1;x),
+ \qquad h=\int_\gamma X\,\frac{dX}{y}.
+\]
+If this curve is non-CM, then $\pi,\omega^2,\omega h$ are linearly
+independent over $\Qbar$.
+\end{hypothesis}
+
+\begin{theorem}[Conditional classification]\label{thm:main-conditional}
+Assume Hypothesis~\ref{hyp:QPI}. Every primitive standard identity has
+a CM elliptic fiber. There are exactly $36$ classes, comprising
+$11,12,9,4$ classes at levels $1,2,3,4$, respectively, as listed in
+Tables~\ref{tab:standard1}--\ref{tab:standard4}.
+For each fixed level and denominator, the primitive coefficient pair
+is unique up to simultaneous sign, and its multiplier is nonzero.
+
+For the linear Euler companion $F_s(z)/(1-z)$, the complete list has
+$35$ classes. It is obtained by the coefficient transport and ordinary
+convergence criterion of Theorem~\ref{thm:euler}.
+\end{theorem}
+\begin{proof}
+The elliptic realization and its first derivative identify the
+coefficient space with de Rham cohomology. In the normalized basis,
+\begin{equation}\label{rev:eq:leading-reduction}
+ \pi\mathfrak S_\ell(A,B,C)
+  =\frac{3}{2\pi}\bigl((A+Bu_s)\omega^2+Bv_s\omega h\bigr),
+ \qquad u_s,v_s\in\Qbar,\quad v_s\ne0.
+\end{equation}
+Thus a nonzero coefficient pair gives a nontrivial quadratic-period
+relation. Hypothesis~\ref{hyp:QPI} forces CM; the positive endpoint is
+excluded unconditionally in Section~\ref{sec:endpoint}. CM reciprocity
+and the finite modular correspondence then bound the class number and
+give the tabulated parameters. The complementary CM eigenline supplies
+the identity, and its equivariance supplies a rational coefficient
+slope. These statements, with the exact finite enumeration, are proved
+in Section~\ref{sec:enumeration}. Chudnovsky's theorem gives uniqueness
+and nonvanishing in Section~\ref{sec:unique}. Finally, the invertible
+Euler transport gives the companion classification.
+\end{proof}
+
+\begin{theorem}[Unconditional uniqueness]\label{thm:unconditional}
+At every nonzero algebraic real $z\in[-1,1)$, there is at most one
+$[A:B]\in\mathbf P^1(\Qbar)$ such that
+$(A+B\thetaop)F_s(z)\in\Qbar/\pi$. A nonzero coefficient pair cannot
+give zero. At $z=1$, no nonzero algebraic pair gives a convergent
+identity in $\Qbar/\pi$.
+\end{theorem}
+
+The first two assertions are consequences of the identity-line theorem;
+the endpoint uses CM period independence. In particular, the uniqueness
+assertion in the leading theorem needs no conjecture.
+
+\subsection{The period line and its arithmetic}
+The organizing object is a line in the two-dimensional de Rham
+cohomology of an elliptic curve. Clausen's identity realizes the
+hypergeometric function as an elliptic period square. Its first
+derivative is governed by the Gauss--Manin connection, which converts
+the coefficient pair $(A,B)$ into a de Rham class. At an admissible
+algebraic fiber this coefficient map is an isomorphism, and the
+proposed identity takes the form
+\[
+ a\omega^2+b\omega h=\alpha\pi,
+ \qquad a,b,\alpha\in\Qbar.
+\]
+Here $\omega$ is a holomorphic period and $h$ is the period of a
+complementary algebraic class. Chudnovsky's theorem makes the resulting
+coefficient line unique whenever it exists. At a CM fiber, the
+endomorphism algebra supplies a canonical complement to the Hodge
+line; the determinant comparison, or Legendre relation, gives the
+required multiple of $1/\pi$. This construction explains both
+uniqueness and CM existence in the same cohomological language.
+
+For the converse, the natural identification
+\[
+ \operatorname{Sym}^2 H^1(E)\otimes\det H^1(E)^{-1}
+       \simeq\operatorname{End}_0(H^1(E))
+\]
+places the quadratic relation in a comparison space of trace-zero
+endomorphisms. A single scalar relation determines only part of that
+comparison. The remaining coordinates, or suitable propagation to a
+second cycle, would yield an endomorphism criterion for CM.
+Quadratic-period independence gives an explicit numerical exclusion
+sufficient for the original families. Once CM is established,
+the modular correspondence bounds the degree of the elliptic
+$j$-invariant by one or two. CM reciprocity \cite{CoxCM} and complete
+class-number bounds \cite{Watkins} reduce the parameters to a finite
+set. Descent of the complementary eigenline then gives the rational
+slope before any coefficient identification is made. The linear Euler
+companion is obtained by transporting this line; ordinary convergence
+accounts for the change from $36$ standard classes to $35$ companions.
+
+The same line also has an arithmetic realization. Finite
+hypergeometric identities from \cite{BRSTT} relate weighted
+truncations to the conjugate filtration in characteristic $p$.
+Combined with the algebraization theorem of Tang \cite{Tang}, this
+gives an unconditional characterization of the standard rows by
+weighted vanishing at a set of primes of lower natural density
+greater than $3/4$. At a single place of good ordinary reduction,
+exact preservation of the Hodge line by the residue-field power of
+crystalline Frobenius characterizes CM; the lifting step uses the
+$p$-adic Lefschetz theorem of Maulik--Poonen \cite{MaulikPoonen}.
+These criteria impose arithmetic information in addition to the
+complex identity. They do not infer that information from its value.
+
+Variation of the periods gives unconditional restrictions on possible
+identities even without such arithmetic hypotheses. Product monodromy
+and norm descent allow us to apply the Bombieri--Andr\'e specialization
+theorem in the form stated in \cite{BaldiBinyaminiUrbanik2026}.
+For bounded degree of the squared multiplier $\alpha^2$, the gaps
+between distinct absolute denominators tend to infinity, jointly
+across the four levels and both signs. On compact parameter intervals,
+the counting theorem of Habegger--Pila \cite{HabeggerPilaCounting}
+gives subpower bounds in complete arithmetic height windows. These
+results restrict the distribution of possible identities; they leave
+the existence of an isolated non-CM identity unresolved.
+
+\subsection{Organization of the paper}
+Section~\ref{sec:general-period-square} develops the intrinsic period
+line, proves uniqueness, and treats ordinary convergence, including
+the endpoints. Section~\ref{sec:hinge} formulates the CM implication
+in terms of comparison tensors and modular derivatives, and proves
+the implications from the stated numerical conjectures.
+Section~\ref{sec:enumeration} gives CM descent, finite exhaustion,
+and Euler transport. Section~\ref{sec:prime-tests} proves the
+prime-density and one-prime criteria, and Section~\ref{sec:C-density}
+establishes separation and counting.
+
+The appendices supply the explicit elliptic models, the finite CM
+certificate and all identity tables, and details of the integral
+realizations. They also develop refinements of comparison and
+specialization, finite transport, further elliptic branches, and
+compact Shimura settings. The final appendices record the Pad\'e and
+rational-certificate arguments, finite exclusions, and countertests.
+Their role is to preserve the supporting arguments and delineate the
+limits of stronger assertions without interrupting the main proofs.

@@ -1,0 +1,823 @@
+\section{Truncation transport and canonical normalization}
+\label{rev:truncations}
+\label{sec:general-pullbacks}
+The analytic transport is \eqref{eq:general-pullback-transport}; its
+gauge and logarithmic derivatives are denoted here by $g,u,v$.
+All applications below retain the nondegeneracy and branch conditions
+of the general theory. We now prove the additional finite-polynomial
+condition needed to transport raw weighted truncations.
+\subsection{A polynomial criterion for truncation transport}
+
+Write $[H]_{<p}=\sum_{n=0}^{p-1}[t^n]H\,t^n$.
+All congruences in the next lemma are coefficientwise, followed by
+reduction to $\mathbb F_p[[t]]$ or $\mathbb F_p(t)$ as appropriate.
+
+\begin{lemma}[Finite Frobenius transformation]
+\label{lem:finite-frobenius-pullback}
+Let $p>3$, let $g\in1+t\mathbb Z_p[[t]]$, let
+$r\in t\mathbb Z_p[[t]]$, and suppose
+$H=gF_s(r)\in\mathbb Z_p[[t]]$.
+If
+\[
+ \Lambda_p(t)=g(t)^{1-p}T_p(r(t))
+\]
+reduces to a polynomial of degree less than $p$, then
+\begin{equation}\label{eq:finite-frobenius-pullback}
+ [H]_{<p}(t)\equiv\Lambda_p(t)\pmod p.
+\end{equation}
+If $u=\delta g/g$ and $v=\delta r/r$, then
+\begin{equation}\label{eq:finite-weighted-pullback}
+ (A+B\delta)[H]_{<p}(t)
+ \equiv g(t)^{1-p}
+ \bigl\{(A+Bu(t))T_p(r(t))
+        +Bv(t)r(t)T'_p(r(t))\bigr\}\pmod p.
+\end{equation}
+The last identity is valid wherever its reduced rational expressions
+are defined.
+\end{lemma}
+\begin{proof}
+The rational parameters $1/2,s,1-s$ are $p$-adic integers, so their
+binomial coefficients show that all coefficients of $F_s$ are
+$p$-integral.  Since $r$ has positive order,
+$F_s(r)-T_p(r)$ is divisible by $t^p$.  In characteristic $p$,
+\[
+ g(t)^{-p}=g(t^p)^{-1}=1+O(t^p).
+\]
+It follows that $g^{1-p}T_p(r)$ and $gF_s(r)$ have the same
+coefficients of degree less than $p$.  The assumed polynomial degree
+bound proves \eqref{eq:finite-frobenius-pullback}.  Differentiating
+in characteristic $p$ gives
+\[
+ \frac{\delta(g^{1-p})}{g^{1-p}}=(1-p)u=u,
+\]
+and then the chain rule proves
+\eqref{eq:finite-weighted-pullback}.
+\end{proof}
+
+\begin{proposition}[Three exact finite transformations]
+\label{prop:three-finite-transformations}
+For every prime $p>3$, the following are polynomial congruences of
+degree less than $p$:
+\begin{align}
+ [\mathcal G]_{<p}(t)
+ &\equiv(1+Kt)^{p-1}
+       T_p\!\left(\frac{Rt}{(1+Kt)^2}\right),
+       &&R=4K,\label{eq:finite-quadratic}\\
+ [H_{\mathrm{Domb}}]_{<p}(t)
+ &\equiv(1-4t)^{p-1}
+       T_{p,1/3}\!\left(\frac{108t^2}{(1-4t)^3}\right),
+       \label{eq:finite-domb}\\
+ [H_9]_{<p}(t)
+ &\equiv D(t)^{(p-1)/2}
+       T_{p,1/6}\!\left(\frac{1728t^3}{D(t)^3}\right),
+       &&D(t)=1-6t-27t^2.\label{eq:finite-nine}
+\end{align}
+Here the first line uses the corresponding value of $s$, and
+$T_{p,s}$ denotes the truncation of $F_s$.
+Their weighted forms are obtained by
+\eqref{eq:finite-weighted-pullback}, with exactly the logarithmic
+derivatives in the analytic transformations.
+\end{proposition}
+\begin{proof}
+In the reduced truncations, a Pochhammer numerator first vanishes
+after degrees
+\[
+ d_s(p)=
+ \begin{cases}
+ \lfloor p/6\rfloor,&s=1/6,\\
+ \lfloor p/4\rfloor,&s=1/4,\\
+ \lfloor p/3\rfloor,&s=1/3,\\
+ (p-1)/2,&s=1/2.
+ \end{cases}
+\]
+Thus $\deg T_{p,s}=d_s(p)$.  In
+\eqref{eq:finite-quadratic}, the $n$th term is a constant times
+$t^n(1+Kt)^{p-1-2n}$, whose exponent is nonnegative and whose degree
+is at most $p-1$.  In \eqref{eq:finite-domb}, its counterpart is
+$t^{2n}(1-4t)^{p-1-3n}$, again with nonnegative exponent and degree
+at most $p-1$.  In \eqref{eq:finite-nine}, it is
+$t^{3n}D^{(p-1)/2-3n}$; the exponent is nonnegative because
+$n\le\lfloor p/6\rfloor$, and its degree is $p-1-3n$.
+Each right side therefore satisfies the polynomial degree condition
+of Lemma~\ref{lem:finite-frobenius-pullback}.  The defining analytic
+identities and that lemma prove all three congruences.
+\end{proof}
+
+The arithmetic prefactors are essential.  For example, the factor
+in \eqref{eq:finite-domb} is $(1-4t)^{p-1}$, whereas the analytic
+factor is $(1-4t)^{-1}$.  Their logarithmic derivatives agree modulo
+$p$, which is precisely what permits linear weights to transfer.
+
+\begin{theorem}[Arithmetic classification for the additional families]
+\label{thm:additional-raw-density}
+In each of the quadratic-companion, Domb, and level-nine families,
+consider integer denominators and primitive integer linear weights
+for which the defining series converges ordinarily.  Let
+\[
+ Z_{A,B,t_0}=
+ \left\{p>3:(A+B\delta)[H]_{<p}(t_0)\equiv0\pmod p\right\},
+ \qquad t_0=1/C,
+\]
+omitting the finitely many primes at which the data are not integral
+or the displayed rational transformations have poles.  The following
+are equivalent:
+\begin{enumerate}
+\item The lower natural density of $Z_{A,B,t_0}$ is greater than $3/4$.
+\item The set $Z_{A,B,t_0}$ contains all but finitely many primes.
+\item Up to simultaneous sign of the weights, the data are one of the
+five quadratic-companion rows, the two Domb rows, or the two level-nine
+rows in the respective CM classification.
+\end{enumerate}
+\end{theorem}
+\begin{proof}
+At a nonendpoint convergent parameter, the analytic transformations
+have $g\ne0$, $v\ne0$, and rational $r,u,v$.
+Proposition~\ref{prop:three-finite-transformations} identifies the
+raw weighted truncation, up to a nonzero finite-field factor, with
+the standard weighted truncation having the fixed rational weights
+\[
+ (a,b)=(A+Bu(t_0),Bv(t_0)).
+\]
+The sets of vanishing rational primes therefore differ by at most
+a finite set.  Theorem~\ref{thm:weighted-density-cm} shows that the
+first condition forces a CM fiber.  The exact CM parameter
+classification leaves the denominators already listed.
+Proposition~\ref{prop:cm-weighted-slope} then identifies the unique
+slope of density greater than $3/4$ with the CM eigenline.  Its period
+determinant characterization and invertible analytic transport
+identify this slope with the displayed complex identity.  At that
+slope the congruence holds outside a finite set of primes, proving
+the second condition.  Conversely, every displayed identity selects
+that line and therefore satisfies the second condition.  The second
+condition plainly implies the first.
+
+There are two kinds of convergent endpoint not covered by this
+regular argument: $C=K$ for a quadratic companion, and $C=16$ for
+Domb.  In either case convergence forces $B=0$, and the transformed
+parameter is $z=1$.  The finite transformations reduce the zero
+condition to $T_p(1)=0$.  Finite Clausen gives
+$T_p(1)=U_p(1/2)^2$, and the Hasse calculation remains valid at
+$x=1/2$, where the elliptic fiber is smooth and CM.  Deuring's
+criterion therefore gives density $1/2$ for these zero sets.  They
+do not satisfy the first condition and supply no additional rows.
+\end{proof}
+
+This theorem is unconditional, but its hypothesis is arithmetic.
+It does not derive the weighted congruences from a complex identity
+at an unknown non-CM fiber.  Under the appropriately enlarged
+quadratic-period hypothesis, the analytic classifications and these
+arithmetic classifications coincide.
+
+
+\subsection{Why the regularity conditions cannot be suppressed}
+\label{sec:countermodel-guardrails}
+The next examples concern rational and algebraic transforms of the
+standard functions. They do not contradict the standard-branch
+classification. They show precisely why a general formulation must
+control zeros of the gauge, critical points of the parameter map, the
+coefficient field, and singular source parameters.
+
+Suppose $H(t)=g(t)F(\phi(t))$ and put $\delta=t\,d/dt$.
+At an algebraic point $t_0$ where $F$ is analytic at $\phi(t_0)$,
+$g,\phi$ are regular, and $t_0g(t_0)\phi(t_0)\ne0$, the transport is
+\begin{equation}\label{eq:countermodel-transport}
+ (A+B\delta)H=g\left[
+ \left(A+B\frac{\delta g}{g}\right)F
+ +B\frac{\delta\phi}{\phi}\thetaop F\right].
+\end{equation}
+Its determinant is $g(t_0)^2t_0\phi'(t_0)/\phi(t_0)$.
+Thus nonvanishing of this determinant transfers algebraic projective
+uniqueness. Rational projective slopes require a further field check.
+
+\begin{proposition}[Critical pullbacks with cubic supercongruences]
+\label{prop:critical-countermodels}
+Let $m>3$ be an integer with $m\nmid64$, and write
+\[
+ H_m(t)=F_{1/2}\!\left(\frac{2t-t^2}{m}\right)
+       =\sum_{k\ge0}h_kt^k.
+\]
+The series and its differentiated series converge absolutely at
+$t=1$. The elliptic fiber there is smooth and non-CM, but
+\[
+ \delta H_m(1)=0,\qquad
+ \sum_{k=0}^{p-1}kh_k\equiv0\pmod{p^3}
+ \quad\text{for every odd prime }p\nmid m.
+\]
+\end{proposition}
+\begin{proof}
+Put $\phi_m(t)=(2t-t^2)/m$. Choose $r>1$ with $2r+r^2<m$.
+Then $|\phi_m(t)|<1$ on $|t|\le r$, proving convergence.
+The derivative vanishes because $\phi'_m(1)=0$ while $F_{1/2}$ is
+analytic at $1/m$. The invariant is
+\[
+ j(1/m)=\frac{64(4m-1)^3}{m}.
+\]
+Since $\gcd(m,4m-1)=1$ and $m\nmid64$, it is a nonintegral rational
+number. It cannot be a CM invariant, because singular moduli are
+algebraic integers.
+
+For the congruence write
+$c_n=\binom{2n}{n}^3/64^n$ and
+\[
+ V_p(t)=\sum_{n=0}^{p-1}c_n\phi_m(t)^n.
+\]
+The coefficients of degree less than $p$ agree with those of $H_m$.
+Terms with $n\le(p-1)/2$ have degree at most $p-1$, while terms with
+$(p+1)/2\le n<p$ have $p^3\mid c_n$ in $\Z_{(p)}$. Hence
+\[
+ V_p(t)-\sum_{k<p}h_kt^k\in p^3\Z_{(p)}[t].
+\]
+Since $V'_p(1)=0$ exactly, differentiation and evaluation at 1 give
+the asserted congruence.
+\end{proof}
+
+This example has the primitive input pair $(A,B)=(0,1)$ and the
+allowed multiplier $\alpha=0$. It does not refute a CM statement
+restricted to nonzero multipliers. It does refute an unrestricted
+claim that cofinite weighted supercongruences force CM for every
+rational pullback of an elliptic period square. At this critical
+point the proposed de Rham direction is zero, so there is no
+complementary line to which the algebraization theorem could apply.
+The condition $B\ne0$ cannot replace that geometric requirement.
+Multiplication by $1+t$ gives the non-CM zero identity with primitive
+pair $(-1,2)$; this last observation concerns the complex value only.
+
+Vanishing gauges can destroy even uniqueness. The normalized rational
+coefficient function
+\[
+ J(t)=(1-t)^2F_{1/2}(t/5)
+\]
+has radius at least 5 and satisfies $J(1)=\delta J(1)=0$, at the
+smooth non-CM fiber $j=438976/5$. Every primitive integer pair gives
+zero there, so one parameter has infinitely many slopes.
+Separately, a smoothness condition cannot be replaced by a
+noncriticality condition: for $m>2$,
+\[
+ K_m(t)=F_{1/2}\!\left(\frac{t(1-t)}m\right),\qquad
+ (1+8m\delta)K_m(1)=0.
+\]
+Here the pullback is noncritical at 1, but its image is the nodal
+parameter $z=0$; indeed $K_m(1)=1$ and $\delta K_m(1)=-1/(8m)$.
+
+\begin{proposition}[Rational Taylor coefficients do not preserve rational slopes]
+\label{prop:gauge-rational-slope-countermodel}
+The rational-coefficient function
+\[
+ L(t)=\frac{1+\sqrt{1+t/3}}2\,F_{1/2}(t/4),
+\]
+with square root equal to 1 at zero, is normalized by $L(0)=1$ and
+converges absolutely, with its derivative, at $t=1$. Its fiber there
+has CM. Nevertheless it has no nonzero rational pair $(A,B)$ for an
+inverse-$\pi$ identity at $t=1$.
+\end{proposition}
+\begin{proof}
+The scalar $g(t)=(1+\sqrt{1+t/3})/2$ has rational Taylor coefficients
+and is analytic for $|t|<3$. The other factor is analytic for $|t|<4$.
+The standard identity at $z=1/4$ is
+$(1+6\thetaop)F_{1/2}(1/4)=4/\pi$, and its invariant is $j=54000$.
+By algebraic projective uniqueness the unique slope is $1/6$.
+But $\delta g(1)/g(1)=(2-\sqrt3)/4$, so
+\eqref{eq:countermodel-transport} transports that slope to
+\[
+ \frac AB=\frac16-\frac{2-\sqrt3}{4}
+ =-\frac13+\frac{\sqrt3}{4}\notin\Q.
+\]
+Taking $B=1$ gives multiplier $2g(1)/3\ne0$. Every nonzero pair is
+on this unique algebraic slope, so none is rational.
+\end{proof}
+
+A critical pullback over a singular source parameter requires a
+different local calculation. In particular it need not give a zero
+derivative. Clausen's transformation gives the germ identity
+\[
+ M(t)=F_{1/2}(t(2-t))
+ ={}_2F_1(1/2,1/2;1;t/2)^2.
+\]
+The right side has radius 2. Consequently the series and derivative
+converge absolutely at $t=1$. In complete elliptic-integral parameter
+notation, $f(x)={}_2F_1(1/2,1/2;1;x)=2K(x)/\pi$, and at $x=1/2$
+\[
+ f'(1/2)=\frac2\pi(2E(1/2)-K(1/2)),\qquad
+ 2K(1/2)E(1/2)-K(1/2)^2=\frac\pi2.
+\]
+It follows that
+\[
+ \delta M(1)=f(1/2)f'(1/2)=\frac2\pi.
+\]
+The fiber has $j=1728$ and is CM. The source derivative $F'_{1/2}(z)$
+is singular at $z=1$, so direct substitution into a product of the
+vanishing pullback derivative with $F'_{1/2}(1)$ was never legitimate.
+This example also shows that an algebraic pullback can improve the
+ordinary convergence of a differentiated series.
+
+\subsection{The different behavior of raw Euler truncations}
+Finite transformation is not an automatic consequence of
+analytic transformation.  For the linear Euler companion
+$H=F_s/(1-t)$, direct summation of coefficients gives instead
+\[
+ [H]_{<p}(t)
+  =\frac{T_p(t)-t^pT_p(1)}{1-t}\pmod p.
+\]
+The extra boundary term is generally nonzero.  In this case
+$(1-t)^{p-1}T_p(t)$ need not have degree less than $p$, so
+Lemma~\ref{lem:finite-frobenius-pullback} does not apply.  Transported
+standard truncations still provide an arithmetic criterion for its
+35 slopes, but identifying that criterion with the raw Euler
+truncations is false in general, as the next exact example shows.
+
+\begin{proposition}[A CM Euler row with raw zero density $1/2$]
+\label{prop:euler-raw-density-obstruction}
+For $s=1/2$, $t_0=1/4$, and $H=F_{1/2}/(1-t)$, the genuine CM
+identity
+\[
+ (-1+6\delta)H(1/4)=\frac{16}{3\pi}
+\]
+has raw weighted-truncation zeros of natural density exactly $1/2$.
+\end{proposition}
+\begin{proof}
+The exact formula for $[H]_{<p}$, differentiated in characteristic
+$p$, gives
+\[
+ (-1+6\delta)[H]_{<p}(1/4)
+ \equiv\frac43(1+6\thetaop)T_p(1/4)-\frac13T_p(1).
+\]
+The first term vanishes at all but finitely many primes by the CM
+line criterion for the standard row $(1,6,256,4)$.
+Put $m=(p-1)/2$.  Finite Clausen and the hypergeometric expression
+for the Legendre polynomial give
+\[
+ T_p(1)=U_p(1/2)^2=P_m(0)^2\pmod p.
+\]
+For odd $m$, $P_m(0)=0$; for even $m$,
+\[
+ P_m(0)=(-1)^{m/2}2^{-m}\binom{m}{m/2}\not\equiv0\pmod p.
+\]
+Thus, outside finitely many primes, the raw Euler weighted
+truncation vanishes exactly when $p\equiv3\pmod4$.  These primes
+have natural density $1/2$.
+\end{proof}
+
+
+\subsection{Finite jets do not determine raw congruence densities}
+\label{subsec:C-gauge-obstruction}
+The arithmetic transfer problem cannot be solved by retaining only
+global boundedness, irreducible elliptic symmetric-square monodromy,
+and finitely many derivatives at the identity point.  The following
+construction preserves all these data but changes the prime-zero
+density from one to zero.
+
+\begin{proposition}\label{prop:C-finite-jet-density-zero}
+Put $F=F_{1/2}$ and, for any integer $M\ge2$, define
+\[
+ g_M(z)=1+\frac{z(4z-1)^M}{3-4z},\qquad H_M(z)=g_M(z)F(z).
+\]
+Then $H_M(0)=1$, $H_M(192t)\in\mathbb Z[[t]]$, and the minimal
+differential module of $H_M$ is isomorphic over $\mathbb Q(z)$ to
+the irreducible rank-three differential module of $F$.
+All derivatives of $H_M$ and $F$ through order $M-1$ agree at
+$z_0=1/4$.  In particular, an ordinarily absolutely convergent
+identity holds:
+\[
+ (1+6\thetaop)H_M(1/4)=\frac4\pi.
+\]
+Nevertheless, if $H_{M,p}$ is the Taylor polynomial of $H_M$ of
+degree less than $p$, the set of primes for which
+\[
+ (1+6\thetaop)H_{M,p}(1/4)\equiv0\pmod p
+\]
+has natural density zero.
+\end{proposition}
+\begin{proof}
+Write
+\[
+ T_p(z)=\sum_{n=0}^{p-1}\frac{\binom{2n}{n}^3}{64^n}z^n
+ \quad\text{in }\mathbb F_p[z],\qquad
+ P_M(z)=3-4z+z(4z-1)^M.
+\]
+For $p>3$, the polynomial $T_p$ has degree at most $(p-1)/2$.
+If $p\ge2M+3$, then $\deg(P_MT_p)\le p-1$.
+Finite geometric summation therefore gives the polynomial identity
+\begin{equation}\label{eq:C-gauge-finite}
+ H_{M,p}(z)=
+ \frac{P_M(z)T_p(z)-(4z/3)^pP_M(3/4)T_p(3/4)}{3-4z}
+ \qquad\text{in }\mathbb F_p[z].
+\end{equation}
+Indeed the numerator vanishes at $z=3/4$, the quotient has degree
+at most $p-1$, and its germ agrees modulo $z^p$ with
+$P_M(z)F(z)/(3-4z)$.
+
+Now $g_M(z_0)=1$ and $g'_M(z_0)=0$.  Differentiation in
+characteristic $p$ annihilates $(4z/3)^p$; also
+\[
+ \left.(1+6\thetaop)\frac1{3-4z}\right|_{z=z_0}=2,
+ \qquad (4z_0/3)^p=\frac13,
+ \qquad P_M(3/4)=\frac34\,2^M.
+\]
+Consequently \eqref{eq:C-gauge-finite} implies
+\begin{equation}\label{eq:C-gauge-weighted}
+ (1+6\thetaop)H_{M,p}(1/4)
+ =(1+6\thetaop)T_p(1/4)-2^{M-1}T_p(3/4)
+ \quad\text{in }\mathbb F_p.
+\end{equation}
+The standard CM row $(A,B,C)=(1,6,256)$ and its proved CM
+congruence give $(1+6\thetaop)T_p(1/4)=0$ outside a finite set
+of primes.  Finite Clausen, applied with $x=1/4$ and
+$4x(1-x)=3/4$, identifies $T_p(3/4)$ with the square of
+the Hasse polynomial of the Legendre curve
+\[
+ E:\quad y^2=x(x-1)(x-1/4).
+\]
+Thus $T_p(3/4)=0$ precisely at the supersingular good primes.
+The invariant
+\[
+ j(E)=256\frac{(1-1/4+1/16)^3}{(1/16)(9/16)}
+     =\frac{35152}{9}
+\]
+is not an algebraic integer; hence $E$ is non-CM.  Its
+supersingular rational primes have density zero by the non-CM
+case of Theorem~\ref{thm:B-qcurve-density} (or directly by Serre's
+open-image theorem and Chebotarev).  Equation
+\eqref{eq:C-gauge-weighted} proves the density assertion.
+
+Finally,
+\[
+ F(192t)=\sum_{n\ge0}\binom{2n}{n}^3 3^n t^n,
+ \qquad
+ g_M(192t)=1+\frac{64t(768t-1)^M}{1-256t}
+\]
+have integral coefficients.  Rational multiplication by the nonzero
+function $g_M$ is an invertible change of differential module;
+it preserves rank and irreducibility over $\mathbb Q(z)$.
+The difference $H_M-F$ vanishes to order $M$ at $z_0$.
+Moreover, $H_M$ is analytic for $|z|<3/4$, so evaluation and
+differentiation at $z_0$ are ordinary absolutely convergent
+operations.  This proves every claimed property.
+\end{proof}
+
+\begin{corollary}\label{cor:C-two-jet-density-zero}
+The same obstruction persists when arbitrarily many Taylor
+coefficients at the cusp are prescribed as well.  For $M\ge2$ and
+$N\ge1$, put
+\[
+ g_{M,N}(z)=1+\frac{z^N(4z-1)^M}{3-4z},\qquad
+ H_{M,N}=g_{M,N}F.
+\]
+Then $H_{M,N}-F$ vanishes to order $N$ at $0$ and to order $M$
+at $1/4$.  All conclusions of
+Proposition~\ref{prop:C-finite-jet-density-zero} hold, with the
+finite formula for every $p\ge2(M+N)+1$ replaced by
+\[
+ (1+6\thetaop)H_{M,N,p}(1/4)
+ =(1+6\thetaop)T_p(1/4)
+   -2^{M+1-2N}3^{N-1}T_p(3/4)\pmod p.
+\]
+\end{corollary}
+\begin{proof}
+Replace $P_M$ in the preceding proof by
+$3-4z+z^N(4z-1)^M$, of degree $M+N$.
+Its value at $3/4$ is $(3/4)^N2^M$, giving the displayed
+coefficient.  It is nonzero modulo every $p>3$.
+The rescaling $z=192t$ again gives integral coefficients, since
+$192^N/3$ is integral.  The other assertions follow from the
+indicated orders of vanishing and the preceding density proof.
+\end{proof}
+
+This proposition changes the generating function and is not a
+counterexample to CM forcing for any of the four standard branches.
+It shows that a successful transfer theorem must retain the specified
+Frobenius-compatible coefficient normalization; no prescribed finite
+jet at the complex identity point can replace that normalization.
+
+\subsection{A normalization retained by the standard coefficients}
+\label{subsec:C-canonical-lucas}
+
+The preceding rational gauges preserve finite complex data but lose
+an exact arithmetic property of the standard coefficients: Lucas
+congruences. This supplies a restriction on possible transfer
+arguments, although it does not establish a transfer theorem.
+
+\begin{proposition}[Standard Lucas normalization]
+\label{prop:C-standard-lucas}
+Let $u_\ell(n)$ be the factorial coefficients in \eqref{eq:series},
+and put $k_\ell=6,4,3,2$ for $\ell=1,2,3,4$, respectively.
+For every prime $p$, $a\geq0$, and $0\leq b<p$,
+\[
+ u_\ell(pa+b)\equiv u_\ell(a)u_\ell(b)\pmod p.
+\]
+If $p>k_\ell$, then
+\[
+ T_{\ell,p}(t)=\sum_{n=0}^{p-1}u_\ell(n)t^n\in\mathbb F_p[t]
+ \quad\text{has degree}\quad
+ d_\ell(p)=\left\lfloor\frac{p-1}{k_\ell}\right\rfloor,
+ \qquad 1\leq d_\ell(p)<p-1.
+\]
+Writing $G_\ell(t)=\sum_{n\geq0}u_\ell(n)t^n$, one has
+\begin{equation}\label{eq:C-standard-lucas-functional}
+ G_\ell(t)=T_{\ell,p}(t)G_\ell(t^p)
+ \qquad\text{in }\mathbb F_p[[t]].
+\end{equation}
+The same conclusions hold for $F_{s_\ell}(z)=G_\ell(z/R_\ell)$
+when $p\nmid R_\ell$.
+\end{proposition}
+\begin{proof}
+Legendre's factorial valuation formula gives
+\[
+ v_p(u_\ell(n))=\sum_{j\geq1}\Delta_\ell(n/p^j),
+\]
+where the $\Delta_\ell$ are periodic of period one and on $[0,1)$ equal
+\[
+ \lfloor6x\rfloor-\lfloor3x\rfloor,\quad
+ \lfloor4x\rfloor,\quad
+ \lfloor3x\rfloor+\lfloor2x\rfloor,\quad
+ 3\lfloor2x\rfloor.
+\]
+They are nonnegative everywhere and positive on $[1/k_\ell,1)$.
+If $b\geq p/k_\ell$, the first summand shows that both
+$u_\ell(pa+b)$ and $u_\ell(b)$ vanish modulo $p$.
+If $b<p/k_\ell$, there are no low-digit carries in the respective
+integer presentations
+\[
+ \binom{6n}{3n}\binom{3n}{n,n,n},\qquad
+ \binom{4n}{n,n,n,n},\qquad
+ \binom{3n}{n,n,n}\binom{2n}{n},\qquad
+ \binom{2n}{n}^{\!3}.
+\]
+Lucas's multinomial theorem proves the required congruence.
+For $0\leq n<p/k_\ell$, every factorial argument is below $p$,
+so $u_\ell(n)$ is a unit; for $p/k_\ell\leq n<p$ it is divisible
+by $p$. This proves the degree formula. Coefficientwise digit
+decomposition gives \eqref{eq:C-standard-lucas-functional}.
+Rescaling by $R_\ell$ preserves the congruence by Fermat's theorem.
+\end{proof}
+
+\begin{proposition}[Rigidity under rational scalar gauges]
+\label{prop:C-lucas-rational-rigidity}
+Let $f\in\mathbb F_p[[t]]$ satisfy $f(0)=1$ and
+\[
+ f(t)=T(t)f(t^p),\qquad T\in\mathbb F_p[t],\quad
+ 1\leq\deg T<p-1.
+\]
+Let $g\in\mathbb F_p(t)$ be regular at zero with $g(0)=1$.
+If $h=gf$ also satisfies Lucas congruences, then $g=1$.
+Consequently, any nonconstant rational $g\in\Q(t)$ with $g(0)=1$
+destroys the Lucas property of each standard series at every
+sufficiently large prime.
+\end{proposition}
+\begin{proof}
+Write $g=P/Q$ with $P,Q$ coprime and $P(0)=Q(0)\ne0$.
+Lucas congruences for $h$ give $h(t)=U(t)h(t^p)$ with
+$U\in\mathbb F_p[t]$ and $\deg U<p$. Since $g(t^p)=g(t)^p$,
+\[
+ U=Tg^{1-p}=\frac{TQ^{p-1}}{P^{p-1}}.
+\]
+Thus $P^{p-1}$ divides $T$, and $\deg T<p-1$ makes $P$ constant.
+If $Q$ were nonconstant, then
+$\deg U=\deg T+(p-1)\deg Q\geq p$, a contradiction.
+Normalization gives $g=1$.
+For a rational gauge in characteristic zero, exclude the finitely
+many primes at which its coefficients are not integral, its numerator
+or denominator degree drops, their resultant vanishes, or the
+standard truncation has degree zero. Its reduction remains
+nonconstant at every other prime, so the first assertion applies.
+\end{proof}
+
+There is a corresponding correction to raw truncation. For a normalized
+series $h$ in characteristic $p$, define its formal Frobenius quotient by
+\[
+ \mathcal Q_p(h)(t)=\frac{h(t)}{h(t^p)}.
+\]
+In the notation of Proposition~\ref{prop:C-lucas-rational-rigidity},
+\begin{equation}\label{eq:C-lucas-gauge-covariance}
+ \mathcal Q_p(gf)=g^{1-p}T.
+\end{equation}
+The right side is rational, and its Taylor polynomial of degree less
+than $p$ is the raw truncation of $gf$, since $h(t^p)\equiv1\pmod{t^p}$.
+If $g(t_0)=1$ and $g'(t_0)=0$ at a regular point $t_0\in\mathbb F_p$,
+then the value and first derivative of this rational quotient equal
+those of $T$ at $t_0$. Thus
+\[
+ (A+Bt\partial_t)\mathcal Q_p(gf)(t_0)
+ =(A+Bt\partial_t)T(t_0).
+\]
+This explains exactly where the gauge examples change the raw
+weighted congruence: a rational Frobenius tail is discarded.
+It is an identity in characteristic $p$, not a comparison theorem
+for the original complex value.
+
+\begin{remark}[Algebraic gauges remain possible]
+\label{rem:C-algebraic-lucas-gauge}
+The rationality hypothesis in
+Proposition~\ref{prop:C-lucas-rational-rigidity} is necessary.
+For $g(z)=(1-z)^{-1/2}$ and every odd good prime,
+\[
+ \frac{g(z)}{g(z^p)}=(1-z)^{(p-1)/2}\pmod p.
+\]
+Multiplication by the standard $F_{s_\ell}$ gives a polynomial
+Frobenius quotient of degree $d_\ell(p)+(p-1)/2\leq p-1$.
+Thus this nonrational algebraic gauge preserves Lucas congruences.
+It does not preserve the first derivative at a regular evaluation point.
+\end{remark}
+
+Even preserving finite jets does not rule out algebraic gauges if
+Lucas congruences are required only on a progression of primes.
+The following construction states this limitation precisely.
+
+\begin{proposition}\label{prop:C-algebraic-jet-lucas}
+Let $M\geq2$, $N\geq1$, $D=M+N$, and let $m\geq2D$ be an integer.
+Put
+\[
+ P(z)=1+2^{-M-1}z^N(4z-1)^M,\qquad
+ g(z)=P(z)^{-1/m},\qquad H(z)=g(z)F_{1/2}(z),
+\]
+using the branch with $g(0)=1$.
+The difference $H-F_{1/2}$ vanishes to order at least $N$ at zero
+and at least $M$ at $z=1/4$. An ordinarily absolutely convergent
+identity holds:
+\[
+ (1+6\thetaop)H(1/4)=\frac4\pi.
+\]
+For every sufficiently large prime $p\equiv1\pmod m$, $H$ satisfies
+Lucas congruences modulo $p$.
+\end{proposition}
+\begin{proof}
+On $|z|\leq1/4$ one has
+\[
+ |P(z)-1|\leq 2^{-M-1}4^{-N}2^M=2^{-1}4^{-N}<1.
+\]
+Hence the branch $g$ is analytic on a disk of radius greater than
+$1/4$. The chosen logarithm gives $g(1/4)=1$, and the stated
+vanishing orders follow from those of $P-1$.
+In particular $g'(1/4)=0$, so the standard row $(A,B,C)=(1,6,256)$
+is preserved.
+Its series still converges absolutely there.
+The gauge is nonrational: its pole-order equation $g^{-m}=P$ at
+infinity would otherwise require $m$ to divide $D$, whereas $0<D<m$.
+
+At a good prime $p\equiv1\pmod m$, the coefficients of $g$ are
+$p$-integral: the binomial expansion has exponent $-1/m\in\Z_p$.
+Reduction gives $g(z^p)=g(z)^p$, and therefore
+\[
+ \frac{H(z)}{H(z^p)}
+ =T_p(z)P(z)^{(p-1)/m},\qquad
+ T_p(z)=\sum_{n=0}^{p-1}c_{1/2}(n)z^n.
+\]
+This is a polynomial of degree
+\[
+ \frac{p-1}{2}+D\frac{p-1}{m}\leq p-1.
+\]
+Its functional identity with $H(z^p)$ is equivalent to Lucas
+congruences. This proves the assertion.
+\end{proof}
+
+These constructions change the generating function and retain the CM
+fiber at $z=1/4$; they are not counterexamples to standard CM forcing.
+The exact factorial recurrence and its Lucas structure survive as
+additional data that a successful transfer argument may need to use.
+Neither their preservation nor the quotient covariance above supplies
+the missing equality with an exact characteristic-zero Frobenius
+splitting.
+
+\subsection{Algebraic gauges on a majority of primes}
+\label{subsec:C-majority-lucas-gauges}
+
+The progression restriction in Proposition~\ref{prop:C-algebraic-jet-lucas}
+cannot be removed. In fact, an upper prime density greater than one half
+already classifies all algebraic gauges preserving Lucas congruences.
+Here and below the density is taken relative to all rational primes.
+
+\begin{theorem}[Classification of algebraic Lucas gauges]
+\label{thm:C-majority-lucas-gauges}
+Fix $s\in\{1/6,1/4,1/3,1/2\}$, and let
+$g\in\Q[[z]]$ be algebraic over $\Q(z)$ with $g(0)=1$.
+Let $\mathcal P_g$ be the set of primes at which the coefficients of
+$gF_s$ are $p$-integral and their reductions satisfy Lucas congruences.
+Then the following conditions are equivalent:
+\begin{enumerate}
+\item $\mathcal P_g$ has upper natural prime density greater than $1/2$;
+\item $\mathcal P_g$ contains every sufficiently large prime;
+\item $g(z)=(1-az)^{-1/2}$ for some $a\in\Q$, with the branch
+normalized at zero.
+\end{enumerate}
+If these conditions hold and $g(z_0)=1$ at any nonzero regular point
+on an analytic continuation of the branch, then $g=1$.
+The condition $g'(0)=0$ likewise forces $g=1$.
+\end{theorem}
+\begin{proof}
+Put $d=[\Q(z,g):\Q(z)]$. We first justify preservation of this degree
+on reduction. Eisenstein's theorem on algebraic power series makes
+all coefficients of $g$ integral outside finitely many primes.
+The field $\Q(z,g)$ embeds in $\Q((z))$, whose elements algebraic
+over $\Q$ are rational constants: differentiate a separable polynomial
+equation to see that such a Laurent series has derivative zero.
+Thus $\Q(z,g)/\Q$ is regular, and a primitive polynomial model
+$H(z,Y)$ for $g$ is absolutely irreducible.
+Absolute irreducibility persists outside finitely many primes.
+Indeed, after homogenization, each possible factorization degree
+is the image of multiplication between projective spaces of forms;
+these images are closed because the maps are proper. The section
+defined by $H$ avoids their union generically, hence meets it at
+only finitely many primes. Excluding degree drops as well shows
+\begin{equation}\label{eq:C-gauge-degree-reduction}
+ [\mathbb F_p(z,g_p):\mathbb F_p(z)]=d
+\end{equation}
+for every sufficiently large $p$.
+
+Suppose condition (1) holds. For a sufficiently large $p\in\mathcal P_g$,
+write the Lucas identities for $f_p=(F_s)_p$ and $h_p=(gF_s)_p$ as
+\[
+ f_p(z)=T_p(z)f_p(z^p),\qquad
+ h_p(z)=U_p(z)h_p(z^p),\qquad \deg T_p,\deg U_p<p.
+\]
+Their constant terms are one. Cancellation gives
+\begin{equation}\label{eq:C-algebraic-gauge-kummer}
+ g_p^{p-1}=T_p/U_p\in\mathbb F_p(z).
+\end{equation}
+All roots of $X^{p-1}-T_p/U_p$ lie in $\mathbb F_p(z,g_p)$,
+since $\mu_{p-1}\subset\mathbb F_p$. This polynomial is separable,
+so the field extension is Galois and its group embeds in
+$\mathbb F_p^*$ through $\sigma\mapsto\sigma(g_p)/g_p$.
+Equation~\eqref{eq:C-gauge-degree-reduction} therefore implies
+$d\mid p-1$. Apart from finitely many exceptions,
+$\mathcal P_g$ is contained in the progression $p\equiv1\pmod d$.
+The prime number theorem in arithmetic progressions gives this
+progression natural prime density $1/\varphi(d)$.
+Since $\varphi(d)\geq2$ for $d>2$, condition (1) forces $d\leq2$.
+
+If $d=1$, Proposition~\ref{prop:C-lucas-rational-rigidity} gives $g=1$.
+If $d=2$, the nontrivial Galois automorphism at each sufficiently
+large $p\in\mathcal P_g$ sends $g_p$ to $-g_p$.
+The trace of $g$ over $\Q(z)$ consequently reduces to zero at
+infinitely many primes and is zero. Hence
+\[
+                         g^2=R\in\Q(z).
+\]
+
+We need a uniform multiplicity bound for the roots of $T_p$.
+By Proposition~\ref{prop:C-standard-lucas},
+\[
+ d_p:=\deg T_p=\left\lfloor\frac{p-1}{k_\ell}\right\rfloor,
+ \qquad 1\leq d_p\leq(p-1)/2.
+\]
+The standard differential operator is
+\[
+ L_s=\thetaop^3-z(\thetaop+1/2)(\thetaop+s)(\thetaop+1-s).
+\]
+Since derivatives annihilate $f_p(z^p)$, the identity
+$f_p=T_pf_p(z^p)$ and $L_sf_p=0$ imply $L_sT_p=0$.
+Its leading ordinary-derivative coefficient is $z^3(1-z)$.
+At any point other than $0,1$, a root of multiplicity $r\geq3$
+would contribute a nonzero lowest term proportional to
+$r(r-1)(r-2)$, because $r\leq d_p<p$. Thus its multiplicity
+is at most two. At $z=1$, write $t=z-1$.
+The coefficients of $\partial_z^3$ and $\partial_z^2$ are
+$-t+O(t^2)$ and $-3/2+O(t)$, respectively.
+A root of multiplicity $r\geq2$ would force
+\[
+                         r(r-1)(r-1/2)=0\pmod p.
+\]
+The only additional positive residue is $(p+1)/2>d_p$, so the
+multiplicity at $1$ is at most one. Finally $T_p(0)=1$.
+
+Write $R=P/Q$ in lowest terms, with $P(0)=Q(0)\ne0$.
+At sufficiently large primes in $\mathcal P_g$,
+\[
+                       U_p=T_p(Q/P)^{(p-1)/2}.
+\]
+If $P$ had a root, polynomiality would require a root of $T_p$
+of multiplicity at least $(p-1)/2>2$, impossible for $p\geq7$.
+Thus $P$ is constant. Normalize to write $R=1/Q_0$ with $Q_0(0)=1$.
+Then
+\[
+ \deg U_p=d_p+\tfrac{p-1}{2}\deg Q_0\leq p-1.
+\]
+Since $d_p>0$, one has $\deg Q_0\leq1$.
+This gives $Q_0=1-az$ for $a\in\Q$ and proves (3).
+
+Conversely, for such a gauge at each sufficiently large odd prime,
+\[
+ \frac{g(z)F_s(z)}{g(z^p)F_s(z^p)}
+       =T_p(z)(1-az)^{(p-1)/2}\pmod p.
+\]
+This is a polynomial of degree at most $p-1$ and constant term one,
+so it gives Lucas congruences. Thus (3) implies (2), which implies (1).
+Finally $g(z_0)=1$ gives $1-az_0=1$, and $g'(0)=a/2$.
+Both additional normalization assertions follow.
+\end{proof}
+
+\begin{remark}[Sharp density threshold and scope]
+For any $a\in\Q^*$, the cubic gauge $g=(1-az)^{-1/3}$ has
+Lucas-prime density exactly $1/2$. Its degree makes $p\equiv1\pmod3$
+necessary at every sufficiently large Lucas prime. Conversely, at
+each sufficiently large prime in that progression its Frobenius
+quotient is
+\[
+                  T_p(z)(1-az)^{(p-1)/3},
+\]
+of degree at most $5(p-1)/6<p$, so Lucas holds.
+This proves sharpness for the gauge classification, without an
+additional target-value normalization. The theorem specifies the
+standard section among its algebraic scalar gauges once that value
+is normalized; it does not identify a complex period relation with
+a Frobenius condition and therefore does not prove CM forcing.
+\end{remark}
+

@@ -1,0 +1,316 @@
+\section{Finite exclusions and a modular-jet family}
+\label{sec:C-certified}
+\subsection{Certified finite exclusion in the level-four family}
+Put $U_C=\pi F_{1/2}(64/C)$ and
+$V_C=\pi\vartheta F_{1/2}(64/C)$.
+The following elementary lattice observation turns bounded numerical
+searches into exact finite exclusions.
+
+\begin{lemma}[A certificate excluding small integer relations]
+Let $x_1,\ldots,x_n\in\mathbb R$, and suppose that integers
+$a_1,\ldots,a_n,Q$, with $Q>0$, satisfy
+$|a_i-Qx_i|\le1$. Let $\Lambda\subset\mathbb Z^{n+1}$ be the lattice
+with row basis $[I_n\mid a]$. If an integer basis of $\Lambda$ has every
+Gram--Schmidt squared length strictly larger than $n(n+1)H^2$, then
+\[
+ \sum_{i=1}^n h_ix_i=0,\qquad h_i\in\mathbb Z,
+ \quad\max_i|h_i|\le H
+ \quad\Longrightarrow\quad h_1=\cdots=h_n=0.
+\]
+\end{lemma}
+\begin{proof}
+A nonzero relation would yield the nonzero lattice vector
+$(h_1,\ldots,h_n,\sum_i h_ia_i)$, whose last coordinate has absolute
+value at most $nH$ and whose squared norm is therefore at most
+$n(n+1)H^2$. For any integer basis, the squared norm of a nonzero lattice
+vector is at least the least Gram--Schmidt squared length: take the
+last nonzero integer basis coefficient and project onto the corresponding
+orthogonalized direction. This is a contradiction.
+\end{proof}
+
+\begin{proposition}[Finite exclusion certified by exact arithmetic]
+For every integer $C$ with $65\le|C|\le1024$ and
+$C\notin\{-512,256\}$, no nonzero polynomial
+$P\in\mathbb Z[X,Y]$ of total degree at most two and coefficient height
+at most $10^{11}$ vanishes at $(U_C,V_C)$.
+Consequently there is no identity
+\[
+ (A+B\vartheta)F_{1/2}(64/C)=\alpha/\pi
+\]
+in that denominator range with $(A,B)\ne(0,0)$,
+$|A|,|B|\le1000$, and $\alpha$ annihilated by a nonzero integer
+polynomial of degree at most two and coefficient height at most $50000$.
+\end{proposition}
+\begin{proof}[Proof with a reproducible finite certificate]
+For each of the $1918$ indicated parameters, enclose the six monomials
+\[
+ U_C^2,\ U_CV_C,\ V_C^2,\ U_C,\ V_C,\ 1
+\]
+using outward-rounded integer intervals of scale $10^{120}$. These
+enclosures follow from
+\[
+ \frac{\binom{2n+2}{n+1}^3|C|^{-n-1}}
+      {\binom{2n}{n}^3|C|^{-n}}
+ =\frac{8(2n+1)^3}{(n+1)^3|C|}\le\frac{64}{|C|}
+\]
+and geometric bounds for the tails of both the series and its Euler
+derivative. An exact alternating-series enclosure from Machin's formula
+encloses $\pi$. With $Q=10^{80}$, nearest-midpoint rounding gives
+integers $a_i$; both endpoint inequalities $|a_i-Qx_i|\le1$ are checked
+exactly. Every stored integral basis is obtained by a matrix of determinant
+$\pm1$, with the matrix identity checked. Independent rational
+Gram--Schmidt computations show in all $1918$ cases that the least squared
+length exceeds $42(10^{11})^2$.
+
+The accompanying scripts and the parameter-by-parameter integer bases are
+stored in the research archive under the stem
+\texttt{20260918C\_numeric\_level4\_lattice}; verifying a stored basis
+does not require trusting lattice reduction. The lemma proves the first
+assertion. Substituting $AX+BY$ into an annihilating polynomial for
+$\alpha$ gives a nonzero polynomial in $X,Y$, of total degree at most two
+and coefficient height at most
+$2\cdot1000^2\cdot50000=10^{11}$, proving the second.
+\end{proof}
+
+This is a bounded arithmetic exclusion, not a proof of CM forcing with
+unrestricted coefficients or algebraic multipliers. The three analogous
+tests at $C=-512,256,4096$ correctly fail to exclude their known small
+polynomial relations.
+
+\subsection{Additional exact finite searches}
+The interval method also gives exclusions for multiplier sets with
+unbounded numerator.  At level four, take
+\[
+ 65\leq |C|\leq10000,\qquad |A|\leq20,\quad 0\leq B\leq100,
+ \qquad \gcd(A,B)=1,
+\]
+using $(A,B)=(1,0)$ as the representative when $B=0$.
+There are $19872$ denominators and $2500$ coefficient pairs, hence
+$49680000$ cases.  If $\alpha$ is rational of reduced denominator at
+most $100$, the only surviving identities are the known rows
+$(1,6,256)$ and $(5,42,4096)$.  If instead $\alpha^2$ is rational
+of reduced denominator at most $100$, the only additional row is
+$(1,6,-512)$.  Each surviving row is already established exactly.
+
+For each of levels one to three, take the $127$ denominators
+\[
+ \{R_\ell+1,\ldots,R_\ell+63\}
+ \ \cup\ \{-R_\ell,-R_\ell-1,\ldots,-R_\ell-63\},
+\]
+and the $502$ primitive representatives with $|A|\leq10$,
+$1\leq B\leq40$, together with $(1,0)$.  No identity in this
+set has either $\alpha^2$ or $\alpha^4$ rational with reduced
+denominator at most $1000$.  These are $382524$ power tests.
+The exact CM class-polynomial certificate verifies that every
+parameter in this last set is non-CM.
+
+Here are the certification principles. Rational recurrences and
+geometric tail bounds give outward enclosures for the series and
+its Euler derivative. Near the boundary the quadratic Clausen
+parameter has absolute value at most $1/2$, so its Gauss series
+gives rapidly convergent enclosures, including the negative
+endpoint. Machin's alternating arctangent formula supplies an
+independent rational enclosure for $\pi$. For an enclosure of
+$\alpha^k$ and a denominator bound $M$, an exact rational
+nearest-fraction calculation decides whether the enclosure
+contains a reduced fraction with denominator at most $M$.
+The enclosures are narrower than $1/M^2$, the minimum separation
+between two such distinct fractions. Exclusion therefore does
+not require an upper bound on their numerators.
+
+All endpoints and comparisons are rational. A separate integer
+implementation recomputes the enclosures and verifies the rational
+detector. The scripts and certificates, including their input and
+source hashes, are stored under
+\texttt{20260918C\_numeric\_level4} and
+\texttt{20260918C\_numeric\_levels123} in the attempt archive.
+
+Higher-degree numerical integer-relation searches likewise found
+only known CM controls. Their null results are evidence only and
+are not used in any theorem or certificate above.
+
+\subsection{An explicit non-CM test family and an exact infinite exclusion}
+\label{subsec:C-explicit-jet}
+
+The affine two-jet formulation defines a family in which a counterexample
+would have to meet an additional arithmetic condition. The rational
+constants of bounded denominator below can be excluded unconditionally.
+Put $J(y)=j(iy)$ for $y>1$, with primes on $J$ denoting real $y$-derivatives.
+
+\begin{proposition}\label{prop:C-jet-family}
+The function $H(y)=J''(y)/J'(y)$ is a strictly decreasing bijection from
+$(1,\infty)$ to $(2\pi,\infty)$. For $c>2\pi$, let $H(y_c)=c$,
+$C_c=J(y_c)$, and $t_c=\sqrt{1-1728/C_c}$. Then $C_c>1728$ is strictly
+decreasing in $c$, and
+\begin{equation}\label{eq:C-jet-family-identity}
+ \bigl[(864-C_c)+(C_c-1728)\thetaop\bigr]F_{1/6}(1728/C_c)
+ =-\frac{c(C_c-1728)}{2\pi t_c}.
+\end{equation}
+The series converges absolutely. If $c$ is algebraic, its elliptic fiber is
+non-CM. Nevertheless, $C_c\notin\mathbb Z$ for every integer $c>2\pi$.
+\end{proposition}
+
+\begin{proof}
+Writing $q=e^{-2\pi y}$, positivity of the coefficients in
+$qj=E_4^3\prod_{n\ge1}(1-q^n)^{-24}$ gives
+\[
+ J=q^{-1}+744+\sum_{n\ge1}a_nq^n,\quad a_n>0,\qquad
+ U=\sum_{n\ge1}na_nq^{n+1},\quad
+ V=\sum_{n\ge1}n^2a_nq^{n+1}.
+\]
+Consequently $J'=2\pi q^{-1}(1-U)$ and
+$H=2\pi(1+V)/(1-U)$. Since $j'(i)=0$, one has $U(1)=1$.
+Both $U$ and $V$ strictly decrease with $y$, proving that $H$ strictly
+decreases from infinity to $2\pi$. Also $J$ strictly increases from $1728$
+to infinity. These facts prove existence, uniqueness, and monotonicity.
+
+For the standard level-one model $g_2=3$, $g_3=t$,
+\[
+ F_{1/6}=\frac{3\omega^2}{2\pi^2},\qquad
+ \frac{\thetaop F_{1/6}}{F_{1/6}}
+ =-\frac16-\frac{h}{3t\omega}.
+\]
+Thus the quadratic period coefficients for $(A+B\thetaop)F_{1/6}$ are
+$a=3A/2-B/4$ and $b=-B/(2t)$. The period--jet dictionary gives
+\[
+ bj''+\left(\frac{a}{3jt}-bR(j)\right)j'^2+i\alpha j'=0,
+ \qquad R(j)=\frac2{3j}+\frac1{2(j-1728)}.
+\]
+Its $j'^2$ coefficient vanishes precisely when
+$A/B=-(j-864)/(j-1728)$. Since $j''(iy_c)/j'(iy_c)=-ic$,
+choosing $A=864-C_c$, $B=C_c-1728$ yields
+$\alpha=bc=-c(C_c-1728)/(2t_c)$, proving
+\eqref{eq:C-jet-family-identity}.
+
+To exclude CM when $c$ is algebraic, use the exact formula
+\[
+ \frac{j''}{j'}=
+ \left(R(j)-\frac{s_2}{6j}\right)j'+\frac{i}{y},\qquad
+ s_2=\frac{E_4}{E_6}\left(E_2-\frac3{\pi y}\right).
+\]
+At a CM point on this branch, $j,s_2,y$ are algebraic, while $j'$ is
+transcendental. Here $E_6\ne0$, so the algebraicity assertion for $s_2$
+in \cite[Theorem~8.1]{CGG} applies. Comparing with $j''/j'=-ic$ would
+force $-c=1/y$, which is impossible.
+
+It remains to exclude integer $C_c$ for integer $c$. This last claim uses
+a finite exact certificate. The archived verifier
+\texttt{20260918C\_explicit\_jet\_search.py} and its accompanying JSON file
+contain rational brackets $q_-<q_+$ for all $c=7,\ldots,200$.
+The brackets have denominator $10^{65}$. Their validity is checked by
+384-bit directed dyadic interval arithmetic using
+\[
+ H=\frac\pi3\left(4\frac{E_6}{E_4}
+       +3\frac{E_4^2}{E_6}-E_2\right),\qquad
+ J=\frac{1728E_4^3}{E_4^3-E_6^2}.
+\]
+The Eisenstein sums are truncated after $50$ terms. For $k=1,3,5$ and
+$0<q<1/500$, their omitted sums satisfy the elementary bound
+\[
+ 0\le\sum_{n>50}\sigma_k(n)q^n
+ \le2\cdot51^{k+1}q^{51},
+\]
+since $\sigma_k(n)\le n^{k+1}$ and the successive majorant ratios are
+at most $(1/500)(52/51)^{k+1}<1/2$. A rational enclosure of $\pi$ follows
+from Machin's formula using $110$ alternating terms in each arctangent.
+Every bracket has certified $E_6>0$, so it lies on the required branch.
+For each of the $194$ brackets, the verifier establishes
+$H(q_-)<c<H(q_+)$ and places
+$[J(q_+),J(q_-)]$ strictly between consecutive integers. Approximate
+arithmetic proposes the brackets only; their replay uses exact integers.
+The smallest certified distance to an integer over this range exceeds
+$0.0032177275685462482644977288$, at $c=156$.
+In particular,
+\[
+ 1728.6093005038821554072482832073<C_{200}
+ <1728.6093005038821554072482832074<1729.
+\]
+Finally, every integer $c>2\pi$ is at least $7$, and monotonicity gives
+$1728<C_c\le C_{200}<1729$ for $c\ge200$. The finite certificate and
+this last inequality cover all integer $c$.
+\end{proof}
+
+The proposition excludes a genuine candidate mechanism, rather than a
+normalization defect. If an algebraic noninteger $c>2\pi$ had integer
+$C_c$, division of $A=864-C_c$ and $B=C_c-1728$ by
+$\gcd(C_c-864,C_c-1728)$ in \eqref{eq:C-jet-family-identity} would yield
+a primitive standard identity at a non-CM fiber. Algebraicity of such a
+$c$ remains unexcluded. Equivalently, the unconditional result above
+proves $H(y(C))\notin\mathbb Z$ for integer $C>1728$; it does not prove
+$H(y(C))\notin\overline{\mathbf Q}$.
+
+\begin{proposition}\label{prop:C-rational-jet}
+In the notation of Proposition~\ref{prop:C-jet-family}, if $C_c$ is an
+integer and $c=a/b$ is rational in lowest terms, with $b>0$, then $b>5$.
+More generally, for all rational $c=a/b$ in this family,
+\[
+ b\gg C_c^{125/444}\qquad(C_c\longrightarrow\infty).
+\]
+Consequently, for fixed $L>0$ and $\gamma<125/444$, only finitely many
+integer fibers in this family can have $b\le L C_c^\gamma$.
+The implied constant is not made effective here.
+\end{proposition}
+
+\begin{proof}
+The certificate \texttt{20260918C\_jet\_rational.json} contains all
+$1938$ reduced rational numbers $c$ with $1\le b\le5$ and
+$2\pi<c\le200$. The endpoint list is determined using the exact Machin
+bounds from Proposition~\ref{prop:C-jet-family}; its smallest element
+is $19/3$. The accompanying verifier checks every rational root bracket
+by the dyadic method of that proposition and by a separately implemented
+decimal-grid interval method. The latter uses $45$ direct Eisenstein
+terms and the uniform tail $2\cdot46^{k+1}/500^{46}$ for $k=1,3,5$.
+Both verifiers prove that each $C_c$ lies strictly between consecutive
+integers. This adds $1744$ nonintegral rational constants to the earlier
+$194$ integer constants. The smallest certified distance to an integer
+is greater than
+\[
+ 0.000048699599821220308647971801,
+\]
+at $c=623/4$. In particular,
+\[
+ 1728.9999513004001787796913520281<C_{623/4}
+ <1728.9999513004001787796913520282<1729.
+\]
+Monotonicity now excludes integer $C_c$ for every real $c\ge623/4$;
+together with the finite certificate, this proves $b>5$.
+
+For the growth statement, the cusp expansion
+\[
+ J=q^{-1}+744+196884q+O(q^2)
+\]
+and the functions $U,V$ in Proposition~\ref{prop:C-jet-family} give
+$U=196884q^2+O(q^3)$ and $V=196884q^2+O(q^3)$. Therefore
+\[
+ H=2\pi\frac{1+V}{1-U}
+   =2\pi+787536\pi q^2+O(q^3).
+\]
+Since $q=C_c^{-1}+O(C_c^{-2})$, a rational value $H=a/b$ satisfies
+\[
+ 0<\frac{a}{2b}-\pi
+   =\frac{393768\pi}{C_c^2}+O(C_c^{-3}).
+\]
+The denominator of $a/(2b)$ in lowest terms is at most $2b$.
+Applying the Zeilberger--Zudilin bound
+\eqref{eq:pi-rational-lower-bound}, with $\mu_*=7.104=888/125$, yields
+\[
+ c_*(2b)^{-888/125}\ll C_c^{-2},
+\]
+and hence $b\gg C_c^{125/444}$. If
+$b\le L C_c^\gamma$ with $\gamma<125/444$, this bounds $C_c$;
+integrality and the uniqueness of $c$ at each fiber prove finiteness.
+\end{proof}
+
+The primitive slopes in this family have a simple description. Put
+$d=\gcd(C_c-1728,864)$ and $k=864/d$. Then
+\[
+ (A,B)=(-B-k,B),\qquad
+ C_c=1728+\frac{864}{k}B,\qquad \gcd(B,k)=1,
+\]
+where $k$ ranges over the $24$ positive divisors of $864$.
+For rational $c$, the proposed multiplier satisfies
+$\alpha^2=c^2C_c(C_c-1728)/(4d^2)\in\Q$.
+Thus this restriction addresses a specific part of the quadratic
+multiplier case. It does not exclude rational $c$ of arbitrary
+denominator, or algebraic irrational $c$.
+

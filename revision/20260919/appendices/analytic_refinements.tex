@@ -1,0 +1,394 @@
+\section{Analytic refinements of the scalar relation}
+\label{rev:analytic-refinements}
+
+We record three restrictions on a possible infinite set of identities:
+its coefficients cannot remain close to a prescribed polynomial at the
+cusp, its complete tuples cannot lie on a fixed algebraic curve, and its
+fibers cannot remain in a fixed isogeny class. A separate differential
+statement shows why a scalar identity cannot be differentiated as though
+it were a functional one. None of these restrictions supplies the missing
+pointwise CM implication.
+
+\subsection{The cusp and a discrete coefficient lattice}
+\label{sec:restricted-finiteness}
+\label{sec:polynomial-avoidance}
+
+Fix a standard pair $(s,R)$, and put
+\[
+ \mathcal F(C)=F_s(R/C),\qquad
+ \mathcal L(C)=\frac{\thetaop F_s(R/C)}{F_s(R/C)},\qquad
+ \kappa=\frac{s(1-s)}2.
+\]
+Their expansions at infinity have rational coefficients and begin with
+\begin{equation}\label{rev:eq:cusp-expansion}
+ \mathcal F(C)=1+O(C^{-1}),\qquad
+ \mathcal L(C)=\frac{\kappa R}{C}+O(C^{-2}).
+\end{equation}
+The rationality of the entire Laurent expansion, rather than its first
+term alone, yields the following separation theorem.
+
+\begin{proposition}[Polynomial avoidance]\label{prop:polynomial-avoidance}
+Let $P\in\Q[X]$ and let
+$\mathcal A\subset\Qbar\cap\mathbb R\setminus\{0\}$ be finite.
+There are $c,C_0>0$ such that every integer identity with
+$\alpha\in\mathcal A$ and $|C|>C_0$ satisfies
+\[
+                         |B-P(C)|\ge c|C|.
+\]
+Consequently, for fixed $d,H,K>0$ and $0\le\nu<1$, there are only
+finitely many ordinarily convergent integer identities satisfying
+\[
+ [\Q(\alpha):\Q]\le d,\qquad H(\alpha)\le H,\qquad
+ |B-P(C)|\le K|C|^\nu.
+\]
+Here $H$ is the absolute multiplicative Weil height; primitivity is
+unnecessary.
+\end{proposition}
+\begin{proof}
+Take the polynomial part at infinity:
+\[
+ P(C)\mathcal L(C)=Q(C)+r(C),\qquad
+ Q\in\Q[C],\quad r(C)=O(C^{-1}).
+\]
+Choose $D\ge1$ with $DQ\in\Z[C]$. Dividing the identity by
+$\mathcal F(C)$ expresses it as
+\begin{equation}\label{rev:eq:cusp-lattice}
+ \underbrace{A+Q(C)}_{\in D^{-1}\Z}
+ +(B-P(C))\mathcal L(C)
+       =\frac{\alpha}{\pi\mathcal F(C)}-r(C).
+\end{equation}
+Transcendence of $\pi$ separates the limiting right side from the
+lattice:
+\[
+ \delta=\min_{\alpha\in\mathcal A}
+       \operatorname{dist}(\alpha/\pi,D^{-1}\Z)>0.
+\]
+For sufficiently large $|C|$, the right side of
+\eqref{rev:eq:cusp-lattice} has distance at least $\delta/2$ from
+$D^{-1}\Z$, whereas $|\mathcal L(C)|\le2\kappa R/|C|$.
+Thus $|B-P(C)|\ge\delta|C|/(4\kappa R)$.
+
+Northcott's theorem states that algebraic numbers of bounded degree
+and absolute Weil height form a finite set. It therefore reduces the
+second assertion to the first, which bounds $C$ and then $B$.
+The nonvanishing of $\mathcal F(C)$ determines $A$ for each remaining
+$(B,C,\alpha)$. The zero multiplier and the positive endpoint have
+already been excluded in Section~\ref{sec:endpoint}.
+\end{proof}
+
+\begin{corollary}\label{prop:cusp-finiteness}
+For a finite nonzero multiplier set, every identity sufficiently near
+the cusp satisfies $|B|\gg|C|$. In particular, bounded degree and height
+of $\alpha$, together with $|B|\le K|C|^\nu$ for some $\nu<1$, imply
+finiteness.
+\end{corollary}
+\begin{proof}
+Take $P=0$ in Proposition~\ref{prop:polynomial-avoidance}.
+\end{proof}
+
+Exactness is essential. At level four, for any integer $C>4096$, take
+$A=1$ and round $(4/\pi-F_{1/2}(64/C))/\thetaop F_{1/2}(64/C)$
+to the nearest integer $B$. Since $c_{1/2}(n)\le1/8$ for $n\ge1$,
+\[
+ \left|\pi\mathfrak S_4(1,B,C)-4\right|
+ \le\frac{4\pi}{C(1-64/C)^2}.
+\]
+These primitive pairs lie on non-CM fibers: the rational invariant
+$j=(C-16)^3/C$ is not integral, as its nonintegral part is $-4096/C$.
+They provide arbitrarily accurate approximations, not exact identities.
+
+\subsection{Rational multipliers of growing height}
+\label{sec:growing-multiplier-height}
+
+The discrete-lattice argument admits a quantitative version. The
+irrationality-measure bound of Zeilberger--Zudilin
+\cite[Part~II, conclusion]{ZZpi} is
+\[
+                         \mu(\pi)\le7.103205334137\ldots.
+\]
+Thus, for $\mu_*=7.104$, there is $c_*>0$ such that every reduced
+rational number $u/v$, $v>0$, satisfies
+\begin{equation}\label{eq:pi-rational-lower-bound}
+                         |\pi-u/v|\ge c_*v^{-\mu_*}.
+\end{equation}
+The strict excess of $\mu_*$ over the cited bound gives the inequality
+for all large denominators; the remaining finitely many denominators
+are absorbed in $c_*$. This is the only quantitative transcendence
+input below.
+
+\begin{proposition}\label{prop:growing-rational-height}
+Fix $P\in\Q[X]$, $K,L>0$, and $\gamma\ge0$, $0\le\nu<1$ with
+$\mu_*\gamma+\nu<1$. Only finitely many ordinarily convergent integer
+identities with $\alpha\in\Q^\times$ satisfy
+\[
+ H(\alpha)\le L|C|^\gamma,\qquad
+ |B-P(C)|\le K|C|^\nu.
+\]
+Neither primitivity nor a uniform bound on $|\alpha|$ is needed.
+\end{proposition}
+\begin{proof}
+With the notation of \eqref{rev:eq:cusp-lattice}, write
+\[
+ \alpha=\pi\mathcal F(C)(m/D+\epsilon_C),\qquad
+ m\in\Z,\quad\epsilon_C=O(|C|^{\nu-1}).
+\]
+Let $\alpha=p/q$ be reduced, with $q>0$. If $m=0$, then
+\[
+ L^{-1}|C|^{-\gamma}\le|\alpha|\ll|C|^{\nu-1},
+\]
+which is impossible for large $|C|$ because $\gamma+\nu<1$.
+If $m\ne0$, the rational number $u/v=Dp/(mq)$ in lowest terms obeys
+\[
+ |\pi-u/v|\ll|C|^{\nu-1},\qquad
+ v\le |m|q\ll |p|+q|\epsilon_C|\ll|C|^\gamma.
+\]
+Here the first estimate uses $|m/D|\ge1/D$ and
+$\mathcal F(C)=1+O(C^{-1})$; the second follows from the exact
+identity. Inequality~\eqref{eq:pi-rational-lower-bound} now gives
+$|C|^{-\mu_*\gamma}\ll|C|^{\nu-1}$, again impossible for large
+$|C|$. Bounded $C$ bounds $B$ and the rational multiplier set, and the
+identity then determines $A$.
+\end{proof}
+
+\subsection{Finiteness on a fixed algebraic curve}
+
+The normalization $F_s(0)=1$ has an arithmetic consequence beyond
+polynomial coefficient bounds. We first isolate its analytic input.
+
+\begin{lemma}\label{lem:logderivative-nonalgebraic}
+For $0<s<1$, the logarithmic derivative $F_s'/F_s$ is not algebraic
+over $\C(z)$.
+\end{lemma}
+\begin{proof}
+Clausen's identity gives
+$F_s(4x(1-x))=f_s(x)^2$, where
+$f_s(x)={}_2F_1(s,1-s;1;x)$. Algebraicity of the first logarithmic
+derivative would imply that of $f_s'/f_s$. The zero-balanced Gauss
+connection formula and its differentiated convergent expansion give
+\[
+ \frac{f_s'(x)}{f_s(x)}\sim
+       \frac1{(1-x)(-\log(1-x))}\qquad(x\to1^-).
+\]
+This cannot be the leading Puiseux term of a nonzero algebraic function.
+\end{proof}
+
+\begin{theorem}[Algebraic-curve finiteness]\label{thm:curve-finiteness}
+Let $s\in\Qbar\cap(0,1)$ and let $Z\subset\mathbb A^4_{\Qbar}$,
+with coordinates $(z,A,B,\alpha)$, be an irreducible curve. Suppose
+$z|_Z$ is nonconstant and $Z\ne\{A=B=\alpha=0\}$. Then only finitely
+many real points of $Z$, with $z\in[-1,1]$, satisfy an ordinarily
+convergent identity
+\begin{equation}\label{eq:curve-identity}
+                  \pi(AF_s(z)+B\thetaop F_s(z))=\alpha.
+\end{equation}
+The individual points need not be algebraic, and their coefficients
+need not be bounded.
+\end{theorem}
+\begin{proof}
+Let $X$ be the smooth projective normalization of the closure of $Z$.
+Its coordinate functions are meromorphic, and the nonconstant map
+$z:X\to\mathbb P^1$ is finite. An infinite set of identity points
+would therefore accumulate at a point over $[-1,1]$.
+
+Below $z=1$, the selected branch $F_s$ is holomorphic, so the identity
+theorem, after clearing meromorphic poles on $X$, turns this accumulation
+into a local functional identity. The same holds above $z=1$ after a
+finite local cover: the Gauss function
+${}_2F_1(s/2,(1-s)/2;1;z)$ has exponents $0,1/2$ there, hence is
+holomorphic in $\sqrt{1-z}$, and $F_s$ is its square. The finite
+fiber above one cannot alone supply infinitely many points.
+
+Continue the identity inside $\C\setminus[1,\infty)$ towards zero,
+avoiding the finitely many poles and branch values of the algebraic
+coordinates. In a local root $t=z^{1/e}$, the resulting branches have
+convergent Laurent--Puiseux expansions over $\Qbar$. Thus
+\[
+ \pi\bigl(a(t)F_s(t^e)+b(t)\thetaop F_s(t^e)\bigr)=c(t),
+ \qquad a,b,c\in\Qbar((t)).
+\]
+The Taylor coefficients of $F_s$ are algebraic. Coefficient comparison
+and $\pi\notin\Qbar$ therefore give $c=0$ and
+$aF_s+b\thetaop F_s=0$. If $b\ne0$, this makes the logarithmic
+derivative algebraic, contrary to Lemma~\ref{lem:logderivative-nonalgebraic};
+if $b=0$, then $a=0$ because $F_s(0)=1$. All three coordinate functions
+$A,B,\alpha$ vanish on the irreducible curve, a contradiction.
+\end{proof}
+
+For integer denominators, an infinite set has $|C|\to\infty$ along a
+subsequence, and the proof reduces directly to coefficient comparison
+at $z=R/C=0$. The global form also controls accumulation at arbitrary
+real parameters and at the convergence boundary.
+
+The condition of lying on one algebraic curve is substantial. The set
+\[
+                  \{(1/n,2^n,3^n,5^n):n\ge1\}
+\]
+is Zariski dense in $\mathbb A^4$, despite reciprocal-integer first
+coordinates, primitive middle pairs, and rational last coordinates.
+Indeed, a polynomial relation would yield
+$\sum p_{ijk}(n)(2^i3^j5^k)^n=0$ after clearing powers of $n$.
+Distinct triples give distinct positive bases; division by the largest
+base contradicts the growth of a nonzero polynomial. These points are
+not claimed to be identities. They show why arithmetic restrictions
+alone do not provide the curve required by the theorem.
+
+\subsection{The differential of the incidence relation}
+
+Write $F=F_s$, $G=\thetaop F_s$ and $K=\Qbar$, with $s$ standard.
+Clausen's identity and the Gauss equation give the rational system
+\begin{equation}\label{eq:C-standard-two-value-system}
+ F'=G/z,\qquad G'=F\,Q_s(z,G/F),\qquad
+ Q_s(z,T)=\frac{T^2}{2z}+\frac{T+s(1-s)}{2(1-z)}.
+\end{equation}
+For algebraic coefficient germs $A,B$, define the polynomial
+\begin{equation}\label{rev:eq:contact-operator}
+          \mathcal D_{A,B}(T)=A'+(A/z+B')T+BQ_s(z,T).
+\end{equation}
+Then $(AF+BG)'=F\mathcal D_{A,B}(G/F)$. This is the differential
+of the scalar incidence relation in the projective coordinate $G/F$.
+Its degree makes the contact calculation transparent.
+
+\begin{proposition}\label{prop:C-slope-transverse}
+Let $z_0\in[-1,1)\setminus\{0\}$ be algebraic and let
+$A,B\in K$ be constant and not both zero. Then
+\[
+                          (AF+BG)'(z_0)\ne0.
+\]
+In particular, every zero at $z_0$ of $\pi(AF+BG)-\alpha$, for
+constant $\alpha\in K$, is simple.
+\end{proposition}
+\begin{proof}
+By Theorem~\ref{thm:B-value-independent}, $F(z_0)\ne0$ and
+$r=G(z_0)/F(z_0)$ is transcendental over $K$.
+The polynomial $\mathcal D_{A,B}$ at $z_0$ has degree two with leading
+coefficient $B/(2z_0)$ if $B\ne0$, and equals $(A/z_0)T$ otherwise.
+It is nonzero, so it cannot vanish at $r$.
+\end{proof}
+
+\begin{proposition}[Contact with algebraic coefficient germs]
+\label{prop:C-varying-transverse}
+Let $z_0$ be as above and let $A,B,\alpha$ be algebraic function germs
+holomorphic there. Suppose
+\[
+ H=\pi(AF+BG)-\alpha,\qquad H(z_0)=0,\quad\alpha(z_0)\ne0.
+\]
+Then $H'(z_0)$ is algebraic if and only if
+\[
+                       B(z_0)=0,\qquad B'(z_0)=-A(z_0)/z_0.
+\]
+In that case
+$H'(z_0)=\alpha(z_0)A'(z_0)/A(z_0)-\alpha'(z_0)$.
+Consequently $H'(z_0)=0$ holds precisely when
+\begin{equation}\label{eq:C-contact-exception}
+ B(z_0)=0,\qquad B'(z_0)=-A(z_0)/z_0,\qquad
+ A'(z_0)=\frac{\alpha'(z_0)}{\alpha(z_0)}A(z_0).
+\end{equation}
+In all other cases, $q,\pi,H'(z_0)$ are algebraically independent,
+where $q$ is the nome of Theorem~\ref{thm:B-value-independent}.
+\end{proposition}
+\begin{proof}
+Evaluate all coefficients at $z_0$ and put $r=G(z_0)/F(z_0)$.
+The identity gives
+\[
+ K(q,F(z_0),G(z_0))=K(q,\pi,r),\qquad
+ H'(z_0)=\alpha\frac{\mathcal D_{A,B}(r)}{A+Br}-\alpha'.
+\]
+The left field has transcendence degree three by
+Theorem~\ref{thm:B-value-independent}. If $B\ne0$, the displayed
+rational function of $r$ is nonconstant, since its numerator has degree
+two and its denominator degree one. If $B=0$, then $A\ne0$, and it
+is affine in $r$, constant exactly when $B'=-A/z_0$. In the constant
+case it has the asserted algebraic value. Otherwise $r$ is algebraic
+over $K(H'(z_0))$, so $K(q,\pi,H'(z_0))$ still has transcendence
+degree three. This proves every assertion.
+\end{proof}
+
+\begin{corollary}\label{cor:C-derivative-independent}
+At an identity with constant algebraic coefficients,
+$q,\pi,(\pi(AF+BG)-\alpha)'(z_0)$ are algebraically independent.
+\end{corollary}
+\begin{proof}
+The exceptional conditions in \eqref{eq:C-contact-exception} would
+force $B=A=0$ for constant coefficients.
+\end{proof}
+
+At $z_0=-1$ these are derivatives of the analytic branch through an
+ordinary point. Abel's theorem identifies the values with the ordinary
+sums; no termwise differentiation of the boundary series is used.
+The variable-coefficient exception is necessary: a hypothetical constant
+identity with $B=0$ would acquire second-order contact on replacing
+$B$ by $-A(z-z_0)/z_0$. No existence of such an identity is asserted.
+The fixed-coefficient result applies equally to CM and hypothetical
+non-CM fibers. Differentiating a scalar equality therefore imposes an
+additional equation which is, in this setting, false.
+
+\subsection{Finiteness within one isogeny class}
+
+\begin{theorem}\label{thm:fixed-isogeny-degree-finiteness}
+Let $E/K$ be a non-CM elliptic curve over a number field and set
+\[
+ I_E=[\operatorname{GL}_2(\widehat\Z):\rho_E(G_K)]<\infty.
+\]
+For $E'$ geometrically isogenous to $E$, let $N(E,E')$ be the least
+positive isogeny degree from $E$ to $E'$. Then
+\[
+ [K(j(E')):K]\ge\frac{\psi(N(E,E'))}{I_E},\qquad
+ \psi(N)=N\prod_{p\mid N}(1+1/p).
+\]
+In particular, the isogeny class contains only finitely many invariants
+of absolute degree at most $d$, all with $N(E,E')\le I_Ed$.
+\end{theorem}
+\begin{proof}
+Serre's open image theorem \cite{Serre} states that the adelic Galois
+image of a non-CM elliptic curve over a number field has finite index,
+which is precisely $I_E<\infty$. A least-degree isogeny has cyclic
+kernel: otherwise its kernel contains $E[m]$ for some $m>1$, and
+factoring through $[m]$ lowers the degree.
+
+Let $\mathrm{Cyc}_N(E)$ be the set of cyclic order-$N$ subgroups of
+$E[N]$. The quotient construction is a $G_K$-equivariant injection
+\[
+ \mathrm{Cyc}_N(E)\longrightarrow\overline K,
+                \qquad H\longmapsto j(E/H).
+\]
+Indeed, isomorphic quotients would give two degree-$N$ maps to one
+target. Since $\operatorname{Hom}(E,E')\otimes\Q$ is one-dimensional,
+they differ by a rational scalar of square one, and hence have the
+same kernel. Equivariance and injectivity identify the two Galois
+orbits:
+\[
+             |G_K\cdot H|=[K(j(E/H)):K].
+\]
+Thus no descent of an individual isogeny to the $j$-field is needed.
+
+The full group $\operatorname{GL}_2(\Z/N\Z)$ acts transitively on
+$\mathrm{Cyc}_N(E)$, which has cardinality $\psi(N)$. Its Galois
+subgroup has index at most $I_E$, so every orbit has cardinality at
+least $\psi(N)/I_E$. Apply this to the cyclic kernel of a least-degree
+isogeny. Finally,
+\[
+ N\le\psi(N)\le I_E[K(j(E')):K]
+                 \le I_E[\Q(j(E')):\Q].
+\]
+Bounded degree therefore bounds $N$, and only finitely many kernels
+remain.
+\end{proof}
+
+\begin{corollary}
+In any fixed elliptic isogeny class over $\Qbar$, each standard
+family has only finitely many rational nonzero parameters $C$ with
+smooth fiber in that class.
+\end{corollary}
+\begin{proof}
+For rational $z=R_\ell/C$, the auxiliary parameter
+$x=(1-\sqrt{1-z})/2$ has degree at most two, and $j_s(x)\in\Q(x)$.
+The theorem treats a non-CM class. In a CM class the quadratic field is
+fixed, and the order conductor formula gives
+\[
+                 h(f^2D_K)\ge h(D_K)\varphi(f)/3\longrightarrow\infty.
+\]
+Since the degree of a singular modulus equals the order class number,
+only finitely many $j$-invariants of degree at most two occur there as
+well. The nonconstant rational map $x\mapsto j_s(x)$ has finite fibers;
+so does $C=R_\ell/[4x(1-x)]$ on the parameters under consideration.
+\end{proof}

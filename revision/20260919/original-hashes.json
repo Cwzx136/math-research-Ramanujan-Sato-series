@@ -1,0 +1,22 @@
+[
+  {
+    "Algorithm": "SHA256",
+    "Hash": "4E84A62F276EB35F911CAFDE599869BB3BC5863F16F61E17302D8D5E4E7D8698",
+    "Path": "D:\\Agent's home\\Math\\Research\\Ramanujan-Sato\\paper.tex"
+  },
+  {
+    "Algorithm": "SHA256",
+    "Hash": "CC21FC55AF09AF7F8D07D7ED84B2505446E514DD491282B223BDC8D9F002BED6",
+    "Path": "D:\\Agent's home\\Math\\Research\\Ramanujan-Sato\\paper.pdf"
+  },
+  {
+    "Algorithm": "SHA256",
+    "Hash": "2049594A9F9787757D5B39CA881C70A4FF11BA8A018B73FEAC36F142BA680894",
+    "Path": "D:\\Agent's home\\Math\\Research\\Ramanujan-Sato\\hint_paper.tex"
+  },
+  {
+    "Algorithm": "SHA256",
+    "Hash": "6E2EEEBB8E514C2243E74C343BBCA7E52B6A958C166E04DF551A1722244707F3",
+    "Path": "D:\\Agent's home\\Math\\Research\\Ramanujan-Sato\\hint_paper.pdf"
+  }
+]

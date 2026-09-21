@@ -1,0 +1,417 @@
+\section{Scalar comparison and its refinements}\label{rev:app-comparison}
+
+Throughout this appendix, $E/k$ is an algebraic elliptic curve,
+$k=\Qbar$, and the period matrix has determinant $2\pi i$.
+Unless stated otherwise we assume the nonzero scalar relation
+\[
+ \omega(a\omega+bh)=\alpha\pi,\qquad a,b,\alpha\in k,
+ \quad\alpha\ne0.
+\]
+The main text identifies its missing comparison coordinate.  We record
+here the exact restricted hypothesis, useful analytic refinements,
+and the limits of weaker replacement conditions.
+
+\subsection{The restricted directions and known independence}
+For the standard real branch put $t=\sqrt{1-z}$ and
+$(e_1,e_2,e_3,e_4)=(0,1/4,1/2,0)$.  The Gauss--Manin coefficients
+give
+\[
+ \left\{\frac ab:A/B\in\Q\right\}=t\Q-e_\ell
+ \qquad(B\ne0).
+\]
+Indeed, substituting the explicit logarithmic derivatives of the
+discriminants into $a/b=(A/B+u_s)/v_s$ yields a nonzero rational
+multiple of $tA/B$, a rational multiple of $t$, and the constant
+$-e_\ell$.  Consequently the precise restriction needed to exclude
+non-CM rational slopes is transcendence of
+\[
+ \frac{\omega^2}{\pi},\qquad
+ \frac{\omega h+(tq-e_\ell)\omega^2}{\pi}\quad(q\in\Q)
+\]
+at the specified non-CM fibers.  Multiplication by the nonzero
+algebraic coefficient $b$ proves both directions of this equivalence.
+This is weaker than QPI, but is an equivalent reformulation of the
+rational-slope exclusion itself.
+
+Two unconditional independence theorems clarify this restriction.
+Chudnovsky gives algebraic independence of $h/\omega$ and
+$\pi/\omega$.  Under the scalar relation, write $r=h/\omega$; then
+\[
+ \frac\pi\omega=\frac{\omega(a+br)}\alpha,
+ \qquad
+ \omega=\frac{\alpha(\pi/\omega)}{a+br}.
+\]
+The denominator is nonzero because $\alpha\ne0$.  Hence
+$k(r,\pi/\omega)=k(r,\omega)=k(\omega,h)$, so $\omega,h$ would
+be algebraically independent even under a hypothetical non-CM identity.
+The theorem therefore does not rule out that identity.
+
+Nesterenko's theorem, in \cite[Theorem~1.1]{Fonseca}, states
+\[
+ \operatorname{trdeg}_{\Q}\Q(q,E_2(\tau),E_4(\tau),E_6(\tau))\ge3
+ \quad(\tau\in\mathfrak H).
+\]
+Put $\xi=\omega/(2\pi i)$ and $\upsilon=h/(2\pi i)$.
+The exact lattice formulas
+\[
+ E_2=12\xi\upsilon,\qquad E_4=12g_2\xi^4,\qquad
+ E_6=-216g_3\xi^6
+\]
+place the modular quantities in the three-generator field
+$k(q,\xi,\upsilon)$.  That field therefore has transcendence degree
+exactly three.  The proposed identity becomes
+\[
+ 4\pi(a\xi^2+b\xi\upsilon)+\alpha=0,
+\]
+which only puts $\pi$ in $k(\xi,\upsilon)$.  It does not contradict
+the independence of $q,\xi,\upsilon$.
+
+The comparison fields of the main text give a concise account of the
+conjectural deficit.  A relation $aP+bQ=\alpha$, where
+$P=\omega^2/\pi$ and $Q=\omega h/\pi$, implies
+\[
+ \begin{aligned}
+ \operatorname{trdeg}_k k(\tau,j',j'')&\le2,\\
+ \operatorname{trdeg}_k K_E&\le3,\\
+ \operatorname{trdeg}_k k(2\pi i,\tau,q,E_2,E_4,E_6)&\le4.
+ \end{aligned}
+\]
+Each inequality follows from \eqref{eq:hierarchy-jets-field}--
+\eqref{eq:hierarchy-modular-field}, adding at most one transcendence
+degree for each extra generator.  These are precisely the deficits
+contradicted by the respective numerical conjectures.
+
+\subsection{Functional transcendence and specialization}
+The unconditional Ax--Schanuel consequence in
+\cite[Section~4.1]{EterovicMSCD} does not provide the numerical
+MSCD assertion used here.  In that reference let
+$C_j=\operatorname{jcl}(\varnothing)$.  It is an algebraically closed
+field containing $k$, and Lemma~4.6 gives
+\[
+ j(\tau)\in C_j\Longrightarrow\tau\in C_j
+ \Longrightarrow j(\tau),j'(\tau),j''(\tau)\in C_j.
+\]
+Its Proposition~4.7 measures transcendence over a $j$-closed field.
+At an algebraic $j$-value all the displayed entries lie in $C_j$;
+both the transcendence degree and the associated dimension in that
+bound are zero.  Thus this established functional theorem gives no
+positive numerical lower bound at the points required here.
+A relation holding at one point also supplies no relation among its
+derivatives on a neighborhood.  Similarly, an abstract algebraic
+conjugation cannot be commuted with an infinite analytic sum without
+a separate argument.
+
+\subsection{A real refinement of cycle propagation}\label{sec:real-propagation}
+Suppose now that the model and the coefficients are real algebraic.
+Choose a fundamental basis with $\omega>0$ and
+$\tau=r+iy$, where $r\in\{0,1/2\}$ and $y>0$.
+
+\begin{proposition}[Mixed-cycle reality]\label{prop:real-propagation}
+Under the scalar relation, the following are equivalent:
+\begin{enumerate}
+\item $E$ has CM;
+\item $\omega_{m,n}(a\omega_{m,n}+bh_{m,n})$ is real for some
+integers $m,n$ with $n(m+nr)\ne0$.
+\end{enumerate}
+At CM every such value satisfies
+\[
+ \frac{\omega_{m,n}(a\omega_{m,n}+bh_{m,n})}{\pi}
+       =\alpha|m+n\tau|^2\in k\cap\mathbf R.
+\]
+\end{proposition}
+\begin{proof}
+By \eqref{eq:cycle-propagation}, the imaginary part of the value
+divided by $\pi$ is
+\[
+ 2n(m+nr)(\alpha y+b).
+\]
+The reality hypothesis gives $y=-b/\alpha\in k$.  Thus $\tau$ is
+algebraic and Schneider's theorem proves CM.
+
+Conversely, at CM the independence of $\omega$ and $\pi$ excludes
+$b=0$.  Proposition~\ref{prop:ksv-exact-completion} then gives
+$b=-\alpha y$.  For $L=m+n\tau$ we have
+$\overline L=L-2iny$, so
+$\alpha L^2+2ibnL=\alpha L\overline L$.  This proves the formula
+and the converse.
+\end{proof}
+
+The condition $n(m+nr)\ne0$ is essential.  Values on a real or purely
+imaginary cycle are automatically real in
+\eqref{eq:cycle-propagation}.  In particular, Schwarz reflection,
+which makes values on conjugate cycles conjugate, supplies no
+mixed-cycle reality condition.
+
+The same limitation can be seen before forming the quadratic value.
+Write $\omega_2=r\omega+iv$ and $h_2=rh+iu$, with $u,v$ real.
+Legendre gives $\omega u-vh=2\pi$, and the scalar relation gives
+\[
+ \omega(u-2a\omega/\alpha)
+       -h(v+2b\omega/\alpha)=0.
+\]
+Conjugation repeats this equation.  If $v+2b\omega/\alpha=0$, then
+$v/\omega$ is algebraic and Schneider forces CM.  Otherwise a
+purported algebraic linearization must first establish algebraicity
+of that same period ratio.
+
+For completeness, the modular form of cycle transport is equally
+exact.  If $\gamma=\left(\begin{smallmatrix}u&v\\c&d\end{smallmatrix}\right)
+\in\operatorname{SL}_2(\Z)$ and $\lambda=c\tau+d$, then, changing
+the period basis while keeping the algebraic model fixed,
+\[
+ P(\gamma\tau)=\lambda^2P(\tau),\qquad
+ Q(\gamma\tau)=\lambda^2Q(\tau)+2ic\lambda.
+\]
+The first equation follows from $\omega_{d,c}=\lambda\omega$;
+the second follows from Legendre.  Hence the transported affine
+value is $\alpha\lambda^2+2ibc\lambda$, agreeing with
+\eqref{eq:cycle-propagation} and supplying no automatic propagation.
+
+\subsection{The almost-holomorphic coordinate}
+In the same real normalization put
+\[
+ \kappa=\frac h\omega+\frac{\pi}{y\omega^2}.
+\]
+Under the scalar relation, algebraicity of $\kappa$ forces CM.  Indeed,
+Legendre's identity gives the exact linear relation
+\[
+ h_2-\kappa\omega_2-\left(r+\frac{ib}{\alpha}\right)h
+      +\left(r\kappa-\frac{ia}{\alpha}\right)\omega=0.
+\]
+If $\kappa$ were algebraic and $E$ non-CM, this would contradict
+the algebraic linear independence of its four period entries
+\cite[Section~5]{Waldschmidt}; the coefficient of $h_2$ is one.
+Conversely, CM makes $\kappa$ algebraic.  To see the normalization
+directly, diagonalize a nonreal CM endomorphism on de Rham cohomology.
+Its antiholomorphic eigenvector has the form $\Xi-\kappa_0\Omega$
+with $\kappa_0\in k$.  Thus
+$h_j-\kappa_0\omega_j=K\overline{\omega_j}$.  Taking the determinant
+with $(\omega_1,\omega_2)$ yields
+\[
+ K=-\frac\pi{y\omega^2},\qquad
+ \kappa_0=\frac h\omega+\frac\pi{y\omega^2}=\kappa.
+\]
+This also proves that $\kappa$ is real.
+
+For $g_2g_3\ne0$, the modular interpretation is
+\[
+ E_2^*=E_2-\frac3{\pi y},\qquad
+ \frac{E_2^*E_4}{E_6}=-\frac{2g_2}{3g_3}\kappa.
+\]
+This follows by substitution of the lattice formulas.
+Masser's theorem gives algebraicity of this almost-holomorphic value
+at CM points \cite[Section~5]{Spence}.  Under the scalar relation
+alone, however, one only has
+\[
+ \kappa=-\frac ab+\left(\frac\alpha b+\frac1y\right)
+                      \frac\pi{\omega^2}\quad(b\ne0),
+\]
+whose coefficient $y$ is uncontrolled.  The exceptional cases
+$g_2g_3=0$ already have CM.
+
+\subsection{Coordinates of tensor completion}
+Put $D=2\pi i$ and $k_0=\alpha/(2i)$.  The symmetric bilinear
+coordinates of $a\Omega^2+b\Omega\Xi$, divided by its determinant
+period, are
+\[
+ s_{ij}=\frac{a\omega_i\omega_j+
+           (b/2)(\omega_i h_j+h_i\omega_j)}{D}.
+\]
+Legendre's identity gives
+\begin{equation}\label{eq:comparison-coordinates}
+ (s_{11},s_{12},s_{22})
+       =(k_0,k_0\tau+b/2,k_0\tau^2+b\tau),\qquad
+ s_{12}^2-s_{11}s_{22}=b^2/4.
+\end{equation}
+Thus algebraicity of $s_{12}$ is equivalent to algebraicity of
+$\tau$, to CM, and to algebraicity of all three coordinates.  The
+determinant relation is automatic and adds no missing coordinate.
+
+When $b\ne0$, the tensor $t$ of
+Proposition~\ref{prop:ksv-exact-completion} has, in the polynomial
+Betti basis $(e_1^2,e_1e_2,e_2^2)/(e_1\wedge e_2)$, coordinates
+\begin{equation}\label{eq:ksv-three-coordinates}
+ t_{\mathrm B}
+   =\left(\frac1c,\frac{2\tau+c}{c},
+                       \frac{\tau(\tau+c)}c\right).
+\end{equation}
+The middle polynomial coefficient is twice the symmetric bilinear
+coefficient.  The canonical adjoint identification sends $(x,y,z)$ to
+\[
+ \begin{pmatrix}-y/2&x\\-z&y/2\end{pmatrix}
+       =\Pi_{\mathrm B}-\tfrac12I.
+\]
+This verifies the conventions in the intrinsic comparison square.
+
+At CM the rational endomorphism algebra is the imaginary quadratic
+field $K$, which has no nontrivial idempotent.  The complete projector
+belongs to $K\otimes k\simeq k\times k$, and already exists with
+coefficients in $K$; it is a $K$-linear combination of algebraic
+endomorphisms.  Its entry field is exactly $K$ in a rational Betti
+basis.  There is no assertion that it is a rational endomorphism.
+
+\subsection{The local annihilator condition}
+Set $T=\operatorname{Sym}^2H\otimes(\det H)^{-1}$,
+$N=T\oplus\mathbf1$, and $\xi=(t,c^{-1})\in N_{\mathrm{dR}}$.
+Let $\beta$ be the algebraic Betti functional which subtracts the
+$\mathbf1$-coordinate from the first coordinate of $T$.  Equation
+\eqref{eq:ksv-three-coordinates} gives
+$\beta(\operatorname{comp}\xi)=0$.
+
+\begin{proposition}[Local annihilator lift]\label{prop:ksv-local-lift}
+Under the scalar identity with $b\ne0$, CM is equivalent to the
+existence of a de Rham--Betti subobject $N'\subseteq N$ such that
+\[
+ \xi\in N'_{\mathrm{dR}},\qquad N'_{\mathrm B}\subseteq\ker\beta.
+\]
+\end{proposition}
+\begin{proof}
+For non-CM $E$, Theorem~\ref{thm:ksv-specialized} identifies the
+algebraic-coefficient group with $\operatorname{GL}_2$.  Its adjoint
+representation $T$ is irreducible and nontrivial.  Semisimplicity and
+$\operatorname{Hom}(T,\mathbf1)=\operatorname{Hom}(\mathbf1,T)=0$
+show that a subrepresentation of $T\oplus\mathbf1$ containing a
+vector with nonzero components in both summands is the full object.
+Both components of $\xi$ are nonzero.  Thus $N'=N$, contrary to
+$N'_{\mathrm B}\subseteq\ker\beta$.
+At CM, completion makes all coordinates of $\operatorname{comp}\xi$
+algebraic.  The line spanned by $\xi$ and its comparison is a
+de Rham--Betti subobject whose Betti line lies in $\ker\beta$.
+\end{proof}
+
+Proposition~3.6 of \cite{KSV} characterizes equality between the
+numerical Zariski closure of a comparison point and its smallest
+algebraic torsor by such annihilator lifting for every object in the
+generated tensor category.  Proposition~5.8 proves lifting in the
+abelian category generated by first cohomology of abelian varieties.
+The adjoint tensor $T$ is not a first-cohomology object.  Theorem~5.13
+identifies the de Rham--Betti torsor with the motivic torsor, without
+asserting that the numerical Zariski closure equals that torsor.
+The local lift above is consequently an exact additional premise.
+
+This distinction also persists for the Kummer surface
+$S=\operatorname{Km}(E\times E)$.  Its Picard rank is $19$ in the
+non-CM case and $20$ in the CM case: the ranks $3$ and $4$ of
+$E\times E$ acquire the sixteen exceptional divisors.  Corollary~6.17
+of \cite{KSV} gives, respectively,
+\[
+ \Omega_S=\Omega_S^{\mathrm{mot}},\qquad
+ Z_S=\Omega_S^{\mathrm{mot}}.
+\]
+Here $Z_S$ is the numerical Zariski closure and $\Omega_S$ is the
+smallest algebraic subtorsor containing the comparison point.  The
+rank-$19$ assertion does not identify $Z_S$ with that torsor.
+
+\subsection{Formal obstructions to automatic completion}
+For fixed $c\in k^\times$, every trace-one, rank-one projector with
+upper-right entry $1/c$ is
+\[
+ \begin{pmatrix}x&1/c\\cx(1-x)&1-x\end{pmatrix},\qquad x\in\mathbb C.
+\]
+Indeed trace one fixes the second diagonal entry and determinant zero
+fixes the lower-left entry; the Cayley--Hamilton identity then proves
+idempotence.  Thus these algebraic conditions leave one free coordinate.
+For example $c=-2i$, $\tau=iy$, $y>0$, gives
+\[
+ \begin{pmatrix}y/2&i/2\\i(y^2-2y)/2&1-y/2\end{pmatrix}.
+\]
+Conjugation of its entries followed by conjugation by
+$\operatorname{diag}(1,-1)$ fixes the matrix, for every $y>0$.
+Real structure and positivity therefore leave the same freedom;
+actual CM completion would require $y=1$ by
+\eqref{eq:ksv-cm-field}.  These are formal comparison objects, not
+counterexamples over algebraic elliptic curves.
+
+Connectedness of a torsor is likewise insufficient for genericity:
+evaluation at $2$ on the coordinate ring $k[t,t^{-1}]$ of the connected
+torsor $\mathbf G_m$ has kernel $(t-2)$.  More directly, set
+\[
+ f(M)=aw^2+bwh-\kappa\det M,\qquad \kappa\ne0,
+ \quad M=\begin{pmatrix}w&h\\v&k_2\end{pmatrix}.
+\]
+At a zero of $f$ in $\operatorname{GL}_2$,
+$f(\operatorname{diag}(1,r)M)=\kappa(1-r)\det M$.
+Thus a numerical zero does not make the relation an identity on the
+torsor.
+
+\subsection{Why logarithm methods need additional data}
+The analytic subgroup theorem applies to a logarithm with algebraic
+exponential lying in an algebraic linear subspace of a commutative
+algebraic Lie algebra.  The universal vector extension of $E$,
+together with $\mathbf G_m$, provides the period logarithm
+$(\omega,h,2\pi i)$ with exponential the identity.  Our relation
+instead places it on
+\[
+ q(w,v,t)=aw^2+bwv-\frac\alpha{2i}t=0.
+\]
+The tangent hyperplane there is not algebraic.  Its normal vector is
+$(2a\omega+bh,b\omega,-\alpha/(2i))$; since its last entry is nonzero
+algebraic, an algebraic tangent hyperplane would make the other two
+entries algebraic.  If $b\ne0$ this makes $\omega$ algebraic; if
+$b=0$, then $a\ne0$ and the first entry has the same consequence.
+Both contradict period transcendence
+\cite[Corollary~3]{Waldschmidt}.
+
+A bilinear central extension does not remove the obstruction.
+Let $B:V\times V\to W$ be bilinear in characteristic zero.  The
+associative law
+\[
+ (v,t)*(w,s)=(v+w,t+s+B(v,w))
+\]
+is commutative exactly when $B$ is symmetric, since its commutator is
+$(0,B(v,w)-B(w,v))$.  In that case
+$(v,t)\mapsto(v,t-B(v,v)/2)$ is an algebraic isomorphism to the additive
+group.  Its differential at zero is the identity; hence the original
+exponential is $(v,t)\mapsto(v,t+B(v,v)/2)$.  Algebraicity of its
+endpoint still requires algebraicity of $v$, which fails for the
+period vector.  This calculation is about global bilinear cocycles
+on vector groups; it neither splits an elliptic universal extension
+nor classifies general biextensions.
+
+Nor can one repair this construction by reducing a quadratic coordinate
+modulo a fixed discrete group.  Suppose a lattice $\Lambda$ spans a
+complex vector space $L$, and a homogeneous quadratic form $q$ obeys
+\[
+ q(z+\lambda)-q(z)\in\Gamma
+ \quad(z\in L,\ \lambda\in\Lambda)
+\]
+for a discrete additive subgroup $\Gamma\subset\mathbb C$.
+Writing $q(z)=B(z,z)$, the affine function
+$2B(z,\lambda)+B(\lambda,\lambda)$ has discrete image, so its linear
+part is zero.  Since $\Lambda$ spans $L$, $B=0$.  The two elliptic
+period--quasi-period vectors span their complex Lie algebra by
+Legendre's determinant, so this obstruction applies to them.
+
+Finally, the tensor itself lies outside first-cohomology logarithm
+theory.  The Hodge types of $T=\operatorname{Sym}^2H^1(E)(1)$ are
+$(1,-1),(0,0),(-1,1)$.  Cohomological realizations of 1-motives have
+types among $(0,0),(1,0),(0,1),(1,1)$; their even-weight graded
+pieces, and those of finite extensions of their Tate twists, are Tate.
+Strictness of the Hodge and weight filtrations excludes every Tate
+twist of the full $T$ as a subquotient of such an object.  For non-CM
+$E$ there is not even a nonzero Hodge morphism between $T$ and these
+objects.  Indeed
+\[
+ \operatorname{Hom}_{\mathrm{HS}}(\Q(0),T)
+   =\operatorname{End}_{\mathrm{HS}}(H^1(E))_0
+   =(\operatorname{End}(E)\otimes\Q)_0=0.
+\]
+The middle identification follows by clearing denominators in a Hodge
+map and interpreting it as a holomorphic homomorphism of complex tori.
+Duality excludes Tate quotients as well.  Any morphism to or from the
+stated mixed objects would factor through such a Tate piece by
+strictness, proving the assertion.
+
+Rigidified $\mathbf G_m$-biextensions of $E\times E$ are classified
+by $\operatorname{Hom}(E,E^\vee)$: restrict to $\{x\}\times E$ to
+obtain a point of $E^\vee$; the biextension law makes this map a
+homomorphism, and pullback of the Poincar\'e bundle is inverse to this
+construction.  Under a principal polarization these are endomorphisms
+of $E$.  In the non-CM case their rational first Chern tensors are
+multiples of the polarization and have zero projection to $T$.
+A nonzero symmetric-square Chern tensor would therefore already force
+CM.  It would be algebraic by the Lefschetz $(1,1)$ theorem.  Absolute
+Hodge theory starts with such a complete Hodge class; it does not
+construct the class from one scalar period value.  Logarithms of
+algebraic points on a biextension require further data, whose
+algebraicity must be established before a logarithm theorem applies.

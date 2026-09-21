@@ -1,0 +1,473 @@
+\section{Integral realizations and the limits of prime tests}
+\label{rev:arithmetic-details}
+
+\subsection{The finite Clausen theorem}
+\label{subsec:finite-clausen-precision}
+Write $s=1/d$, with $d\in\{2,3,4,6\}$, and let $U_p,T_p$ be
+the canonical truncations of Section~\ref{sec:weighted-cartier-criterion}.
+Set
+\[
+ k_2=k_6=-1,\qquad k_3=-3,\qquad k_4=-2,\qquad
+                  \chi_{d,p}=\left(\frac{k_d}{p}\right).
+\]
+
+\begin{theorem}[Finite Clausen and reflection]
+\label{thm:brstt-polynomial-packet}\label{cor:weighted-clausen-p2}
+For every $p>3$, the following are polynomial congruences:
+\begin{align}
+ T_p(4x(1-x))&\equiv U_p(x)^2\pmod{p^2\Z_p[x]},
+                                      \label{eq:finite-clausen-modp2}\\
+ U_p(x)&\equiv\chi_{d,p}U_p(1-x)\pmod{p^2\Z_p[x]}.
+                                      \label{eq:finite-reflection-p2}
+\end{align}
+For $A,B\in\Z_p$, their differentiated form is
+\[
+ (1-2x)W_p(4x(1-x))\equiv
+ U_p(x)\bigl(A(1-2x)U_p(x)+2Bx(1-x)U_p'(x)\bigr)\pmod{p^2}.
+\]
+In particular the weighted congruence requires no inversion until
+specialization away from $1-2x=0$.
+\end{theorem}
+\begin{proof}
+The first identity is \cite[\S7, equation (7.4)]{BRSTT}, where it
+is attributed to Chisholm--Deines--Long--Nebe--Swisher, Lemma 18.
+We explain the reflection step because its polynomial content is
+needed over residue-field extensions.
+
+For the elliptic families of \cite[Proposition 7.1]{BRSTT}, that
+proposition gives, over every finite field $\mathbf F_q$ of
+characteristic greater than three,
+\[
+       a_q(\widetilde E_d(x))
+         =\chi_q(k_d)a_q(\widetilde E_d(1-x))
+\]
+at smooth parameters.  It does so by a geometric isogeny of degree
+$1,3,2,1$ for $d=2,3,4,6$, respectively, followed by a quadratic
+twist.  The source families have
+\[
+\begin{array}{c|c|c}
+ d&j(\widetilde E_d(t))&t\text{ corresponding to }E_{1/d,x}\\\hline
+ 2&256(1-t+t^2)^3/[t^2(1-t)^2]&x\\
+ 3&27(9-8t)^3/[t^3(1-t)]&1-x\\
+ 4&64(4-3t)^3/[t^2(1-t)]&1-x\\
+ 6&432/[t(1-t)]&x.
+\end{array}
+\]
+Their Hasse polynomials are $U_p$, up to nonzero differential
+normalizations.  The trace identity proves the reflection
+congruence modulo $p$ at all smooth $\mathbf F_p$-parameters.
+The terminating Chu--Vandermonde identity gives
+$U_p(0)=1$ and $U_p(1)\equiv\chi_{d,p}\pmod p$, including the
+two omitted parameters.  Since the reflected difference has
+degree less than $p$, this proves its vanishing as a polynomial.
+
+Write $U_p(x)=\chi_{d,p}U_p(1-x)+pN(x)$.  Invariance of the
+left side of \eqref{eq:finite-clausen-modp2} under $x\mapsto1-x$
+gives
+\[
+                      2\chi_{d,p}N(x)U_p(1-x)=0
+                              \quad\text{in }\mathbf F_p[x].
+\]
+This integral domain has $U_p\ne0$, so $N=0\bmod p$.
+This is the modulus-$p^2$ argument of \cite[Lemma 7.2]{BRSTT}.
+Differentiation preserves the ideal $p^2\Z_p[x]$ and yields
+the weighted identity by the chain rule.
+\end{proof}
+The reflected product
+$\chi_{d,p}U_p(u)U_p(v)$, with $u+v=1$ and $uv=z/4$, is
+symmetric in $u,v$ and therefore belongs to $\Z_p[z]$.
+It equals $T_p(z)$ modulo $p^2$.  This descent explains why all
+these tests remain valid when the two parameters lie in an
+unramified quadratic extension rather than in $\Q_p$.
+
+\subsection{Cartier and Gauss--Manin differentiation}
+\label{rev:cartier-calculation}
+We give the normalization behind
+Lemma~\ref{lem:cartier-hypergeometric-bridge}.  Write
+\[
+ P(X)=4X^3-g_2(x)X-g_3(x),\qquad m=(p-1)/2,
+ \qquad H=[X^{p-1}]P^m,\quad J=[X^{p-2}]P^m.
+\]
+For the standard basis $\Omega=dX/y$, $\Xi=X\,dX/y$, write
+\[
+ \nabla_x\Omega=a\Omega+b\Xi,\qquad
+ \nabla_x\Xi=c\Omega-a\Xi.
+\]
+The exact differential reductions defining this connection imply
+\begin{equation}\label{eq:hasse-gm-derivative}
+                          H'=aH+bJ,\qquad J'=cH-aJ.
+\end{equation}
+Indeed, multiply either reduction identity by $P^{m-1}$.
+Because $m=-1/2$ in characteristic $p$, its exact correction
+becomes $\partial_X(RP^m)$, whose coefficient of $X^{p-1}$ is
+zero.  Thus the Gauss--Manin system survives coefficient
+extraction.  In particular $H$ satisfies
+\[
+                 x(1-x)H''+(1-2x)H'-s(1-s)H=0.
+\]
+
+For $s=1/6,1/4,1/3$, the model coefficients give $\deg_xH<p$.
+At $x=0$ their common cubic is $(X-1)(2X+1)^2$.  The coefficient
+of $X^{p-1}$ in a polynomial of degree less than $2p-1$ is
+translation invariant modulo $p$: the possibly interfering
+coefficients have $\binom{j}{p-1}=0\bmod p$ for
+$p\le j<2p-1$.  Translation by $-1/2$ therefore gives
+$H(0)=(-6)^m$.  The Gauss equation's recurrence
+\[
+       (n+1)^2h_{n+1}=(n+s)(n+1-s)h_n\quad(0\le n<p-1)
+\]
+then identifies $H=(-6)^mU_p$.
+For $s=1/2$, the affine change
+$X=3T/2-(1+x)/2$ turns the cubic into
+$(27/2)T(T-1)(T-x)$.  The Legendre Hasse polynomial
+$\sum_{n=0}^m\binom mn^2x^n$ and the same coefficient
+invariance give the identical normalization.  Hence, in all four
+families,
+\begin{equation}\label{eq:hasse-hypergeometric}
+                  H=(-6)^mU_p.
+\end{equation}
+
+Cartier coefficient extraction now gives
+\[
+ \operatorname{Cartier}(\nu_{A,B})
+ =\bigl((A+BQa)H+BQbJ\bigr)^{1/p}\Omega
+ =\bigl((-6)^m(AU_p+BQU_p')\bigr)^{1/p}\Omega.
+\]
+There is only one coefficient because
+$\deg_X((A+BQa+BQbX)P^m)<2p-1$; the notation incorporates
+the usual Frobenius twist.  Together with the conjugate-filtration
+sequence, this proves the full Cartier statement over arbitrary
+perfect residue fields.  It also shows why a change of period
+normalization cannot be ignored in the finite-polynomial test.
+
+\subsection{Projective Frobenius and rational-prime density}
+\label{rev:qcurve-proof}
+We supply the Galois details used in
+Theorem~\ref{thm:B-qcurve-density}.
+
+\begin{lemma}[Supersingular projective Frobenius]
+\label{lem:B-supersingular-frobenius}
+For a supersingular elliptic curve over $\mathbf F_{p^f}$,
+$p\ge5$, Frobenius on any auxiliary Tate module has projective
+order dividing six.
+\end{lemma}
+\begin{proof}
+Write the Frobenius polynomial as $T^2-aT+p^f$.
+Supersingularity gives slopes $1/2,1/2$, so
+$v_p(a)\ge f/2$; the Hasse--Weil bound gives
+$|a|\le2p^{f/2}$.  If $f$ is odd these inequalities force $a=0$,
+and the eigenvalue ratio is $-1$.  If $f$ is even, then
+$a/p^{f/2}\in\{-2,-1,0,1,2\}$.  The middle three values give
+eigenvalue ratios of order dividing six.  At either endpoint
+Frobenius is scalar: its characteristic equation would otherwise
+give a nonzero nilpotent in the rational endomorphism division
+algebra of an elliptic curve.  This proves the assertion.
+\end{proof}
+
+For the non-CM $\Q$-curve, choose a finite Galois field of
+definition $K/\Q$, write $d=[K:\Q]$, and choose isogenies
+$\mu_\sigma:{}^\sigma E\to E$, with $\mu_1=1$.
+They need not be defined over $K$.  For every sufficiently large
+auxiliary prime $\lambda$, the maps
+\[
+ A_g=\mu_{g|_K}\circ g:E[\lambda]\longrightarrow E[\lambda]
+\]
+are invertible.  The rational Hom spaces between conjugate
+non-CM curves are one-dimensional, so
+$A_gA_h=c(g,h)A_{gh}$ with $c(g,h)\in\Q^\times$.
+Its square is a quotient of the finitely many isogeny degrees;
+after excluding their prime divisors it is a $\lambda$-adic
+unit.  Projectivization therefore gives a continuous representation
+\[
+ \overline\rho_\lambda:G_\Q\longrightarrow
+                          \operatorname{PGL}_2(\mathbf F_\lambda).
+\]
+Continuity follows on adjoining the isogeny coefficients and
+torsion coordinates to a finite Galois extension.  On $G_K$ this
+is the usual projective representation.  Serre's open image
+theorem \cite{Serre}, in its number-field form, says that the
+residual image on $G_K$ contains
+$\operatorname{SL}_2(\mathbf F_\lambda)$ for every sufficiently
+large $\lambda$.  Thus the projective image contains
+$\operatorname{PSL}_2(\mathbf F_\lambda)$.
+
+Fix such a $\lambda$ and omit its finite ramification and
+bad-reduction sets.  At a supersingular rational prime, let $g$
+be Frobenius and let $f\mid d$ be the residue degree in $K$.
+Then $g^f\in G_K$ acts as Frobenius over $\mathbf F_{p^f}$.
+The lemma gives
+\[
+                 \overline\rho_\lambda(g)^{6d}=1.
+\]
+Put $M=6d$ and take $\lambda>M$.  An element killed by $M$ is
+semisimple.  The split and nonsplit torus types have orders
+$\lambda-1$ and $\lambda+1$, and each contains at most $M$
+such elements.  Hence at most $2M$ conjugacy classes occur,
+each of size at most $\lambda(\lambda+1)$.  Since
+$|\operatorname{PSL}_2(\mathbf F_\lambda)|
+=\lambda(\lambda^2-1)/2$, their proportion in the residual
+image is at most
+\[
+                         \frac{4M}{\lambda-1}.
+\]
+Chebotarev identifies the density of each fixed finite-image
+condition with its cardinality proportion.  The upper natural
+density of our fixed supersingular prime set is bounded by this
+quantity for every sufficiently large $\lambda$, hence is zero.
+No uniform Chebotarev estimate is used: the prime-counting limit
+is taken before $\lambda$ tends to infinity.
+
+\subsection{The analytic order in Tang's inequality}
+\label{subsec:B-growth-sharp}
+For completeness the order convention in
+Theorem~\ref{thm:B-Tang-external} is
+\[
+ T_\gamma(r)=\int_0^r\frac{dt}{t}
+       \int_{\|z\|<t}\gamma^*\eta\wedge\omega^{d-1},
+ \qquad\omega=dd^c\log\|z\|^2,
+ \qquad\rho_\gamma=\limsup_{r\to\infty}
+                         \frac{\log T_\gamma(r)}{\log r},
+\]
+where $\eta$ is the curvature of an ample Hermitian line bundle
+on a projective compactification.  The order is independent of
+these choices in the setting used here.
+
+For an elliptic universal extension the order-two estimate has
+a direct geometric explanation.  Write
+$E(\mathbb C)=\mathbb C/\Lambda$, and use its Weierstrass
+functions $\wp,\zeta,\sigma$ and quasiperiod homomorphism
+$\eta_\lambda$.  After rescaling the additive coordinate,
+\[
+ G(\mathbb C)=\mathbb C^2/
+           \{(\lambda,\eta_\lambda):\lambda\in\Lambda\}.
+\]
+A complementary line has exponential map
+$t\mapsto[(at,bt)]$ with $a\ne0$.  On the torsor above
+$E\setminus\{0\}$ the rational coordinates
+$\wp(u),\wp'(u),v-\zeta(u)$ are invariant under the lattice;
+the addition theorem for $\zeta$ gives their rational group law.
+Since $\sigma$ is entire of order two, its logarithmic
+derivatives, and hence these three pulled-back coordinates, have
+Nevanlinna order at most two.  Rational characteristic inequalities
+give the same bound in any projective embedding.
+
+Conversely the projection $t\mapsto at\bmod\Lambda$ pulls an
+ample invariant curvature form on $E$ back to a positive constant
+multiple of $|a|^2i\,dt\wedge d\bar t$.  Its characteristic is
+therefore of order exactly two.  Comparison of ample bundles on
+a projective-bundle compactification of $G$ bounds this
+characteristic by that of the original map.  Thus the order is
+exactly two.  The threshold $3/4$ cannot be improved solely by
+sharpening this growth estimate; this is not a claim that the
+arithmetic threshold itself is optimal.
+
+\subsection{Unweighted zeros and supersingularity}
+\label{rev:unweighted-tests}
+\begin{proposition}[An arithmetic classification of parameters]
+\label{prop:levels123-density}\label{prop:density}
+\label{prop:infinite-congruences}
+For $|C|\ge R_\ell$, $C\ne R_\ell$, and all sufficiently good
+primes $p$, one has
+\[
+ T_p(R_\ell/C)=0\bmod p
+ \quad\Longleftrightarrow\quad T_p(R_\ell/C)=0\bmod p^2
+ \quad\Longleftrightarrow\quad E_{s,x}\text{ is supersingular}.
+\]
+Their rational-prime set has natural density $1/2$ for exactly
+the 36 level--denominator pairs in the standard tables, and
+density zero otherwise.  At each admitted prime $W_p=0\bmod p$
+for every coefficient pair.  At level four the set is infinite
+for every parameter in this domain, including the non-CM ones.
+\end{proposition}
+\begin{proof}
+Work in the unramified quadratic algebra containing the roots
+of $x^2-x+(R_\ell/C)/4$.  The Hasse criterion and the finite
+Clausen square show that vanishing modulo $p$ is equivalent to
+supersingularity, and that it implies divisibility by $p^2$.
+Divisibility descends to $\Z_p$ by unramifiedness; the reverse
+implication is immediate.  Differentiating the square gives
+$W_p=0\bmod p$ when its Hasse factor vanishes.  The density
+assertion now follows from Theorem~\ref{thm:B-qcurve-density}
+and the finite CM classification.
+
+For infinitude at level four, descend geometrically to the
+rational curve
+\begin{equation}\label{lem:rational-descent}
+ \mathcal E_z:\quad y^2=4X^3-3(1-z/4)(1-z)X
+                                      -(8+z)(1-z)^2/8.
+\end{equation}
+Its discriminant is $729z^2(1-z)^3/64$ and
+$j=64(4-z)^3/z^2$, which agrees with that of the Legendre fiber
+when $z=4x(1-x)$.  Hence geometric supersingularity agrees
+outside finitely many primes.  Elkies' theorem \cite{Elkies}
+states that every elliptic curve over $\Q$ has infinitely many
+supersingular primes, proving the claim.
+\end{proof}
+
+For example, $C=72$ at level four has $j=21952/9$ and is non-CM,
+yet has infinitely many such zeros.  Thus infinitude alone cannot
+replace positive density in the unweighted criterion.
+Nor can finitely many tests distinguish the CM rows: fix finitely
+many $p\ge5$ and exponents $e_p$, and put $M=\prod p^{e_p}$.
+Every $C=256+kM>4096$ has, with $(A,B)=(1,6)$, the same
+weighted truncations of every length modulo each $p^{e_p}$ as
+$C=256$, term by term.  Nevertheless
+\[
+                  j(C)=C^2-48C+768-4096/C
+\]
+is nonintegral, so all these parameters are non-CM.
+
+\subsection{Higher precision and the missing comparison}
+\label{subsec:precision-versus-transfer}
+At an ordinary prime, the weighted factorization defines a
+canonical local slope, but its lift modulo $p^2$ differs from
+the rational CM coefficient slope.
+
+\begin{proposition}[The local slope]
+\label{prop:local-slope-p2}
+Let $p>3$ and $z\in\Z_p$. If $z,1-z$ are units and the fiber is ordinary, then
+\[
+                  r_p=-Q(x)\frac{U_p'(x)}{U_p(x)}\pmod{p^2}
+\]
+is independent of the root $x$ and lies in $\Z/p^2\Z$.
+For $A,B\in\Z_p$ with $B$ a unit,
+$W_p(z)=0\bmod p^2$ if and only if $A/B=r_p\bmod p^2$.
+Modulo $p$ this is the complementary Cartier-kernel line.
+\end{proposition}
+\begin{proof}
+The algebra $\mathcal O=\Z_p[x]/(x^2-x+z/4)$ is finite etale;
+its involution has fixed ring $\Z_p$.  Ordinarity makes $U_p(x)$
+a unit.  Reflection and its derivative give
+$U_p'(x)\equiv-\chi_{d,p}U_p'(1-x)\bmod p^2$.
+Since $Q(1-x)=-Q(x)$, the quotient defining $r_p$ is invariant,
+hence rational modulo $p^2$; invariants commute with reduction
+because two is invertible.  The factorization becomes
+$W_p\equiv BU_p^2(A/B-r_p)\bmod p^2$, proving the assertions.
+\end{proof}
+
+By contrast, \cite[Theorem 2.1]{BRSTT}, restating the theorem of
+Chisholm--Deines--Long--Nebe--Swisher, assumes both CM of the
+source fiber and its identity
+$(1+\beta\thetaop)F_{1/d}(z)=\delta/\pi$ with $|z|<1$.
+Under its good-reduction, unramifiedness, and $p$-adic-unit
+hypotheses, its conclusion is
+\begin{equation}\label{eq:cm-weighted-first-order}
+ T_p(z)+\beta zT_p'(z)
+       \equiv\epsilon_p\left(\frac{1-z}{p}\right)p\pmod{p^2},
+ \qquad
+ \epsilon_p=\begin{cases}1&\text{ordinary},\\-1&\text{supersingular}.
+                         \end{cases}
+\end{equation}
+We use this source only in its stated strict convergence range.
+For a CM identity with $AB\ne0$, putting $\beta=B/A$ therefore
+gives, outside finitely many primes,
+\begin{equation}\label{eq:cm-Wp-nonzero-p2}
+ W_p(z)\equiv A\epsilon_p\left(\frac{1-z}{p}\right)p\pmod{p^2}.
+\end{equation}
+Thus $v_p(W_p)=1$.  At ordinary primes the exact first-order drift
+of the local slope is
+\[
+ r_p\equiv\frac AB\left(1-
+       \frac{\epsilon_p\left(\frac{1-z}{p}\right)p}{U_p(x)^2}
+                   \right)\pmod{p^2}.
+\]
+For the valid row $(A,B,C)=(1,6,256)$, one obtains
+$W_7(1/4)=42\bmod49$, $r_7=20\bmod49$, whereas
+$1/6=41\bmod49$.  A transfer demanding $W_p=0\bmod p^2$
+would therefore fail even for a tabulated identity.  Likewise the
+universal finite Clausen congruence cannot be strengthened to
+modulus $p^3$: at $s=1/2$ and $p=5$ its discrepancy is
+$75x^6\bmod125$.
+
+\begin{lemma}[The complex series does not sum directly $p$-adically]
+\label{lem:padic-divergence}
+At every prime $p\nmid C$, a pair-primitive standard series
+diverges as a $p$-adic series.
+\end{lemma}
+\begin{proof}
+Choose $e\in\{0,1\}$ with $A+Be\ne0\bmod p$.  For
+$n=e+p^r$ and $p^r>6$, the base-$p$ digit blocks of $kn$ are
+disjoint for $1\le k\le6$.  Legendre's formula for factorial
+valuations, applied to the balanced factorial ratio $u_\ell$,
+therefore gives
+\[
+ v_p(u_\ell(e+p^r))=v_p(u_\ell(e))+v_p(u_\ell(1)).
+\]
+The linear weight and $C^{-n}$ are units.  Along this subsequence
+the summand valuation is constant and finite, so the terms do not
+tend to zero.
+\end{proof}
+
+Raw finite truncations also need not equal Frobenius unit roots
+modulo $p^2$.  At $s=1/2$, $x=1/3$, $z=8/9$, the fiber is
+non-CM and has trace $-2$ at $5$.  The unit root of
+$T^2+2T+5$ is $13\bmod25$, while
+\[
+                  U_5(1/3)=8,\qquad T_5(8/9)=14
+                                      \quad\bmod25,
+\]
+and $13^2=19\bmod25$.  The unit-root statement in
+\cite[Theorem 2.2]{BRSTT} retains its CM premise.  In that work
+the CM action first selects a second-kind eigenvector, after which
+a compatible Frobenius lift yields the supercongruence
+\cite[\S2.1, equation (2.3), and Lemma 2.3]{BRSTT}.
+Neither the universal polynomial identity nor this CM construction
+provides the eigenvector from an isolated complex period product.
+
+\subsection{Exact compatibility, finite precision, and a common tensor}
+\begin{proposition}[Finite precision does not force CM]
+\label{prop:one-prime-precision-c}
+There are non-CM elliptic curves over $\Q$ with a common good
+ordinary reduction at $5$ whose Hodge-preservation obstruction
+in Theorem~\ref{thm:one-prime-c} is arbitrarily small $5$-adically
+in fixed analytic local frames.
+\end{proposition}
+\begin{proof}
+Consider $E_N:y^2=x^3-x+5^N$, $N\ge2$.  Its discriminant is
+$16(4-27\cdot5^{2N})$, a $5$-adic unit, and its common reduction
+has eight $\mathbf F_5$-points, hence ordinary trace $-2$.
+Its invariant
+$j(E_N)=6912/(4-27\cdot5^{2N})$ is a nonzero rational number
+of absolute value less than one, hence nonintegral and non-CM.
+The curves tend $5$-adically to the CM curve $y^2=x^3-x$.
+On a sufficiently small deformation disk, the family
+crystalline--de Rham comparison identifies the fixed special-fiber
+isocrystal with the analytic de Rham bundle and makes the Hodge
+line analytic \cite[\S4.6]{MaulikPoonen}.  The obstruction
+$F^1H\to H/F^1H$ therefore tends to zero.  It is nonzero at
+every $E_N$ by Theorem~\ref{thm:one-prime-c}.
+\end{proof}
+
+The distinction between local and common invariants is equally
+sharp on the Galois side.
+\begin{proposition}[A common Galois tensor]\label{prop:galois-tensor}
+For an elliptic curve $E/K$ and an auxiliary prime $\lambda$,
+$E$ has geometric CM if and only if
+\[
+           \operatorname{Sym}^2V_\lambda(E)\otimes
+                       \det(V_\lambda(E))^{-1}
+\]
+has a nonzero invariant over some finite extension of $K$.
+\end{proposition}
+\begin{proof}
+For every two-dimensional vector space, polarization gives
+\[
+             \operatorname{Sym}^2V\otimes\det(V)^{-1}
+                           \simeq\operatorname{End}^0(V),
+\]
+where the superscript denotes trace zero.  Faltings' endomorphism
+theorem \cite{Faltings} identifies the invariant endomorphisms
+over a finite extension $L/K$ with
+$\operatorname{End}_L(E)\otimes\Q_\lambda$.
+Its trace-zero part is zero for a non-CM curve and nonzero once
+the CM endomorphisms are defined.  This proves both directions.
+\end{proof}
+For every elliptic curve over $\Q$, however, each good Frobenius
+on the untwisted symmetric square has eigenvalues
+$r_p^2,r_ps_p,s_p^2$, with $r_ps_p=p$.  The Tate eigenvalue is
+therefore present at every prime, including for non-CM curves;
+its eigenline need not be common to the different Frobenii.
+Factoring off these local eigenvalues cannot by itself prove an
+analytic pole of an $L$-function, since the remaining factor may
+have a zero.  A complex scalar relation, a collection of local
+eigenvalues, and a common Galois tensor are distinct data.

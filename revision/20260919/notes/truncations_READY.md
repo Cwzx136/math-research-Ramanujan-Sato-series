@@ -1,0 +1,1 @@
+Truncation appendix COMPLETE: rewritten, independently audited PASS, both notation repairs applied. See truncations.md and truncations_independent_check.md. Final appendix hash: 561F5C861EA82F058F88470D795A5121F973EA0B7FB956A87414D1D6D707656F. All 31 original labels retained, 823 -> 522 lines, isolated MiKTeX build passed with no box overflows. Ready for integration.

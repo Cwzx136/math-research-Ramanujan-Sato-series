@@ -1,0 +1,106 @@
+\section{The classification problem}
+
+For $s\in\{1/6,1/4,1/3,1/2\}$ let
+\[
+ F_s(z)={}_3F_2\!\left(\begin{matrix}1/2,s,1-s\\1,1\end{matrix};z\right)
+       =\sum_{n\ge0}c_s(n)z^n,
+ \qquad c_s(n)=\frac{(1/2)_n(s)_n(1-s)_n}{(n!)^3},
+ \qquad\thetaop=z\frac d{dz}.
+\]
+The pairs $(s_\ell,R_\ell)$ attached to levels $\ell=1,2,3,4$ are
+\[
+ (1/6,1728),\qquad(1/4,256),\qquad(1/3,108),\qquad(1/2,64).
+\]
+We use the power-series branch at zero and define
+\begin{equation}\label{eq:series}
+ \mathfrak S_\ell(A,B,C)
+  =\sum_{n\ge0}R_\ell^nc_{s_\ell}(n)(A+Bn)C^{-n}
+  =(A+B\thetaop)F_{s_\ell}(R_\ell/C),
+\end{equation}
+where the last expression always means the ordinarily convergent sum.
+
+\begin{definition}
+A primitive standard identity is an ordinarily convergent equality
+\[
+ \mathfrak S_\ell(A,B,C)=\frac\alpha\pi,
+ \qquad A,B,C\in\Z,\quad C\ne0,\quad\gcd(A,B)=1,
+ \quad\alpha\in\Qbar.
+\]
+Classes identify $(A,B,\alpha)$ with $(-A,-B,-\alpha)$, at the same
+level and denominator. The multiplier is initially allowed to be zero.
+\end{definition}
+
+The primitive condition concerns the coefficient pair. Requiring only
+$\gcd(A,B,C)=1$ would permit infinitely many multiples of the identity
+$(A,B,C)=(1,6,256)$ at level four. Analytic continuation is likewise
+excluded from the definition: at a convergence boundary, the value must
+be the sum of the original series.
+
+\begin{hypothesis}[Quadratic-period independence]\label{hyp:QPI}
+Let $z=R_\ell/C\in[-1,1)\setminus\{0\}$, with $C\in\Z$, and put
+$x=(1-\sqrt{1-z})/2$. For the algebraic elliptic curve $E_{s_\ell,x}$
+of Section~\ref{sec:families}, use the analytic cycle normalized by
+\[
+ \omega=\frac{2\pi}{\sqrt6}
+ {}_2F_1(s_\ell,1-s_\ell;1;x),
+ \qquad h=\int_\gamma X\,\frac{dX}{y}.
+\]
+If this curve is non-CM, then $\pi,\omega^2,\omega h$ are linearly
+independent over $\Qbar$.
+\end{hypothesis}
+
+\begin{theorem}[Conditional classification]\label{thm:main-conditional}
+Assume Hypothesis~\ref{hyp:QPI}. Every primitive standard identity has
+a CM elliptic fiber. There are exactly $36$ classes, comprising
+$11,12,9,4$ classes at levels $1,2,3,4$, respectively, as listed in
+Tables~\ref{tab:standard1}--\ref{tab:standard4}.
+For each fixed level and denominator, the primitive coefficient pair
+is unique up to simultaneous sign, and its multiplier is nonzero.
+
+For the linear Euler companion $F_s(z)/(1-z)$, the complete list has
+$35$ classes. It is obtained by the coefficient transport and ordinary
+convergence criterion of Theorem~\ref{thm:euler}.
+\end{theorem}
+\begin{proof}
+The elliptic realization and its first derivative identify the
+coefficient space with de Rham cohomology. In the normalized basis,
+\begin{equation}\label{rev:eq:leading-reduction}
+ \pi\mathfrak S_\ell(A,B,C)
+  =\frac{3}{2\pi}\bigl((A+Bu_s)\omega^2+Bv_s\omega h\bigr),
+ \qquad u_s,v_s\in\Qbar,\quad v_s\ne0.
+\end{equation}
+Thus a nonzero coefficient pair gives a nontrivial quadratic-period
+relation. Hypothesis~\ref{hyp:QPI} forces CM; the positive endpoint is
+excluded unconditionally in Section~\ref{sec:endpoint}. CM reciprocity
+and the finite modular correspondence then bound the class number and
+give the tabulated parameters. The complementary CM eigenline supplies
+the identity, and its equivariance supplies a rational coefficient
+slope. These statements, with the exact finite enumeration, are proved
+in Section~\ref{sec:enumeration}. Chudnovsky's theorem gives uniqueness
+and nonvanishing in Section~\ref{sec:unique}. Finally, the invertible
+Euler transport gives the companion classification.
+\end{proof}
+
+\begin{theorem}[Unconditional uniqueness]\label{thm:unconditional}
+At every nonzero algebraic real $z\in[-1,1)$, there is at most one
+$[A:B]\in\mathbf P^1(\Qbar)$ such that
+$(A+B\thetaop)F_s(z)\in\Qbar/\pi$. A nonzero coefficient pair cannot
+give zero. At $z=1$, no nonzero algebraic pair gives a convergent
+identity in $\Qbar/\pi$.
+\end{theorem}
+
+The first two assertions are consequences of the identity-line theorem;
+the endpoint uses CM period independence. In particular, the uniqueness
+assertion in the leading theorem needs no conjecture.
+
+The main proofs are organized by the information carried by an identity.
+Section~\ref{sec:general-period-square} constructs its coefficient line
+intrinsically. Section~\ref{sec:hinge} describes the precise extra
+comparison information that would force CM and proves the implications
+from named period conjectures. Section~\ref{sec:enumeration} completes
+the arithmetic classification within the CM locus. The arithmetic
+criteria and scarcity theorems then give unconditional conclusions with
+different hypotheses: they neither assume nor prove the missing
+single-value implication. The appendices contain coordinate
+certificates, refinements, further families, and obstructions to
+strengthening those hypotheses.

@@ -1,0 +1,111 @@
+% !TEX program = pdflatex
+% The original 118-page paper.tex and paper.pdf are preserved unchanged.
+% Compile this revision with build_paper_revised.ps1.
+\documentclass[10pt,a4paper,reqno]{amsart}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amssymb,booktabs,array,longtable}
+\usepackage[a4paper,top=24mm,bottom=25mm,left=24mm,right=24mm,headheight=12pt,headsep=7mm]{geometry}
+\usepackage{microtype,tikz-cd,mathrsfs}
+\usepackage[hidelinks]{hyperref}
+\hypersetup{pdftitle={Ramanujan--Sato identities: period lines and arithmetic CM criteria},pdfauthor={ZiXian Chang-Wang},pdfsubject={Conditional classification and unconditional restrictions}}
+\setlength{\emergencystretch}{1.5em}
+\raggedbottom
+\setcounter{tocdepth}{1}
+\setcounter{secnumdepth}{2}
+\numberwithin{equation}{section}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{hypothesis}[theorem]{Hypothesis}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\theoremstyle{definition}\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}\newtheorem{remark}[theorem]{Remark}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\Qbar}{\overline{\mathbb Q}}
+\newcommand{\C}{\mathbb C}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\thetaop}{\vartheta}
+\makeatletter
+\newenvironment{identitytable}{%
+  \par\addvspace{8pt}\noindent
+  \begin{minipage}{\textwidth}\def\@captype{table}\centering\small
+}{\end{minipage}\par\addvspace{8pt}}
+\makeatother
+\title[Period lines and arithmetic CM criteria]{Ramanujan--Sato identities:\\period lines and arithmetic CM criteria}
+\author{ZiXian Chang-Wang}
+\date{September 19, 2026}
+\subjclass[2020]{Primary 11F11, 11G15; Secondary 11J91, 14D07, 33C05}
+\keywords{Ramanujan--Sato series, elliptic periods, complex multiplication,
+de Rham--Betti comparison, Frobenius, G-functions}
+\begin{document}
+\begin{abstract}
+A first-order identity for an elliptic period square determines a line
+in de Rham cohomology. Chudnovsky's theorem makes this line unique;
+complex multiplication supplies it as the eigenline complementary to
+the Hodge filtration. We use this interpretation to classify the CM
+identities in the four standard Ramanujan--Sato families: there are
+36 primitive standard classes and 35 linear Euler companions.
+Exhaustion outside the CM locus follows from an explicitly stated
+quadratic-period independence hypothesis. We express that hypothesis
+in modular jets and distinguish it from the established theorems on
+complete comparison tensors.
+
+Two unconditional arithmetic criteria complement this complex theory.
+Weighted congruences at lower prime density greater than $3/4$
+characterize the standard classes, while exact preservation of the
+Hodge line by crystalline Frobenius at one ordinary place characterizes
+CM. Variation of the periods also gives divergent denominator gaps for
+bounded multiplier degree and subpower counts in bounded height
+windows. The proofs incorporate the precise specialization,
+algebraization, and counting theorems on which these conclusions
+depend. Auxiliary constructions, coordinate certificates, further
+families, and countertests are developed in the appendices.
+The implication from a single complex identity to CM remains unproved.
+\end{abstract}
+\maketitle
+\tableofcontents
+
+\input{revision/20260919/sections/introduction.tex}
+\input{revision/20260919/sections/02_periods.tex}
+\input{revision/20260919/sections/comparison.tex}
+\input{revision/20260919/sections/classification.tex}
+\input{revision/20260919/sections/arithmetic.tex}
+\input{revision/20260919/sections/scarcity.tex}
+
+\section*{The remaining assertion}
+The complex identity fixes one value of a quadratic period pairing.
+At a CM fiber this value, the complementary eigenline, and the
+arithmetic congruences agree. The converse would require deriving
+the extra comparison or Frobenius information from that single value.
+Neither the complete-tensor theorems nor the scarcity theorems provide
+this step. Accordingly, existence of the tabulated identities and
+projective uniqueness are unconditional; their unrestricted exhaustion
+remains conditional on Hypothesis~\ref{hyp:QPI}.
+
+\appendix
+\input{revision/20260919/appendices/period_models.tex}
+\input{revision/20260919/appendices/cm_certificates.tex}
+\input{revision/20260919/appendices/arithmetic_details.tex}
+\input{revision/20260919/appendices/comparison_obstructions.tex}
+\input{revision/20260919/appendices/analytic_refinements.tex}
+\input{revision/20260919/appendices/scarcity_refinements.tex}
+\input{revision/20260919/appendices/truncations.tex}
+\input{revision/20260919/appendices/extensions.tex}
+\input{revision/20260919/appendices/pade_wz.tex}
+\input{revision/20260919/appendices/searches.tex}
+
+\section*{Disclosure of AI assistance}
+OpenAI Codex assisted with mathematical exploration and critique,
+literature cross-checks, proposed proofs and counterexamples,
+symbolic and numerical computations, manuscript drafting and revision,
+and adversarial review in separate AI sessions. These reviews are
+AI-assisted checks, not independent human peer review or formal proof
+verification. The text distinguishes cited results, proved deductions,
+conditional statements, and finite computational certificates.
+The author attribution is retained at the author's request; no claim
+of subsequent human validation is implied. The original 118-page
+manuscript and its research records are preserved separately.
+
+\input{revision/20260919/bibliography.tex}
+\end{document}
